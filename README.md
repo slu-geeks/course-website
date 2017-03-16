@@ -1,1 +1,3 @@
 # course-website
+
+PLEASE READ THE README FILE
