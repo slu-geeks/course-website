@@ -820,7 +820,7 @@
     text-align: left;
   }
   .dl-horizontal dd {
-    margin-left: 0;
+    margin-left: 20px;
   }
   .container {
     width: auto;
