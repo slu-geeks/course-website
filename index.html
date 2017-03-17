@@ -266,6 +266,94 @@
                     </div>
                 </div>
             </article>
+		
+		<article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Request</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>REQUEST</b>
+                        <p>
+                            A request message from a client to a server includes, within the first line of that message, the method to be applied to the resource, the identifier of the resource, and the protocol version in use.
+                            
+                            <p>
+                            ------ sample format here -------
+                            </p>
+                        <ol type="1">
+                        <li><b>Request-Line</b></li>
+                        <p>
+                            The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF. The elements are separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
+                            </p> 
+                                
+                        <p>Request-Line   = Method SP Request-URI SP HTTP-Version CRLF</p>
+                            
+                            <ul>
+                            <li>Method</li>
+                                <p>
+                                    The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase. The following table lists all the supported methods in HTTP/1.1.                                
+                                </p>
+                                
+                                <ul style="list-style-type:disc"> 
+                                    <li>OPTIONS</li>
+                                    <p>
+                                        Describe the communication options for the target resource.      
+                                    </p>
+                                    <li>GET</li>
+                                    <p>
+                                        The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+                                    </p>
+                                    <li>HEAD</li>
+                                    <p>
+                                        Same as GET, but it transfers the status line and the header section only.
+                                    </p>
+                                    <li>POST</li>
+                                    <p>
+                                        A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms. 
+                                    </p>
+                                    <li>PUT</li>
+                                    <p>
+                                        Replaces all the current representations of the target resource with the uploaded content.  
+                                    </p>
+                                    <li>DELETE</li>
+                                    <p>
+                                        Removes all the current representations of the target resource given by URI.
+                                    </p>
+                                    <li>TRACE</li>
+                                    <p>
+                                        Performs a message loop back test along with the path to the target resource.
+                                    </p>
+                                    <li>CONNECT</li> 
+                                    <p>
+                                        Establishes a tunnel to the server identified by a given URI.
+                                    </p>
+                                </ul>
+                                
+                                <li>Request URI</li>
+                                <p>
+                                    The Request-URI is a Uniform Resource Identifier and identifies the resource upon which to apply the request. Following are the most commonly used forms to specify an URI: Request-URI = "*" | absoluteURI | abs_path | authority
+                                    
+                                </p>                         
+                            </ul>
+                            
+                            <li><b>Resource Identified Request</b></li>
+                            <p>
+                                The exact resource identified by an Internet request is determined by examining both the Request-URI and the Host header field.
+                            </p>
+                            
+                            <li><b>Request Header Fields</b></li>
+                            <p>
+                                The request-header fields allow the client to pass additional information about the request, and about the client itself, to the server. These fields act as request modifiers, with semantics equivalent to the parameters on a programming language method invocation.
+                            </p>
+
+                       
+                        </ol>
+
+                        
+                    </div>
+                </div>
+            </article>
+	
 
              <article>
                 <div class="panel panel-primary">
