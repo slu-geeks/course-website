@@ -498,8 +498,54 @@
                                     
                                 </ol>
                                 
-                                
                             </li>
+                            <li>
+                                <b>Media Types</b>
+                                <p>HTTP uses Internet Media Types in the Content-Type and Accept header fields in order to provide open and extensible data typing andt ype negotiation.
+                                </p>
+                                
+                                <p>
+                                    media-type = type "/" subtype *( ";" parameter)
+                                    type = token
+                                    subtype = token
+                                </p>
+                                
+                                <ol type='a'>
+                                    <li><b>Canonicalization and Text Defaults</b>
+                                    <p>Internet media types are registered with a canonical form. An entity-body transferred via HTTP messages must be represented in the appropriate canonical form prior to its transmission except for "text" types, as defined in the next paragraph.</p>
+                                    </li>
+                                    
+                                    <li>
+                                    <b>Multipart Types</b>
+                                    <p>MIME provides for a number of "multipart" types -- encapsulations of one or more entities within a single message-body. All multipart types share a common syntax.</p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><b>Product Tokens</b>
+                                <p>Product tokens are used to allow communicating applications to identify themselves by software name and version.</p>
+                                <p>Example: <br>
+                                User-Agent: CERN-LineMode/2.15 libwww/2.17b3<br>
+                                Server: Apache/2.4</p>
+                            
+                            </li>
+                            
+                            <li><b>Quality Values</b>
+                                <p>HTTP content negotiation uses short "floating point" numbers to indicate the relative importance ("weight") of various negotiable parameters.</p>
+                            
+                            </li>
+                            
+                            <li><b>Language Tags</b>
+                            <p>It identifies a natural language spoken, written, or otherwise conveyed by human beings for communication of information to other human beings. HTTP uses language tags within the Accept-Language and Content-Language fields.</p>
+                            
+                            <p>language-tag = primary-tag *( "_" subtag )<br>
+                            primary-tag = 1*8ALPHA<br>
+                                subtag = 1*8ALPHA</p></li>
+                            
+                            <li><b>Entity Tags</b><p>
+                                Entity tags are used for comparing two or more entities from the same requested resource.</p><p>entity-tag = [ weak ] opaque-tag<br>weak = "W/"<br>opaque-tag = quoted-string</p></li>
+                            
+                            <li><b>Range Units</b><p>HTTP/1.1 allows a client to request that only part (a range of) the response entity be included within the response.</p>
+                            <p>range-unit = bytes-unit | other-range-unit<br>bytes-unit = "bytes"<br>other-range-unit=token</p></li>
                         </ol>
                     </div>
                 </div>
