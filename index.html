@@ -173,8 +173,6 @@
         </aside>
     </section>
     <section class="col-lg-10">
-
-
         <section class="main col col-lg-12">
             <article>
                 <div class="panel panel-primary">
@@ -228,64 +226,220 @@
             <article>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">HTML</h3>
+                        <h3 class="panel-title">HTML (HYPERTEXT MARKUP LANGUAGE)</h3>
                     </div>
+                    
                     <div class="panel-body styleWidgets">
-                        
-                        <dl>
-                            <dt>What is HTML?</dt>
-                            <dd>
-                                HTML stands for HyperText Markup Language. In simple terms, HTML constructs web pages. Hypertext means that documents are designed to be linked to other documents on the web. 
-                                
-                                Next is HTML being a markup language which are the set of tags that are added to the text of a webpage to define its structure which are critical roles. First, it defines the role each piece of content will have. Some content will become the main headline, while other content links in the navigation. Some tags describe non-textual elements and so on. 
-                            </dd>
-                            <dt>What is the role of HTML in modern Technology?</dt>
-                            <dd>
-                                <ol>
-                                    <li>Structure and Content (main role)</li>
-                                    <li>Presentational / Aesthetics (this is becoming depricated in favor of css)</li>
-                                    <li>Behavioral (this is also becoming depricated in favor of javascript)</li>
-                                </ol>
-                            </dd>
-                            
-                            <dt>Who invented HTML?</dt>
-                            <dd>
-
-                                It's Time Berners-Lee! Tim Berners-Lee is the inventor of the Web. In 1989, Tim was working in a computing services section of CERN when he came up with the concept; at the time he had no idea that it would be implemented on such an enormous scale. Particle physics research often involves collaboration among institutes from all over the world. Tim had the idea of enabling researchers from remote sites in the world to organize and pool together information. But far from simply making available a large number of research documents as files that could be downloaded to individual computers, he suggested that you could actually link the text in the files themselves.
-
-                                In other words, there could be cross-references from one research paper to another. This would mean that while reading one research paper, you could quickly display part of another paper that holds directly relevant text or diagrams. Documentation of a scientific and mathematical nature would thus be represented as a `web' of information held in electronic form on computers across the world. This, Tim thought, could be done by using some form of hypertext, some way of linking documents together by using buttons on the screen, which you simply clicked on to jump from one paper to another. Before coming to CERN, Tim had already worked on document production and text processing, and had developed his first hypertext system, `Enquire', in 1980 for his own personal use.
-                                <br/>Referrence: https://www.w3.org/People/Raggett/book4/ch02.html
-                            </dd>
-                            
-                            <dt>Who oversees the development of HTML?</dt>
-                            <dd>
-                                Since 1996, the HTML specifications have been maintained, with input from commercial software vendors, by the World Wide Web Consortium (W3C)
-                            </dd>
-                            <dt>What is the syntax of HTML?</dt>
-                            <dd>
-                                <ol>
-                                    <li>Byte Order Mark (can be ignored).</li>
-                                    <li>
-                                        Any number of comments and space characters.
-                                        <br/>example: &lt;!---HTML Comment ---&gt;
-                                    </li>
-                                    <li>A DOCTYPE.
-                                        <br/>- It tells the browser to render the document using standard mode (same across all browsers) or quirks mode (different across all browsers). Quirks mode is turned on when there is no correct DOCTYPE declaration, and turned off when there is a DOCTYPE definition
-                                        <ul>
-                                            <li>Strict - for structure and content</li>
-                                            <li>Transitional -deprecated elements can be used</li>
-                                            <li>Frameset - not used nowadays anymore and is considered obsolete</li>
-                                        </ul>
-                                    </li>
-                                    <li>Any number of comments and space characters. </li>
-                                    <li>The root element, in the form of an html element. </li>
-                                    <li>Any number of comments and space characters. </li>
-                                </ol>
-                            </dd>    
-                        </dl>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                              <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is HTML?
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                  HTML stands for HyperText Markup Language. In simple terms, HTML constructs web pages.
+                                  Hypertext means that documents are designed to be linked to other documents on the web.
+                                  Next is HTML being a markup language which are the set of tags that are added to the
+                                  text of a webpage to define its structure which are critical roles. First, it defines
+                                  the role each piece of content will have. Some content will become the main headline,
+                                  while other content links in the navigation. Some tags describe non-textual elements and so on.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                              <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What is the role of HTML in modern Technology?
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                              <div class="panel-body">
+                                  <ol>
+                                      <li>Structure and Content (main role)</li>
+                                      <li>Presentational / Aesthetics (this is becoming depricated in favor of css)</li>
+                                      <li>Behavioral (this is also becoming depricated in favor of javascript)</li>
+                                  </ol>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Who invented HTML?
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                  It's Time Berners-Lee! Tim Berners-Lee is the inventor of the Web. In 1989, Tim was
+                                  working in a computing services section of CERN when he came up with the concept;
+                                  at the time he had no idea that it would be implemented on such an enormous scale.
+                                  Particle physics research often involves collaboration among institutes from all over
+                                  the world. Tim had the idea of enabling researchers from remote sites in the world to
+                                  organize and pool together information. But far from simply making available a large
+                                  number of research documents as files that could be downloaded to individual computers,
+                                  he suggested that you could actually link the text in the files themselves.
+                                  In other words, there could be cross-references from one research paper to another.
+                                  This would mean that while reading one research paper, you could quickly display part
+                                  of another paper that holds directly relevant text or diagrams. Documentation of a
+                                  scientific and mathematical nature would thus be represented as a `web' of information
+                                  held in electronic form on computers across the world. This, Tim thought, could be
+                                  done by using some form of hypertext, some way of linking documents together by using
+                                  buttons on the screen, which you simply clicked on to jump from one paper to another.
+                                  Before coming to CERN, Tim had already worked on document production and text processing,
+                                  and had developed his first hypertext system, `Enquire', in 1980 for his own personal use.
+                                  <br/>Referrence: https://www.w3.org/People/Raggett/book4/ch02.html
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Who oversees the development of HTML?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Since 1996, the HTML specifications have been maintained, with input from
+                                    commercial software vendors, by the World Wide Web Consortium (W3C).
+                                </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        What is the syntax of HTML?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <ol>
+                                        <li>Byte Order Mark (can be ignored).</li>
+                                        <li>
+                                            Any number of comments and space characters.
+                                            <br/>example: &lt;!---HTML Comment ---&gt;
+                                        </li>
+                                        <li>A DOCTYPE.
+                                            <br/>- It tells the browser to render the document using standard mode
+                                            (same across all browsers) or quirks mode (different across all browsers).
+                                            Quirks mode is turned on when there is no correct DOCTYPE declaration, and
+                                            turned off when there is a DOCTYPE definition
+                                            <ul>
+                                                <li>Strict - for structure and content</li>
+                                                <li>Transitional -deprecated elements can be used</li>
+                                                <li>Frameset - not used nowadays anymore and is considered obsolete</li>
+                                            </ul>
+                                        </li>
+                                        <li>Any number of comments and space characters. </li>
+                                        <li>The root element, in the form of an html element. </li>
+                                        <li>Any number of comments and space characters. </li>
+                                    </ol>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </article>
+		
+		<article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Request</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>REQUEST</b>
+                        <p>
+                            A request message from a client to a server includes, within the first line of that message, the method to be applied to the resource, the identifier of the resource, and the protocol version in use.
+                            
+                            <p>
+                            ------ sample format here -------
+                            </p>
+                        <ol type="1">
+                        <li><b>Request-Line</b></li>
+                        <p>
+                            The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF. The elements are separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
+                            </p> 
+                                
+                        <p>Request-Line   = Method SP Request-URI SP HTTP-Version CRLF</p>
+                            
+                            <ul>
+                            <li>Method</li>
+                                <p>
+                                    The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase. The following table lists all the supported methods in HTTP/1.1.                                
+                                </p>
+                                
+                                <ul style="list-style-type:disc"> 
+                                    <li>OPTIONS</li>
+                                    <p>
+                                        Describe the communication options for the target resource.      
+                                    </p>
+                                    <li>GET</li>
+                                    <p>
+                                        The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+                                    </p>
+                                    <li>HEAD</li>
+                                    <p>
+                                        Same as GET, but it transfers the status line and the header section only.
+                                    </p>
+                                    <li>POST</li>
+                                    <p>
+                                        A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms. 
+                                    </p>
+                                    <li>PUT</li>
+                                    <p>
+                                        Replaces all the current representations of the target resource with the uploaded content.  
+                                    </p>
+                                    <li>DELETE</li>
+                                    <p>
+                                        Removes all the current representations of the target resource given by URI.
+                                    </p>
+                                    <li>TRACE</li>
+                                    <p>
+                                        Performs a message loop back test along with the path to the target resource.
+                                    </p>
+                                    <li>CONNECT</li> 
+                                    <p>
+                                        Establishes a tunnel to the server identified by a given URI.
+                                    </p>
+                                </ul>
+                                
+                                <li>Request URI</li>
+                                <p>
+                                    The Request-URI is a Uniform Resource Identifier and identifies the resource upon which to apply the request. Following are the most commonly used forms to specify an URI: Request-URI = "*" | absoluteURI | abs_path | authority
+                                    
+                                </p>                         
+                            </ul>
+                            
+                            <li><b>Resource Identified Request</b></li>
+                            <p>
+                                The exact resource identified by an Internet request is determined by examining both the Request-URI and the Host header field.
+                            </p>
+                            
+                            <li><b>Request Header Fields</b></li>
+                            <p>
+                                The request-header fields allow the client to pass additional information about the request, and about the client itself, to the server. These fields act as request modifiers, with semantics equivalent to the parameters on a programming language method invocation.
+                            </p>
+
+                       
+                        </ol>
+
+                        
+                    </div>
+                </div>
+            </article>
+	
 
              <article>
                 <div class="panel panel-primary">
