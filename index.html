@@ -395,6 +395,116 @@
                     </div>
                 </div>
             </article>
+            
+            <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Protocol Parameters</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <ol type="1">
+                            <li>
+                                <b>HTTP Version</b>
+                                <p>HTTP uses a "&lt;major&gt;.&lt;minor&gt;" numbering scheme to indicate versions of the protocol. The protocol versioning policy is intended to allow the sender to indicate format of a message and its capacity for understanding further HTTP communication, rather than the features obtained via that communication.</p>
+                            </li>
+                            
+                            <li>
+                                <b>Uniform Resource Identifiers</b>
+                                <p>URIs have been known by many names: WWW addresses, Universal Document Identifiers, Universal Resource Identifiers, and finally the combination of Uniform Resource Locators (URL) and Names (URN). As far as HTTP is concerned, Uniform Resource Identifiers are simply formatted strings which identify--via name, location, or any other characteristics--a resource.</p>
+                                
+                                <ol type="a">
+                                    <li><b>General Syntax</b>
+                                    <p>URIs in HTTP can be represented in absolute form or relative to some known base URI, depending upon the context of their use. The two forms are differentiated by the fact that absolute URIs always begin with a scheme name followed by a colon. </p>
+                                    </li>
+                                    
+                                    <li>
+                                        <b>http URL</b>
+                                        <p>The "http" scheme is used to locate network resources via the HTTP protocol. This. </p>
+                                        <p>http_URL = "http:" "//" host [ ":" port ] [ abs_path [ "?" query ]]</p>
+                                    </li>
+                                    
+                                    <li>
+                                        <b>URI Comparison</b>
+                                        <p>The following three URIs are equivalent:</p>
+                                        <p>http://xyz.com:80/~smith/index.html<br>
+                                        http://XYZ.com/%7Esmith/index.html<br>
+                                        http://XYZ.com:/7esmith/home.html</p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><b>Date/Time Formats</b>
+                                <ol type=a>
+                                    <li><b>Full Date</b><p>HTTP application have historically three different formats for the representation of date/time stamps:</p>
+                                    <p>Mon, 06 Dec 1997 08:49:37 GMT<br>
+                                    Monday, 06-Dec-97 08:49:37 GMT<br>
+                                    Mon Dec &nbsp;6 08:49:37 1994</p>
+                                    <p>The first format is preffered as an Internet standard and represents a fixed-length subset. The second format is obsolete date format because it lacks a four-digit year.</p>
+                                    <p>All HTTP date/time stamps must be represented in Greenwich Mean Time (GMT), without exception. For the purposes of HTTP, GMT is exactly equal to UTC (Coordinated Universal Time). </p></li>
+                                    
+                                    <li><b>Delta Seconds</b></li>
+                                    <p>Some HTTP header fields allow a time value to be specified as an integer number of seconds, represented in decimal, after the time that the message was received.</p>
+                                    <p>
+                                        delta-seconds &nbsp; = 1*DIGIT
+                                    </p>
+                                </ol>
+                            </li>
+                            <li><b>Character Sets</b>
+                            <p>HTTP uses the same definition of the term "character set" as that described for MIME:</p>
+                            <p>The term "character set" is used in this document to refer to a method used with one or more tables to convert a sequence of octets into a sequence of characters.
+                            </p>
+                            <ol type="a">
+                                <li><b>Missing Charset</b>
+                                    <p>Some HTTP/1.0 software has interpreted a Content-Type header without charset parameter incorrectly to mean "recipient should guess." </p>
+                                </li>
+                            </ol>
+                            </li>
+                            
+                            <li>
+                                <b>Content Codings</b>
+                                <p>Content coding values indicate an encoding transformation that has been or can be applied to an entity. They are primarily used to allow a document to be compressed or otherwise usefully transformed without losing the identity of its underlying media type and without loss of information.</p>
+                                
+                                <p>transfer-coding &nbsp;= "chunked" | transfer-extension<br>transfer-extension&nbsp;= token *( ";" parameter )</p>
+                            </li>
+                            
+                            <li>
+                                <b>Transfer Codings</b>
+                                <p>Transfer-coding values are used to indicate an encoding transformation that has been, can be, or may need to applied to an entity-body in order to ensure "safe transport" through the network.</p>
+                                
+                                <ol type="a">
+                                    <li><b>Chunked Transfer Coding</b>
+                                    <p>The chunked encoding modifies the body of a message in order to transfer it as a series of chunks, each with its own size indicator, followed by optional trailer containing entity-header fields. This allows dynamically produced content to be transferred along with the information necessary for the recipient to verify that it has received the full message.</p>
+                                        
+                                        <p>Chunked-Body&nbsp;&nbsp;= *chunk<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;last-chunk<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;trailer<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CRLF</p>
+                                        
+                                        <p>chunk&emsp;&emsp;&emsp;&emsp;&emsp; = chunk-size [&emsp;chunk-extension&emsp;] CRLF<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;chunk=data CRLF<br>
+                                        chunk-size&emsp;&emsp;&emsp; = 1*HEX<br>
+                                        
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = 1*("0") [&emsp;chunk-extension&emsp;] CRLF</p>
+                                        
+                                        <p>chunk-extension = *( ";" chunk-ext-name [ "=" chunk-ext-val ] )<br>
+                                        
+                                        chunk-ext-name = token<br>
+                                        
+                                        chunk-ext-val = token | quoted-string<br>
+                                        
+                                        chunk-data = chunk-size(OCTET)<br>
+                                        
+                                        trailer = *(entity-header CRLF)</p>
+                                    </li>
+                                    
+                                </ol>
+                                
+                                
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+            </article>
  
             <article>
                 <div class="panel panel-primary">
