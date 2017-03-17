@@ -172,7 +172,7 @@
             </div>
         </aside>
     </section>
-    <section class="col-lg-10">
+    < class="col-lg-10">
         <section class="main col col-lg-12">
             <article>
                 <div class="panel panel-primary">
@@ -318,7 +318,7 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                                 <div class="panel-body">
                                     Since 1996, the HTML specifications have been maintained, with input from
                                     commercial software vendors, by the World Wide Web Consortium (W3C).
@@ -333,7 +333,7 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                 <div class="panel-body">
                                     <ol>
                                         <li>Byte Order Mark (can be ignored).</li>
@@ -356,6 +356,21 @@
                                         <li>The root element, in the form of an html element. </li>
                                         <li>Any number of comments and space characters. </li>
                                     </ol>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingSix">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            Content Model
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                                    <div class="panel-body">
+                                        Since 1996, the HTML specifications have been maintained, with input from
+                                        commercial software vendors, by the World Wide Web Consortium (W3C).
+                                    </div>
                                 </div>
                             </div>
                           </div>
@@ -534,7 +549,6 @@
                           <dt>5xx: Server Error</dt>
                           <dd>- It means the server failed to fulfill an apparently valid request.</dd>
                         </dl>
-        
                    </div>
                </div>
             </article>
@@ -611,7 +625,8 @@
                           <tr>
                             <td>206</td>
                             <td>Partial Content</td>
-                            <td>The server is returning partial data of the size requested. Used in response to a request specifying a Range header. The server must specify the range included in the response with the <i>Content-Range header.</td>
+                            <td>The server is returning partial data of the size requested. Used in response to a request specifying a Range header.
+                                The server must specify the range included in the response with the <i>Content-Range header.</i></td>
                           </tr>
                         </table>
                     </div>
@@ -833,41 +848,44 @@
             </article>
 
                     <article>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">XHTML</h3>
-                    </div>
-                    <div class="panel-body styleWidgets">                            
-                        <b>What Is XHTML?</b>
-                        <ul>
-                        <li>XHTML stands for Extensible Hypertext Markup Language</li>
-                        <li>XHTML is almost identical to HTML because XHTML is, in fact, the follow-on version of HTML 4</li>
-                        <li>Extensibility means that as new ideas for Web communication and presentation emerge, they can be implemented without having to wait for the next major version of HTML and browser support.</li>
-                        </ul>                       
-                        <b>Differences of XHTML to HTML:</b><br>
-                        <ul style="list-style-type:square">
-                            <li><b>Document Structure</b></li>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">XHTML</h3>
+                            </div>
+                            <div class="panel-body styleWidgets">
+                                <b>What Is XHTML?</b>
                                 <ul>
-                                  <li>XHTML DOCTYPE is <strong>mandatory</strong></li>
-                                  <li>The xmlns attribute in &lt;html&gt; is <strong>mandatory</strong></li>
-                                  <li>&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, and &lt;body&gt; are <strong>mandatory</strong></li>
+                                <li>XHTML stands for Extensible Hypertext Markup Language</li>
+                                <li>XHTML is almost identical to HTML because XHTML is, in fact, the follow-on version of HTML 4</li>
+                                <li>Extensibility means that as new ideas for Web communication and presentation emerge, they can be implemented without having to wait for the next major version of HTML and browser support.</li>
                                 </ul>
-                            <li><b>XHTML Elements</b></li>
-                                <ul>
-                                    <li>XHTML elements must be properly nested</li>
-                                    <li>XHTML elements must always be closed</li>
-                                    <li>XHTML elements must be in lowercase</li>
-                                    <li>XHTML documents must have one root element</li>
+                                <b>Differences of XHTML to HTML:</b><br>
+                                <ul style="list-style-type:square">
+                                    <li><b>Document Structure</b></li>
+                                        <ul>
+                                          <li>XHTML DOCTYPE is <strong>mandatory</strong></li>
+                                          <li>The xmlns attribute in &lt;html&gt; is <strong>mandatory</strong></li>
+                                          <li>&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, and &lt;body&gt; are <strong>mandatory</strong></li>
+                                        </ul>
+                                    <li><b>XHTML Elements</b></li>
+                                        <ul>
+                                            <li>XHTML elements must be properly nested</li>
+                                            <li>XHTML elements must always be closed</li>
+                                            <li>XHTML elements must be in lowercase</li>
+                                            <li>XHTML documents must have one root element</li>
+                                        </ul>
+                                    <li></li><b>XHTML Attributes</b></li>
+                                        <ul>
+                                            <li>Attribute names must be in lower case</li>
+                                            <li>Attribute values must be quoted</li>
+                                            <li>Attribute minimization is forbidden</li>
+                                        </ul>
                                 </ul>
-                            <li></li><b>XHTML Attributes</b></li>
-                                <ul>
-                                    <li>Attribute names must be in lower case</li>
-                                    <li>Attribute values must be quoted</li>
-                                    <li>Attribute minimization is forbidden</li>
-                                </ul>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                    </article>
+                   </div>
+               </div>
             </article>
         </section>
 
