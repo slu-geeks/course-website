@@ -61,6 +61,7 @@
         }
     </style>
 </head>
+
 <body id="home" style="background-color: #F2F2F2;">
 
 <section id="header">
@@ -174,9 +175,34 @@
     <section class="col-lg-10">
         <section class="main col col-lg-12">
             <article>
-                <h1>INTERNET</h1>
-                <div class="well well-lg">This page will help you to understand about internet</div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">THE INTERNET</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>What is Internet?</b>
+                        <ul>
+                        	<li>It is a network of networks that consists of millions of private, public, academic, business, and government networks, of local to global scope,that are linked by a broad array of electronic, wireless and optical networking technologies.</li>
+                        	<li>A global system of interconnected computer networks that use the standard Internet Protocol Suite (TCP/IP) to serve billions of users worldwide</li>
+                        	<li>A means of connecting a computer to any other computer anywhere in the world via dedicated routers and servers. When two computers are connected over the Internet, they can send and receive all kinds of information such as text, graphics, voice, video, and computer programs.
+							<sub>Read more: http://www.businessdictionary.com/definition/internet.html</sub></li>                      	
+                        </ul>
+
+                        <b>The World Wide Web</b>
+                        <ul>
+                        	<li>A global information medium which users can read and write via computers connected to the Internet. The term is often mistakenly used as a synonym for the Internet itself, but the Web is a service that operates over the Internet, as e-mail does.</li>
+                        	<li>In September 1994, Berners-Lee founded the World Wide Web Consortium (W3C) at the Massachusetts Institute of Technology with support from the Defense Advanced Research Projects Agency(DARPA) and the European Commission. It comprised various companies that were willing to create standards and recommendations to improve the quality of the Web. </li>
+                        </ul>
+
+                        <b>Tim Berners-Lee</b>
+                        <p>Tim Berners-Lee is credited as the inventor of the World Wide Web. A physicist, Berners-Lee and his team built the world's very first web browser, WorldWideWeb, the first web server and the HyperText-based markup language HTML. Berners-Lee founded and is the current director of the World Wide Web Consortium (W3C), a standards body that oversees the development of the web as a whole. While the Internet itself dates back 1969, it was Berners-Lee who was able to bring together the concept of the Internet and hypertext, which set the foundation for the Internet as we know it today.</p>
+
+                        <b>Internet vs. The World Wide Web</b>
+                        <p>The Internet is not synonymous with World Wide Web. The Internet is a massive network of networks, a networking infrastructure. It connects millions of computers together globally, forming a network in which any computer can communicate with any other computer as long as they are both connected to the Internet. The World Wide Web, or simply Web, is a way of accessing information over the medium of the Internet. It is an information-sharing model that is built on top of the Internet.</p>
+                    </div>
+                </div>
             </article>
+
             <article>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -306,6 +332,94 @@
                     </div>
                 </div>
             </article>
+		
+		<article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Request</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>REQUEST</b>
+                        <p>
+                            A request message from a client to a server includes, within the first line of that message, the method to be applied to the resource, the identifier of the resource, and the protocol version in use.
+                            
+                            <p>
+                            ------ sample format here -------
+                            </p>
+                        <ol type="1">
+                        <li><b>Request-Line</b></li>
+                        <p>
+                            The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF. The elements are separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
+                            </p> 
+                                
+                        <p>Request-Line   = Method SP Request-URI SP HTTP-Version CRLF</p>
+                            
+                            <ul>
+                            <li>Method</li>
+                                <p>
+                                    The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase. The following table lists all the supported methods in HTTP/1.1.                                
+                                </p>
+                                
+                                <ul style="list-style-type:disc"> 
+                                    <li>OPTIONS</li>
+                                    <p>
+                                        Describe the communication options for the target resource.      
+                                    </p>
+                                    <li>GET</li>
+                                    <p>
+                                        The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+                                    </p>
+                                    <li>HEAD</li>
+                                    <p>
+                                        Same as GET, but it transfers the status line and the header section only.
+                                    </p>
+                                    <li>POST</li>
+                                    <p>
+                                        A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms. 
+                                    </p>
+                                    <li>PUT</li>
+                                    <p>
+                                        Replaces all the current representations of the target resource with the uploaded content.  
+                                    </p>
+                                    <li>DELETE</li>
+                                    <p>
+                                        Removes all the current representations of the target resource given by URI.
+                                    </p>
+                                    <li>TRACE</li>
+                                    <p>
+                                        Performs a message loop back test along with the path to the target resource.
+                                    </p>
+                                    <li>CONNECT</li> 
+                                    <p>
+                                        Establishes a tunnel to the server identified by a given URI.
+                                    </p>
+                                </ul>
+                                
+                                <li>Request URI</li>
+                                <p>
+                                    The Request-URI is a Uniform Resource Identifier and identifies the resource upon which to apply the request. Following are the most commonly used forms to specify an URI: Request-URI = "*" | absoluteURI | abs_path | authority
+                                    
+                                </p>                         
+                            </ul>
+                            
+                            <li><b>Resource Identified Request</b></li>
+                            <p>
+                                The exact resource identified by an Internet request is determined by examining both the Request-URI and the Host header field.
+                            </p>
+                            
+                            <li><b>Request Header Fields</b></li>
+                            <p>
+                                The request-header fields allow the client to pass additional information about the request, and about the client itself, to the server. These fields act as request modifiers, with semantics equivalent to the parameters on a programming language method invocation.
+                            </p>
+
+                       
+                        </ol>
+
+                        
+                    </div>
+                </div>
+            </article>
+	
 
              <article>
                 <div class="panel panel-primary">
@@ -380,7 +494,7 @@
                           <tr>
                             <td>201</td>
                             <td>Created</td>
-                            <td>The request is complete, and a new resource is created&nbsp;.</td>
+                            <td>The request is complete, and a new resource is created.</td>
                           </tr>
                           <tr>
                             <td>202</td>
@@ -537,7 +651,7 @@
                           <tr>
                             <td>410</td>
                             <td>Gone</td>
-                            <td>The requested page is no longer available&nbsp;.</td>
+                            <td>The requested page is no longer available.</td>
                           </tr>
                           <tr>
                             <td>411</td>
@@ -623,6 +737,44 @@
                             <td>The server does not support the http protocol version.</td>
                           </tr>
                         </table>
+                    </div>
+                </div>
+            </article>
+
+                    <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">XHTML</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">                            
+                        <b>What Is XHTML?</b>
+                        <ul>
+                        <li>XHTML stands for Extensible Hypertext Markup Language</li>
+                        <li>XHTML is almost identical to HTML because XHTML is, in fact, the follow-on version of HTML 4</li>
+                        <li>Extensibility means that as new ideas for Web communication and presentation emerge, they can be implemented without having to wait for the next major version of HTML and browser support.</li>
+                        </ul>                       
+                        <b>Differences of XHTML to HTML:</b><br>
+                        <ul style="list-style-type:square">
+                            <li><b>Document Structure</b></li>
+                                <ul>
+                                  <li>XHTML DOCTYPE is <strong>mandatory</strong></li>
+                                  <li>The xmlns attribute in &lt;html&gt; is <strong>mandatory</strong></li>
+                                  <li>&lt;html&gt;, &lt;head&gt;, &lt;title&gt;, and &lt;body&gt; are <strong>mandatory</strong></li>
+                                </ul>
+                            <li><b>XHTML Elements</b></li>
+                                <ul>
+                                    <li>XHTML elements must be properly nested</li>
+                                    <li>XHTML elements must always be closed</li>
+                                    <li>XHTML elements must be in lowercase</li>
+                                    <li>XHTML documents must have one root element</li>
+                                </ul>
+                            <li></li><b>XHTML Attributes</b></li>
+                                <ul>
+                                    <li>Attribute names must be in lower case</li>
+                                    <li>Attribute values must be quoted</li>
+                                    <li>Attribute minimization is forbidden</li>
+                                </ul>
+                        </ul>
                     </div>
                 </div>
             </article>
