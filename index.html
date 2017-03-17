@@ -199,6 +199,28 @@
 
                         <b>Internet vs. The World Wide Web</b>
                         <p>The Internet is not synonymous with World Wide Web. The Internet is a massive network of networks, a networking infrastructure. It connects millions of computers together globally, forming a network in which any computer can communicate with any other computer as long as they are both connected to the Internet. The World Wide Web, or simply Web, is a way of accessing information over the medium of the Internet. It is an information-sharing model that is built on top of the Internet.</p>
+
+                        <b>IoT (Internet of Things)</b>
+                        <p>The Internet of things (IoT) is the inter-networking of physical devices, vehicles (also referred to as "connected devices" and "smart devices"), buildings, and other items—embedded with electronics, software, sensors, actuators, and network connectivity that enable these objects to collect and exchange data. In 2013 the Global Standards Initiative on Internet of Things (IoT-GSI) defined the IoT as "the infrastructure of the information society." The IoT allows objects to be sensed or controlled remotely across existing network infrastructure,[4] creating opportunities for more direct integration of the physical world into computer-based systems, and resulting in improved efficiency, accuracy and economic benefit in addition to reduced human intervention.When IoT is augmented with sensors and actuators, the technology becomes an instance of the more general class of cyber-physical systems, which also encompasses technologies such as smart grids, smart homes, intelligent transportation and smart cities. Each thing is uniquely identifiable through its embedded computing system but is able to interoperate within the existing Internet infrastructure. Experts estimate that the IoT will consist of almost 50 billion objects by 2020.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Internet_of_Things.jpg/800px-Internet_of_Things.jpg" alt="IoT">
+                        <p>Photo by wikipidia.org</p>
+                    </div>
+                </div>
+            </article>
+            
+           <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        
+                        <dl>
+                            <dt>What is HTTP?</dt>
+                            <dd>
+                                The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative, hypermedia information systems. HTTP has been in use by the World-Wide Web global information initiative since 1990. The first version of HTTP, referred to as HTTP/0.9, was a simple protocol for raw data transfer across the Internet. HTTP/1.0, as defined by RFC 1945, improved the protocol by allowing messages to be in the format of MIME-like messages, containing metainformation about the data transferred and modifiers on the request/response semantics. 
+                            </dd>
+                        </dl>
                     </div>
                 </div>
             </article>
@@ -419,6 +441,7 @@
                     </div>
                 </div>
             </article>
+
             <article>
                <div class="panel panel-primary">
                    <div class="panel-heading">
@@ -441,6 +464,67 @@
                          <dt>5xx: Server Error</dt>
                          <dd>- It means the server failed to fulfill an apparently valid request.</dd>
                        </dl>
+		
+	    <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Response</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>REPONSE</b>
+                        <p>
+                            After receiving and interpreting a request message, a server responds with an HTTP response message.
+                            
+                            <p>
+                            ------ sample format here -------
+                            </p>
+                        <ol type="1">
+                        <li><b>Status-Line</b></li>
+                        <p>
+                            The first line of a Response message is the Status-Line, consisting of the protocol version followed by a numeric status code and its associated textual phrase, with each element separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
+                            </p> 
+                                
+                        <p>Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF</p>
+                            
+                            <ul>
+                            <li>Status Code and Reason Phrase</li>
+                                <p>
+                                    The Status-Code element is a 3-digit integer result code of the attempt to understand and satisfy the request. The Reason-Phrase is intended to give a short textual description of the Status-Code. The Status-Code is intended for use by automata and the Reason-Phrase is intended for the human user. The client is not required to examine or display the Reason- Phrase.The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase.
+                                </p>                        
+                            </ul>
+                            
+                            <li><b>Response Header Fields</b></li>
+                            <p>
+                                The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
+                            </p>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+	
+
+             <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Status Codes</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>What are HTTP Status Codes</b>
+                        <p>
+                        HTTP Status Codes are 3-digit integers where the first digit of the Status-Code defines the class of response and the last two digits do not have any categorization role. There are 5 values for the first digit:
+                        </p>
+                        <dl>
+                          <dt>1xx: Informational</dt>
+                          <dd>- It means the request has been received and the process is continuing.</dd>
+                          <dt>2xx: Success</dt>
+                          <dd>- It means the action was successfully received, understood, and accepted.</dd>
+                          <dt>3xx: Redirection</dt>
+                          <dd>- It means further action must be taken in order to complete the request.</dd>
+                          <dt>4xx: Client Error</dt>
+                          <dd>- It means the request contains incorrect syntax or cannot be fulfilled.</dd>
+                          <dt>5xx: Server Error</dt>
+                          <dd>- It means the server failed to fulfill an apparently valid request.</dd>
+                        </dl>
         
                    </div>
                </div>
