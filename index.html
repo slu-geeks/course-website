@@ -230,160 +230,167 @@
                             <p>HTTP is also used as a generic protocol for communication between user agents and proxies/gateways to other Internet systems, including those supported by the SMTP, NNTP, FTP, Gopher, and WAIS protocols. In this way, HTTP allows basic hypermedia access to resources available from diverse applications.
                             </p>
             
-                        <li><b>Terminology</b>
-                            <dl>
-                                <ul>
-                                    
-                                    <li>
-                                        <dt>connection</dt>
-                                        <dd>A transport layer virtual circuit established between two programs for the purpose of communication.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>message</dt>
-                                        <dd>The basic unit of HTTP communication, consisting of a structured sequence of octets matching the syntax and transmitted via the connection.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>request</dt>
-                                        <dd>An HTTP request message.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>request</dt>
-                                        <dd>An HTTP request message.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>response</dt>
-                                        <dd>An HTTP response message.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>resource</dt>
-                                        <dd>A network data object or service that can be identified by a URI. Resources may be available in multiple representations (e.g. multiple languages, data formats, size, and resolutions) or vary in other ways.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>representation</dt>
-                                        <dd>An entitiy included with a response that is subject to content negotiation. There may exist multiple representations associated with a particular response status.</dd>
-                                    </li>
-                                    
-                                    
-                                    <li>
-                                        <dt>content negotiation</dt>
-                                        <dd>The mechanism for selecting the appropriate representation when servicing a request. The representation of entities in any response can be negotiated (including error responses).</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>variant</dt>
-                                        <dd>A resource may have one, or more than one, representation(s) associated with it at any given instant. Each of these representations is termed a 'variant'. Use of the term 'variant' does not necessarily imply that the resource is subject to content negotiation.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>client</dt>
-                                        <dd>A program that establishes connections for the purpose of sending requests.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>user agent</dt>
-                                        <dd>The client which initiates a request. These are often browsers, editors, spiders (web-traversing robots), or other end user tools.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>server</dt>
-                                        <dd>An application program that accepts connections in order to service requests by sending back responses. </dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>origin server</dt>
-                                        <dd>The server on which a given resource resides or is to be created.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>proxy</dt>
-                                        <dd>An intermediary program which acts as both a server and a client for the purpose of making requests on behalf of other clients.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>gateway</dt>
-                                        <dd>A server which acts as an intermediary for some other server.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>tunnel</dt>
-                                        <dd>An intermediary program which is acting as a blind relay between two connections.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>cache</dt>
-                                        <dd>A program's local storage of response messages and the subsystem that controls its message storage, retrieval, and deletion.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>cacheable</dt>
-                                        <dd>A response is cacheable if a cache is allowed to store a copy of the response message for use in answering subsequent requests.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>first-hand</dt>
-                                        <dd>A response is first-hand if it comes directly and without unnecessary delay from the origin server, perhaps via one or more proxies.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>explicit expiration time</dt>
-                                        <dd>The time at which the origin server intends that an entity should no longer be returned by a cache without further validation.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>heuristic expiration time</dt>
-                                        <dd>An expiration time assigned by a cache when no explicit expiration time is available.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>age</dt>
-                                        <dd>The age of a response is the time since it was sent by, or successfully validated with, the origin server.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>freshness lifetime</dt>
-                                        <dd>The length of time between the generation of a response and its expiration time.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>fresh</dt>
-                                        <dd>A response is fresh if its age has not yet exceeded its freshness lifetime.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>stale</dt>
-                                        <dd>A response is stale if its age has passed its freshness lifetime.</dd>
+                            <li><b>Terminology</b>
+                                <dl>
+                                    <ul>
 
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>semantically transparent</dt>
-                                        <dd>A cache behaves in a "semantically transparent" manner, with respect to a particular response, when its use affects neither the requesting client nor the origin server.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>validator</dt>
-                                        <dd>A protocol element (e.g., an entity tag or a last-Modified time) that is used to find out whether a cache entry is an equivalent copy of an entity.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>upstream/downstream</dt>
-                                        <dd>Upstream and downstream describe the flow of a message: all messages flow from upstream to downstream.</dd>
-                                    </li>
-                                    
-                                    <li>
-                                        <dt>invound/outbound</dt>
-                                        <dd>Inbound and outbound refer to the request and response paths for messages: "inbound" means "traveling toward the origin server", and "outbound" means "traveling toward the user agent".</dd>
-                                    </li>
-                                        
-                                </ul>
-                            </dl>
-                        </li>
+                                        <li>
+                                            <dt>connection</dt>
+                                            <dd>A transport layer virtual circuit established between two programs for the purpose of communication.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>message</dt>
+                                            <dd>The basic unit of HTTP communication, consisting of a structured sequence of octets matching the syntax and transmitted via the connection.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>request</dt>
+                                            <dd>An HTTP request message.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>request</dt>
+                                            <dd>An HTTP request message.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>response</dt>
+                                            <dd>An HTTP response message.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>resource</dt>
+                                            <dd>A network data object or service that can be identified by a URI. Resources may be available in multiple representations (e.g. multiple languages, data formats, size, and resolutions) or vary in other ways.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>representation</dt>
+                                            <dd>An entitiy included with a response that is subject to content negotiation. There may exist multiple representations associated with a particular response status.</dd>
+                                        </li>
+
+
+                                        <li>
+                                            <dt>content negotiation</dt>
+                                            <dd>The mechanism for selecting the appropriate representation when servicing a request. The representation of entities in any response can be negotiated (including error responses).</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>variant</dt>
+                                            <dd>A resource may have one, or more than one, representation(s) associated with it at any given instant. Each of these representations is termed a 'variant'. Use of the term 'variant' does not necessarily imply that the resource is subject to content negotiation.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>client</dt>
+                                            <dd>A program that establishes connections for the purpose of sending requests.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>user agent</dt>
+                                            <dd>The client which initiates a request. These are often browsers, editors, spiders (web-traversing robots), or other end user tools.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>server</dt>
+                                            <dd>An application program that accepts connections in order to service requests by sending back responses. </dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>origin server</dt>
+                                            <dd>The server on which a given resource resides or is to be created.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>proxy</dt>
+                                            <dd>An intermediary program which acts as both a server and a client for the purpose of making requests on behalf of other clients.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>gateway</dt>
+                                            <dd>A server which acts as an intermediary for some other server.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>tunnel</dt>
+                                            <dd>An intermediary program which is acting as a blind relay between two connections.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>cache</dt>
+                                            <dd>A program's local storage of response messages and the subsystem that controls its message storage, retrieval, and deletion.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>cacheable</dt>
+                                            <dd>A response is cacheable if a cache is allowed to store a copy of the response message for use in answering subsequent requests.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>first-hand</dt>
+                                            <dd>A response is first-hand if it comes directly and without unnecessary delay from the origin server, perhaps via one or more proxies.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>explicit expiration time</dt>
+                                            <dd>The time at which the origin server intends that an entity should no longer be returned by a cache without further validation.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>heuristic expiration time</dt>
+                                            <dd>An expiration time assigned by a cache when no explicit expiration time is available.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>age</dt>
+                                            <dd>The age of a response is the time since it was sent by, or successfully validated with, the origin server.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>freshness lifetime</dt>
+                                            <dd>The length of time between the generation of a response and its expiration time.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>fresh</dt>
+                                            <dd>A response is fresh if its age has not yet exceeded its freshness lifetime.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>stale</dt>
+                                            <dd>A response is stale if its age has passed its freshness lifetime.</dd>
+
+                                        </li>
+
+                                        <li>
+                                            <dt>semantically transparent</dt>
+                                            <dd>A cache behaves in a "semantically transparent" manner, with respect to a particular response, when its use affects neither the requesting client nor the origin server.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>validator</dt>
+                                            <dd>A protocol element (e.g., an entity tag or a last-Modified time) that is used to find out whether a cache entry is an equivalent copy of an entity.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>upstream/downstream</dt>
+                                            <dd>Upstream and downstream describe the flow of a message: all messages flow from upstream to downstream.</dd>
+                                        </li>
+
+                                        <li>
+                                            <dt>invound/outbound</dt>
+                                            <dd>Inbound and outbound refer to the request and response paths for messages: "inbound" means "traveling toward the origin server", and "outbound" means "traveling toward the user agent".</dd>
+                                        </li>
+
+                                    </ul>
+                                </dl>
+                            </li>
+                            
+                            <li>
+                                <b>Overall Operation</b>
+                                <p>The HTTP protocol is a request/response protocol. A client sends a request to the server in the form of a request method, URI, and protocol version, followd by a MIME-like message contatining request modifiers, client information, and possible body content over a connection with a server. The server responds with a status line, including the messages's protocol version and a success information, entity metainformation, and possible entity-body content. </p>
+                                
+                                <p>HTTP communication usually takes place over TCP/IP connections. The default port is TCP 80, but other ports can be used. This does not preclude HTTP from being implemented on top of any other protocol on the Internet, or on other networks. HTTP only presumes a reliable transport; any protocol that provides such guarantees can be used.</p>
+                            </li>
                         </ol>
                     </div>
                 </div>
@@ -860,7 +867,248 @@
                 </div>
             </article>
 
-	
+	    <article>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">HTTP Connections</h3>
+                    </div>
+                    <div class="panel-body styleWidgets">
+                        <b>CONNECIONS</b>
+
+                        <ol type="1">
+                        <li><b>Persistent Connections</b></li>
+                            
+                            <ul> 
+                                <li><b>Purpose</b></li>
+                                <p>
+                                    Prior to persistent connections, a separate TCP connection was established to fetch each URL, increasing the load on HTTP servers and causing congestion on the Internet. The use of inline images and other associated data often require a client to make multiple requests of the same server in a short amount of time. Analysis of these performance problems and results from a prototype implementation are available. Implementation experience and measurements of actual HTTP/1.1 (RFC 2068) implementations show good results. Alternatives have also been explored, for example, T/TCP.
+                                </p>
+                                <p>
+                                    Persistent HTTP connections have a number of advantages:
+                                </p>
+                                
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        By opening and closing fewer TCP connections, CPU time is saved
+                                        in routers and hosts (clients, servers, proxies, gateways,
+                                        tunnels, or caches), and memory used for TCP protocol control
+                                        blocks can be saved in hosts.
+                                    </li>
+                                    <li>
+                                        HTTP requests and responses can be pipelined on a connection.
+                                        Pipelining allows a client to make multiple requests without
+                                        waiting for each response, allowing a single TCP connection to
+                                        be used much more efficiently, with much lower elapsed time.
+                                    </li>
+                                    <li>
+                                        Network congestion is reduced by reducing the number of packets
+                                        caused by TCP opens, and by allowing TCP sufficient time to
+                                        determine the congestion state of the network.
+                                    </li>
+                                    <li>
+                                        Latency on subsequent requests is reduced since there is no time
+                                        spent in TCP's connection opening handshake.
+                                    </li>
+                                    <li>
+                                        HTTP can evolve more gracefully, since errors can be reported
+                                        without the penalty of closing the TCP connection. Clients using
+                                        future versions of HTTP might optimistically try a new feature,
+                                        but if communicating with an older server, retry with old
+                                        semantics after an error is reported.
+                                    </li>                               
+                                </ul>
+                                <p>
+                                    HTTP implementations SHOULD implement persistent connections.
+                                </p>
+                                
+                                
+                                <li><b>Overall Operation</b></li>
+                                <p>
+                                    A significant difference between HTTP/1.1 and earlier versions of HTTP is that persistent connections are the default behavior of any HTTP connection. That is, unless otherwise indicated, the client SHOULD assume that the server will maintain a persistent connection, even after error responses from the server.
+                                </p>
+                                <p>
+                                    Persistent connections provide a mechanism by which a client and a server can signal the close of a TCP connection. This signaling takes place using the Connection header field. Once a close has been signaled, the client MUST NOT send any more requests on that connection.
+                                </p>
+                                <ul style="list-style-type:disc">
+                                    <li>Negotiation</li>
+                                    <p>
+                                        An HTTP/1.1 server MAY assume that a HTTP/1.1 client intends to maintain a persistent connection unless a Connection header including the connection-token "close" was sent in the request. If the server chooses to close the connection immediately after sending the response, it SHOULD send a Connection header including the connection-token close.
+                                    </p>
+                                    <li>Pipelining</li>
+                                    <p>
+                                        A client that supports persistent connections MAY "pipeline" its requests (i.e., send multiple requests without waiting for each response). A server MUST send its responses to those requests in the same order that the requests were received.
+                                    </p>
+                                </ul>
+                                
+                                <li><b>Proxy Servers</b></li>
+                                <p>
+                                    It is especially important that proxies correctly implement the properties of the Connection header field. The proxy server MUST signal persistent connections separately with its clients and the origin servers (or other proxy servers) that it connects to. Each persistent connection applies to only one transport link.
+                                    A proxy server MUST NOT establish a HTTP/1.1 persistent connection with an HTTP/1.0 client (but see RFC 2068 [33] for information and discussion of the problems with the Keep-Alive header implemented by many HTTP/1.0 clients).
+                                </p>
+                                <li><b>Practical Considerations</b></li>
+                                <p>
+                                    Servers will usually have some time-out value beyond which they will no longer maintain an inactive connection. Proxy servers might make this a higher value since it is likely that the client will be making more connections through the same server. The use of persistent connections places no requirements on the length (or existence) of this time-out for either the client or the server.<br>
+
+                                    When a client or server wishes to time-out it SHOULD issue a graceful close on the transport connection. Clients and servers SHOULD both constantly watch for the other side of the transport close, and respond to it as appropriate. If a client or server does not detect the other side's close promptly it could cause unnecessary resource drain on the network.<br>
+
+                                    A client, server, or proxy MAY close the transport connection at any time. For example, a client might have started to send a new request at the same time that the server has decided to close the "idle" connection. From the server's point of view, the connection is being closed while it was idle, but from the client's point of view, a request is in progress.
+                                </p>
+                                </ul>
+                                    
+                            <li><b>Message Transmission Requirements</b></li>
+                            
+                            <ul> 
+                                <li><b>Persistent Connections and Flow Control</b></li>
+                                <p>
+                                HTTP/1.1 servers SHOULD maintain persistent connections and use TCP's flow control mechanisms to resolve temporary overloads, rather than terminating connections with the expectation that clients will retry. The latter technique can exacerbate network congestion.
+                                </p>
+                                
+                                <li><b>Monitoring Connections for Error Status Messages</b></li>
+                                <p>
+                                    An HTTP/1.1 (or later) client sending a message-body SHOULD monitor the network connection for an error status while it is transmitting the request. If the client sees an error status, it SHOULD immediately cease transmitting the body. If the body is being sent using a "chunked" encoding, a zero length chunk and empty trailer MAY be used to prematurely mark the end of the message. If the body was preceded by a Content-Length header, the client MUST close the connection.
+                                </p>
+                                
+                                <li><b>Use of the 100 (Continue) Status</b></li>
+                                <p>
+                                    The purpose of the 100 (Continue) status is to allow a client that is sending a request message with a request body to determine if the origin server is willing to accept the request (based on the request headers) before the client sends the request body. In some cases, it might either be inappropriate or highly inefficient for the client to send the body if the server will reject the message without looking at the body.
+                                </p>
+                                <p>
+                                    Requirements for HTTP/1.1 clients:
+                                </p>
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        If a client will wait for a 100 (Continue) response before
+                                        sending the request body, it MUST send an Expect request-header
+                                        field with the "100-continue" expectation.
+                                    </li>
+                                    <li>
+                                        A client MUST NOT send an Expect request-header field with the "100-continue" expectation if it does not intend
+                                        to send a request body.
+                                    </li>
+                                </ul>
+                                <p>
+                                    Requirements for HTTP/1.1 origin servers:
+                                </p>
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        Upon receiving a request which includes an Expect request-header 
+                                        field with the "100-continue" expectation, an origin server MUST
+                                        either respond with 100 (Continue) status and continue to read
+                                        from the input stream, or respond with a final status code. The
+                                        origin server MUST NOT wait for the request body before sending
+                                        the 100 (Continue) response. If it responds with a final status
+                                        code, it MAY close the transport connection or it MAY continue
+                                        to read and discard the rest of the request.  It MUST NOT
+                                        perform the requested method if it returns a final status code.
+                                    </li>
+                                    <li>
+                                        An origin server SHOULD NOT send a 100 (Continue) response if
+                                        the request message does not include an Expect request-header
+                                        field with the "100-continue" expectation, and MUST NOT send a
+                                        100 (Continue) response if such a request comes from an HTTP/1.0
+                                        (or earlier) client. There is an exception to this rule: for
+                                        compatibility with RFC 2068, a server MAY send a 100 (Continue)
+                                        status in response to an HTTP/1.1 PUT or POST request that does
+                                        not include an Expect request-header field with the "100-
+                                        continue" expectation. This exception, the purpose of which is
+                                        to minimize any client processing delays associated with an
+                                        undeclared wait for 100 (Continue) status, applies only to
+                                        HTTP/1.1 requests, and not to requests with any other HTTP-
+                                        version value.
+                                    </li>
+                                    <li>
+                                        An origin server MAY omit a 100 (Continue) response if it has
+                                        already received some or all of the request body for the
+                                        corresponding request.
+                                    </li>
+                                    <li>
+                                        An origin server that sends a 100 (Continue) response MUST
+                                        ultimately send a final status code, once the request body is
+                                        received and processed, unless it terminates the transport
+                                        connection prematurely.              
+                                    </li>
+                                    <li>
+                                        If an origin server receives a request that does not include an
+                                        Expect request-header field with the "100-continue" expectation,
+                                        the request includes a request body, and the server responds
+                                        with a final status code before reading the entire request body
+                                        from the transport connection, then the server SHOULD NOT close
+                                        the transport connection until it has read the entire request,
+                                        or until the client closes the connection. Otherwise, the client
+                                        might not reliably receive the response message. However, this
+                                        requirement is not be construed as preventing a server from
+                                        defending itself against denial-of-service attacks, or from
+                                        badly broken client implementations.
+                                    </li>
+                                </ul>
+                                <p>
+                                    Requirements for HTTP/1.1 proxies:                    
+                                </p>
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        If a proxy receives a request that includes an Expect request-
+                                        header field with the "100-continue" expectation, and the proxy
+                                        either knows that the next-hop server complies with HTTP/1.1 or
+                                        higher, or does not know the HTTP version of the next-hop
+                                        server, it MUST forward the request, including the Expect header
+                                        field.
+                                    </li>
+                                    <li>
+                                        If the proxy knows that the version of the next-hop server is
+                                        HTTP/1.0 or lower, it MUST NOT forward the request, and it MUST
+                                        respond with a 417 (Expectation Failed) status.
+                                    </li>
+                                    <li>
+                                        Proxies SHOULD maintain a cache recording the HTTP version
+                                        numbers received from recently-referenced next-hop servers.
+                                    </li>
+                                    <li>
+                                        A proxy MUST NOT forward a 100 (Continue) response if the
+                                        request message was received from an HTTP/1.0 (or earlier)
+                                        client and did not include an Expect request-header field with
+                                        the "100-continue" expectation. This requirement overrides the
+                                        general rule for forwarding of 1xx responses.
+                                    </li>
+                                </ul>
+                                <li><b>Client Behavior if Server Prematurely Closes Connection</b></li>
+                                <p>
+                                    If an HTTP/1.1 client sends a request which includes a request body, but which does not include an Expect request-header field with the "100-continue" expectation, and if the client is not directly connected to an HTTP/1.1 origin server, and if the client sees the connection close before receiving any status from the server, the client SHOULD retry the request. If the client does retry this request, it MAY use the following "binary exponential backoff" algorithm to be assured of obtaining a reliable response:
+                                </p>
+                                <ol type="a">
+                                    <li>Initiate a new connection to the server</li>
+                                    <li>Transmit the request-headers</li>
+                                    <li>Initialize a variable R to the estimated round-trip time to the
+                                        server (e.g., based on the time it took to establish the
+                                        connection), or to a constant value of 5 seconds if the round-
+                                        trip time is not available.</li>
+                                    <li>Compute T = R * (2**N), where N is the number of previous
+                                        retries of this request.</li>
+                                    <li>Wait either for an error response from the server, or for T
+                                        seconds (whichever comes first)</li>
+                                    <li>If no error response is received, after T seconds transmit the
+                                        body of the request.</li>
+                                    <li>If client sees that the connection is closed prematurely,
+                                        repeat from step 1 until the request is accepted, an error
+                                        response is received, or the user becomes impatient and
+                                        terminates the retry process.</li>
+                                </ol>
+                                <p>
+                                    If at any point an error status is received, the client:
+                                </p>
+                                <ul style="list-style-type:disc">
+                                <li>
+                                    SHOULD NOT continue and
+                                </li>
+                                <li>
+                                    SHOULD close the connection if it has not completed sending the
+                                    request message.
+                                </li>
+                                </ul>
+                            </ul>
+                        </ol>
+                    </div>
+                </div>
+            </article>
 
              <article>
                 <div class="panel panel-primary">
