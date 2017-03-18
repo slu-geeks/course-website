@@ -1,0 +1,65 @@
+<article>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">CSS (Cascading Style Sheets)</h3>
+        </div>
+
+        <div class="panel-body styleWidgets">
+            <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What is CSS?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            CSS is the language for describing the presentation of Web pages, including colors, layout,
+                            and fonts. It allows one to adapt the presentation to different types of devices, such as
+                            large screens, small screens, or printers. CSS is independent of HTML and can be used with
+                            any XML-based markup language. The separation of HTML from CSS makes it easier to maintain
+                            sites, share style sheets across pages, and tailor pages to different environments. This is
+                            referred to as the separation of structure (or: content) from presentation.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                CSS Rule Precedence
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <ul style="list-style-type:square">
+                                <li><b>!important</b></li>
+                                <li><b>by origin and importance</b></li>
+                                <ul>
+                                    <li>user agent important declaration</li>
+                                    <li>user important declaration</li>
+                                    <li>author important declaration</li>
+                                    <li>author normal declaration</li>
+                                    <li>user normal declaration</li>
+                                    <li>user agent normal declaration</li>
+                                </ul>
+                                <li><b>by specificity</b></li>
+                                <ul>
+                                    <li>inline style</li>
+                                    <li>number of ID selectors</li>
+                                    <li>number of class selectors, attribute selectors, pseudo-classes</li>
+                                    <li>number of type selectors and pseudo elements</li>
+                                </ul>
+                                <li><b>by order</b></li>
+                            </ul>
+                        </div>
+                        <p>Reference: https://www.w3.org/TR/CSS2/cascade.html#value-def-inherit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
