@@ -45,3 +45,36 @@
 .errorForm{
 	color: red;
 }
+
+.carousel-left-font-size {
+	font-size: 30px;
+}
+
+.v-center {
+	display: table;
+	border: 2px solid gray;
+	height: 300px;
+}
+
+.content {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.styleWidgets{
+	height:auto;
+}
+
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}

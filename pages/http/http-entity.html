@@ -1,0 +1,90 @@
+
+<article>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">HTTP Entity</h3>
+        </div>
+        <div class="panel-body styleWidgets">
+            <b>ENTITY</b>
+            <p>
+                Request and Response messages MAY transfer an entity if not otherwise restricted by the request method or response status code. An entity consists of entity-header fields and an entity-body, although some responses will only include the entity-headers.
+            </p>
+            <ol type="1">
+                <li><b>Entity Header Fields</b></li>
+                <p>
+                    Entity-header fields define metainformation about the entity-body or, if no body is present, about the resource identified by the request. Some of this metainformation is OPTIONAL; some might be REQUIRED by portions of this specification.
+                </p>
+
+                <ul>
+                    <li>Allow</li>
+                    <p>
+                        Entity Header.
+                    </p>
+                    <li>Content-Encoding</li>
+                    <p>
+                        The Content-Encoding entity-header field is used as a modifier to the media-type. When present, its value indicates what additional content codings have been applied to the entity-body, and thus what decoding mechanisms must be applied in order to obtain the media-type referenced by the Content-Type header field. Content-Encoding is primarily used to allow a document to be compressed without losing the identity of its underlying media type.
+                    </p>
+                    <li>Content-Language</li>
+                    <p>
+                        The Content-Language entity-header field describes the natural language(s) of the intended audience for the enclosed entity. Note that this might not be equivalent to all the languages used within the entity-body.
+                    </p>
+                    <li>Content-Length</li>
+                    <p>
+                        The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient or, in the case of the HEAD method, the size of the entity-body that would have been sent had the request been a GET.
+                    </p>
+                    <li>Content-Location</li>
+                    <p>
+                        The Content-Location entity-header field MAY be used to supply the resource location for the entity enclosed in the message when that entity is accessible from a location separate from the requested resource's URI. A server SHOULD provide a Content-Location for the variant corresponding to the response entity; especially in the case where a resource has multiple entities associated with it, and those entities actually have separate locations by which they might be individually accessed, the server SHOULD provide a Content-Location for the particular variant which is returned.
+                    </p>
+                    <li>Content-MD5</li>
+                    <p>
+                        The Content-MD5 entity-header field, as defined in RFC 1864, is an MD5 digest of the entity-body for the purpose of providing an end-to-end message integrity check (MIC) of the entity-body.
+                    </p>
+                    <li>Content-Range</li>
+                    <p>
+                        The Content-Range entity-header is sent with a partial entity-body to specify where in the full entity-body the partial body should be applied.
+                    </p>
+                    <li>Content-Type</li>
+                    <p>
+                        The Content-Type entity-header field indicates the media type of the entity-body sent to the recipient or, in the case of the HEAD method, the media type that would have been sent had the request been a GET.
+                    </p>
+                    <li>Expires</li>
+                    <p>
+                        The Expires entity-header field gives the date/time after which the response is considered stale. A stale cache entry may not normally be returned by a cache (either a proxy cache or a user agent cache) unless it is first validated with the origin server (or with an intermediate cache that has a fresh copy of the entity).
+                    </p>
+                    <li>Last-Modified</li>
+                    <p>
+                        The Last-Modified entity-header field indicates the date and time at which the origin server believes the variant was last modified.
+                    </p>
+                    <li>extension-header</li>
+                    <p>
+                        The extension-header mechanism allows additional entity-header fields to be defined without changing the protocol, but these fields cannot be assumed to be recognizable by the recipient. Unrecognized header fields SHOULD be ignored by the recipient and MUST be forwarded by transparent proxies.
+                    </p>
+                </ul>
+
+                <ul>
+                    <li>Entity Body</li>
+                    <p>
+                        The entity-body (if any) sent with an HTTP request or response is in a format and encoding defined by the entity-header fields. An entity-body is only present in a message when a message-body is present. The entity-body is obtained from the message-body by decoding any Transfer-Encoding that might have been applied to ensure safe and proper transfer of the message.
+                    </p>
+                </ul>
+
+                <li><b>Response Header Fields</b></li>
+                <p>
+                    The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
+                </p>
+
+                <ul>
+                    <li>Type</li>
+                    <p>
+                        When an entity-body is included with a message, the data type of that body is determined via the header fields Content-Type and Content- Encoding.
+                    </p>
+                    <li>Entity Length</li>
+                    <p>
+                        The entity-length of a message is the length of the message-body before any transfer-codings have been applied. Section 4.4 defines how the transfer-length of a message-body is determined.
+                    </p>
+                </ul>
+            </ol>
+        </div>
+    </div>
+</article>
