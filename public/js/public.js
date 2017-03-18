@@ -38,4 +38,3 @@ $('.draftPostExhibitor').popover({
     trigger: 'hover'
 });
 
-

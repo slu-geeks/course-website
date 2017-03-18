@@ -1,23 +1,53 @@
-<article>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">HTTP Message</h3>
-        </div>
-        <div class="panel-body styleWidgets">
-            <ol type="1">
-                <li><b>Message Types</b><p>HTTP messages consist of request from client to server and responses from server to client.</p>
-                    <p> HTTP-message = Request | Response &emsp;&emsp; HTTP/1.1 messages</p></li>
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
 
-                <li><b>Message Headers</b>
-                    <p>HTTP header fields, which include general-header, request header, response-header, and entity-header fields, follow the same generic format as that given in.</p></li>
+    <script type="text/javascript">
+        $(function () {
+            loader("about");
+        });
+    </script>
+    <!--head include-->
+</head>
 
-                <li><b>Message Body</b><p>The message-body (if any) of an HTTP message is used to carry the entity-body associated with the request or response. The message-body differs from the entity-body only when a transfer-coding has been applied, as indicated by the Transfer-Encoding header field. </p></li>
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-barss" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">HTTP Message</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <ol type="1">
+                        <li><b>Message Types</b><p>HTTP messages consist of request from client to server and responses from server to client.</p>
+                            <p> HTTP-message = Request | Response &emsp;&emsp; HTTP/1.1 messages</p></li>
 
-                <li><b>Message Length</b><p>The transfer-length of a message is the length of the message-body as it appears in the message; that is, after any transfer-codings have been applied.</p></li>
+                        <li><b>Message Headers</b>
+                            <p>HTTP header fields, which include general-header, request header, response-header, and entity-header fields, follow the same generic format as that given in.</p></li>
 
-                <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p></li>
-            </ol>
+                        <li><b>Message Body</b><p>The message-body (if any) of an HTTP message is used to carry the entity-body associated with the request or response. The message-body differs from the entity-body only when a transfer-coding has been applied, as indicated by the Transfer-Encoding header field. </p></li>
 
-        </div>
-    </div>
-</article>
+                        <li><b>Message Length</b><p>The transfer-length of a message is the length of the message-body as it appears in the message; that is, after any transfer-codings have been applied.</p></li>
+
+                        <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p></li>
+                    </ol>
+
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>

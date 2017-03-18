@@ -1,36 +1,68 @@
-<article>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">HTTP Response</h3>
-        </div>
-        <div class="panel-body styleWidgets">
-            <b>REPONSE</b>
-            <p>
-                After receiving and interpreting a request message, a server responds with an HTTP response message.
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
 
-            <p>
-                ------ sample format here -------
-            </p>
-            <ol type="1">
-                <li><b>Status-Line</b></li>
-                <p>
-                    The first line of a Response message is the Status-Line, consisting of the protocol version followed by a numeric status code and its associated textual phrase, with each element separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
-                </p>
+    <script type="text/javascript">
+        $(function () {
+            loader("about");
+        });
+    </script>
+    <!--head include-->
+</head>
 
-                <p>Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF</p>
-
-                <ul>
-                    <li>Status Code and Reason Phrase</li>
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-barss" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">HTTP Response</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <b>REPONSE</b>
                     <p>
-                        The Status-Code element is a 3-digit integer result code of the attempt to understand and satisfy the request. The Reason-Phrase is intended to give a short textual description of the Status-Code. The Status-Code is intended for use by automata and the Reason-Phrase is intended for the human user. The client is not required to examine or display the Reason- Phrase.The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase.
-                    </p>
-                </ul>
+                        After receiving and interpreting a request message, a server responds with an HTTP response message.
 
-                <li><b>Response Header Fields</b></li>
-                <p>
-                    The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
-                </p>
-            </ol>
-        </div>
-    </div>
-</article>
+                    <p>
+                        ------ sample format here -------
+                    </p>
+                    <ol type="1">
+                        <li><b>Status-Line</b></li>
+                        <p>
+                            The first line of a Response message is the Status-Line, consisting of the protocol version followed by a numeric status code and its associated textual phrase, with each element separated by SP characters. No CR or LF is allowed except in the final CRLF sequence.
+                        </p>
+
+                        <p>Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF</p>
+
+                        <ul>
+                            <li>Status Code and Reason Phrase</li>
+                            <p>
+                                The Status-Code element is a 3-digit integer result code of the attempt to understand and satisfy the request. The Reason-Phrase is intended to give a short textual description of the Status-Code. The Status-Code is intended for use by automata and the Reason-Phrase is intended for the human user. The client is not required to examine or display the Reason- Phrase.The request method indicates the method to be performed on the resource identified by the given Request-URI. The method is case-sensitive and should always be mentioned in uppercase.
+                            </p>
+                        </ul>
+
+                        <li><b>Response Header Fields</b></li>
+                        <p>
+                            The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
+                        </p>
+                    </ol>
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
+
