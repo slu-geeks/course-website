@@ -1,4 +1,4 @@
-<section class="row clearfix" style="margin-left: -15px;">
+
     <section class="col col-lg-2">
         <aside>
 
@@ -48,4 +48,3 @@
             </div>
         </aside>
     </section>
-</section>

@@ -1,4 +1,4 @@
-<section id="header">
+
 
     <header>
         <div>
@@ -54,4 +54,3 @@
     <!-- header -->
     <!-- column -->
     <!-- content -->
-</section>
