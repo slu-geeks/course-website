@@ -39,5 +39,3 @@ $('.draftPostExhibitor').popover({
 });
 
 
-
-

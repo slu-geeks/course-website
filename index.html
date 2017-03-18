@@ -5,11 +5,13 @@
 
     <title>Explanation Page</title>
     <script type="text/javascript">
-        $(function () {
+        $(function (pageName) {
+            var pageName = 'internet';
+
             $("#head").load("pages/includes/head.txt");
             $("#top-nav-barss").load("pages/includes/top-nav.txt");
             $("#side-nav-barss").load("pages/includes/side-nav.txt");
-            $("#main-secss").load("pages/internet/internet.txt");
+            $("#main-secss").load("pages/internet/"+ pageName +".txt");
             $("#footer").load("pages/includes/footer.txt");
             $("#footer").after().load("pages/includes/scripts.txt");
         });
@@ -19,15 +21,16 @@
 
 <body id="home" style="background-color: #F2F2F2;">
 <section id="top-nav-barss"></section>
-<section id= "side-nav-barss" class="row clearfix" style="margin-left: -15px;"></section>
-<section class="col-lg-10">
-    <section id="main-secss" class="main col col-lg-12">
+<section id="side-nav-barss" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
         <!--content include-->
     </section>
 </section>
 
 <section id="footer">
+    <!-- footer includes-->
 </section>
-<!-- scripts includes-->
+    <!-- scripts includes-->
 </body>
 </html>
