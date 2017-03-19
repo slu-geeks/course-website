@@ -35,7 +35,18 @@
 
                         <li><b>Message Length</b><p>The transfer-length of a message is the length of the message-body as it appears in the message; that is, after any transfer-codings have been applied.</p></li>
 
-                        <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p></li>
+                        <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p>
+                        general-header = Cache-Control<br>
+            
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Connection<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Date<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Pragma<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Trailer<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Transfer-Encoding<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Upgrade<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Via <br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Warning<br>
+                        </li>
                     </ol>
                     <p>Reference: https://tools.ietf.org/html/rfc2616</p>
 
