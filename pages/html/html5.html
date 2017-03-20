@@ -51,7 +51,10 @@
                             </div>
                             <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                                 <div class="panel-body">
-                                    A non-normative description of whether, in the text/html syntax, the start and end tags can be omitted.
+                                    <ul>
+                                        <li>An html element&#39;s start tag may be omitted if the first thing inside the html element is not a comment.</li>
+                                        <li>An html element&#39;s end tag may be omitted if the html element is not immediately followed by a comment and the element contains a body element that is either not empty or whose start tag has not been omitted.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -65,8 +68,24 @@
                             </div>
                             <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
                                 <div class="panel-body">
-                                    A normative list of attributes that may be specified on the element (except where otherwise disallowed),
-                                    along with non-normative descriptions of those attributes. <br/>
+                                    A normative list of attributes that may be specified on the element (except where otherwise disallowed), along with non-normative descriptions of those attributes. <br/><br/>
+                                    Global Attributes - applicable to all elements, the following attributes are common to and may be specified on all HTML elements (even those not defined in this specification):
+                                    <ul>
+                                        <li>accesskey</li>
+                                        <li>class</li>
+                                        <li>contenteditable</li>
+                                        <li>dir</li>
+                                        <li>hidden</li>
+                                        <li>id</li>
+                                        <li>lang</li>
+                                        <li>spellcheck</li>
+                                        <li>style</li>
+                                        <li>tabindex</li>
+                                        <li>title</li>
+                                        <li>translate</li>
+                                    </ul>
+                                    These attributes are only defined by this specification as attributes for HTML elements. When this specification refers to elements having these attributes, elements from namespaces that are not defined as having these attributes must not be considered as being elements with these attributes. <br/><br/>
+                                    Reference: https://www.w3.org/TR/html5/dom.html
                                 </div>
                             </div>
                         </div>
@@ -80,23 +99,7 @@
                             </div>
                             <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
                                 <div class="panel-body">
-                                    A normative list of ARIA role attribute values that may be specified on the
-                                    element (except where otherwise disallowed). Each value is linked to a non
-                                    normative description.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTen">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                        Allowed ARIA state and property attributes
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                                <div class="panel-body">
-                                    Links to the Global aria-* attributes list and the allowed roles, states and properties table.
+                                    ARIA is a set of special accessibility attributes which can be added to any markup, but is especially suited to HTML. The role attribute defines what the general type of object is (such as an article, alert, or slider). Additional ARIA attributes provide other useful properties, such as a description for a form or the current value of a progressbar.
                                 </div>
                             </div>
                         </div>
@@ -110,12 +113,44 @@
                             </div>
                             <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
                                 <div class="panel-body">
-                                    A normative definition of a DOM interface that such elements must implement. <br/>
+                                    A normative definition of a DOM interface that such elements must implement. It is used to let a cript gain access <br/>
                                     example: interface HTMLParagraphElement: HTMLElement{}
                                 </div>
                             </div>
                         </div>
-                        Reference: https://www.w3.org/TR/html51/infrastructure.html#root-element
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwelve">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                        Metadata Element
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>contained in the head element</li>
+                                        <li>contain meta information about the document</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThirteen">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                        HTML Element
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                                <div class="panel-body">
+                                    The HTML &lt;html&gt; element represents the root (top-level element) of an HTML document, so it is also referred to as the root element. All other elements must be descendants of this element.
+                                    <br/><br/>
+                                    Reference: https://developer.mozilla.org/en/docs/Web/HTML/Element/html
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
