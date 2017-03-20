@@ -19,4 +19,5 @@ script:
 
 after_success:
  - echo "Deploying ..."
-- firebase deploy --project coursewebsite-345c3 --public . --token=${FIREBASE_TOKEN}
+ - firebase deploy --project coursewebsite-345c3  --public . --token=${FIREBASE_TOKEN}
+
