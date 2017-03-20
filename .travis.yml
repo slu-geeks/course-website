@@ -12,7 +12,7 @@ branches:
 
 install:
 - npm install -g firebase-tools
-- pip install html5validator
+#- pip install html5validator
 
 #script:
 # - html5validator --root . --blacklist reference_manual_html --ignore 'Attribute "webkitallowfullscreen" not allowed' 'Attribute "mozallowfullscreen" not allowed' 'The "frameborder" attribute on the "iframe" element is obsolete' 'No "p" element in scope but a "p" end tag seen.'
