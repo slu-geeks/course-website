@@ -91,6 +91,15 @@
                         <li>
                             <b>Transfer Codings</b>
                             <p>Transfer-coding values are used to indicate an encoding transformation that has been, can be, or may need to applied to an entity-body in order to ensure "safe transport" through the network.</p>
+                            <p>transfer-coding&emsp;&emsp; = "chunked" | tranfer-extension<br>
+                            transfer-extension &emsp;&emsp; token *( ";" parameter )</p>
+                            
+                            <p>Parameters are in the form of attribute/value pairs.</p>
+                            
+                            <p>parameter &emsp;&emsp;&emsp;&emsp; = attribute "=" value<br>
+                            attribute &emsp;&emsp;&emsp;&emsp; = token<br>
+                            value &emsp;&emsp;&emsp;&emsp;&emsp; = token | quoted-string
+                            </p>
 
                             <ol type="a">
                                 <li><b>Chunked Transfer Coding</b>
@@ -101,21 +110,21 @@
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;trailer<br>
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CRLF</p>
 
-                                    <p>chunk&emsp;&emsp;&emsp;&emsp;&emsp; = chunk-size [&emsp;chunk-extension&emsp;] CRLF<br>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;chunk=data CRLF<br>
-                                        chunk-size&emsp;&emsp;&emsp; = 1*HEX<br>
+                                    <p>chunk&emsp;&emsp;&emsp;&emsp; = chunk-size [&emsp;chunk-extension&emsp;] CRLF<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;chunk-data CRLF<br>
+                                        chunk-size&emsp;&emsp; = 1*HEX<br>
 
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = 1*("0") [&emsp;chunk-extension&emsp;] CRLF</p>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;= 1*("0") [&emsp;chunk-extension&emsp;] CRLF</p>
 
                                     <p>chunk-extension = *( ";" chunk-ext-name [ "=" chunk-ext-val ] )<br>
 
                                         chunk-ext-name = token<br>
 
-                                        chunk-ext-val = token | quoted-string<br>
+                                        chunk-ext-val&emsp; = token | quoted-string<br>
 
-                                        chunk-data = chunk-size(OCTET)<br>
+                                        chunk-data&emsp;&emsp; = chunk-size(OCTET)<br>
 
-                                        trailer = *(entity-header CRLF)</p>
+                                        trailer &emsp;&emsp;&emsp;&emsp;= *(entity-header CRLF)</p>
                                 </li>
 
                             </ol>
@@ -169,6 +178,7 @@
                         <li><b>Range Units</b><p>HTTP/1.1 allows a client to request that only part (a range of) the response entity be included within the response.</p>
                             <p>range-unit = bytes-unit | other-range-unit<br>bytes-unit = "bytes"<br>other-range-unit=token</p></li>
                     </ol>
+                    <p>Reference: https://tools.ietf.org/html/rfc2616</p>
                 </div>
             </div>
 

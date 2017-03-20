@@ -33,6 +33,19 @@
                         <p>
                             Entity-header fields define metainformation about the entity-body or, if no body is present, about the resource identified by the request. Some of this metainformation is OPTIONAL; some might be REQUIRED by portions of this specification.
                         </p>
+                        <pre>
+                    entity-header  = Allow                
+                      | Content-Encoding        
+                      | Content-Language        
+                      | Content-Length           
+                      | Content-Location 
+                      | Content-MD5            
+                      | Content-Range    
+                      | Content-Type        
+                      | Expires                  
+                      | Last-Modified            
+                      | extension-header
+                    </pre>
 
                         <ul>
                             <li>Allow</li>
@@ -81,17 +94,10 @@
                             </p>
                         </ul>
 
-                        <ul>
-                            <li>Entity Body</li>
+                        <li><b>Entity Body</b></li>
                             <p>
                                 The entity-body (if any) sent with an HTTP request or response is in a format and encoding defined by the entity-header fields. An entity-body is only present in a message when a message-body is present. The entity-body is obtained from the message-body by decoding any Transfer-Encoding that might have been applied to ensure safe and proper transfer of the message.
                             </p>
-                        </ul>
-
-                        <li><b>Response Header Fields</b></li>
-                        <p>
-                            The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
-                        </p>
 
                         <ul>
                             <li>Type</li>
@@ -107,7 +113,20 @@
                 </div>
             </div>
         </article>
-        <!-- END CONTENTS FOR THIS PAGE-->
+        <pre>
+        <i>
+        Source: https://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html#sec7
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.12
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.14
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.15
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21
+            https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.29
+        </i>
+        </pre>
     </section>
 </section>
 

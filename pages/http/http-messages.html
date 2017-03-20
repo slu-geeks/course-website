@@ -26,17 +26,46 @@
                 <div class="panel-body styleWidgets">
                     <ol type="1">
                         <li><b>Message Types</b><p>HTTP messages consist of request from client to server and responses from server to client.</p>
-                            <p> HTTP-message = Request | Response &emsp;&emsp; HTTP/1.1 messages</p></li>
+                            <p> HTTP-message = Request | Response &emsp;&emsp; HTTP/1.1 messages</p>
+                            
+                            <p>Request and Response messages use the generic message format of RFC 822 for transferring entitites (the payload of the message). Both types of message consist of a start-line, zero or more header fields (also known as "headers"), an empty line (i.e., a line with nothing preceding the CRLF) indicating the end of the header fields, and possibly a message-body.</p>
+                            
+                            <p> generic-message = start-line<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*(message-header CRLF)<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CRLF<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[ message-body }<br>
+                            start-line &emsp;&emsp;&emsp;= Request-Line | Status-Line</p>
+                            
+                        </li>
 
                         <li><b>Message Headers</b>
-                            <p>HTTP header fields, which include general-header, request header, response-header, and entity-header fields, follow the same generic format as that given in.</p></li>
+                            <p>HTTP header fields, which include general-header, request header, response-header, and entity-header fields. Each header field consists of a name followed by a colon (":") and the field value. Field names are case-insensitive. The field value may be preceded by any amount of LWS, though a single SP is preferred. Header fields can be extend over multiple lines by preceding each extra line with at least one SP or HT. Applications ought to follow "common form", where one is known or indicated, when generating HTTP constructs, since there might exist some implementations that fail to accept anything beyond the common forms.</p>
+                            
+                            <p>message-header = field-name ":" [ field-value ]<br>field-name &emsp;&emsp;= token<br>
+                            field-value &emsp;&emsp;= *( field-content | LWS)<br>
+                            field content &emsp;&nbsp;=&nbsp;&lt;the OCTETs making up the field-value and consisting of either *TEXT or combinations of token, separators, and quoted-string&gt;</p>
+                            
+                        </li>
 
-                        <li><b>Message Body</b><p>The message-body (if any) of an HTTP message is used to carry the entity-body associated with the request or response. The message-body differs from the entity-body only when a transfer-coding has been applied, as indicated by the Transfer-Encoding header field. </p></li>
+                        <li><b>Message Body</b><p>The message-body (if any) of an HTTP message is used to carry the entity-body associated with the request or response. The message-body differs from the entity-body only when a transfer-coding has been applied, as indicated by the Transfer-Encoding header field. </p>
+                        <p>message-body = entity-body<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;| &lt;entity-body encoded as per Transfer-Encoding&gt;</p></li>
 
                         <li><b>Message Length</b><p>The transfer-length of a message is the length of the message-body as it appears in the message; that is, after any transfer-codings have been applied.</p></li>
 
-                        <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p></li>
+                        <li><b>General Header Fields</b><p>There are a few header fields which have general applicability for both request and response messages, but which do not apply to the entity being transferred. These header fields apply only to the message being transmitted.</p>
+                        general-header = Cache-Control<br>
+            
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Connection<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Date<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Pragma<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Trailer<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Transfer-Encoding<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Upgrade<br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Via <br>
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Warning<br>
+                        </li>
                     </ol>
+                    <p>Reference: https://tools.ietf.org/html/rfc2616</p>
 
                 </div>
             </div>

@@ -28,9 +28,15 @@
                     <p>
                         After receiving and interpreting a request message, a server responds with an HTTP response message.
 
-                    <p>
-                        ------ sample format here -------
-                    </p>
+                    <pre>
+                        Response      = Status-Line          
+                       *(( general-header        
+                        | response-header        
+                        | entity-header ) CRLF)
+                       CRLF
+                       [ message-body ]        
+                    </pre>
+                    
                     <ol type="1">
                         <li><b>Status-Line</b></li>
                         <p>
@@ -50,16 +56,32 @@
                         <p>
                             The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
                         </p>
+                        <pre>
+                        response-header = Accept-Ranges           
+                       | Age                    
+                       | ETag                  
+                       | Location                
+                       | Proxy-Authenticate 
+                       | Retry-After          
+                       | Server               
+                       | Vary                
+                       | WWW-Authenticate    
+                        </pre>
+                        <p>
+                        Response-header field names can be extended reliably only in combination with a change in the protocol version. However, new or experimental header fields MAY be given the semantics of response- header fields if all parties in the communication recognize them to be response-header fields. Unrecognized header fields are treated as entity-header fields.
+                        </p>
+                        
                     </ol>
                 </div>
             </div>
         </article>
-        <!-- END CONTENTS FOR THIS PAGE-->
+        <pre><i>
+       Source: https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html#sec6
+       </i></pre>
     </section>
 </section>
 
 <section id="footer">
-    <!-- footer includes-->
 </section>
 <!-- scripts includes-->
 </body>

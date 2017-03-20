@@ -30,9 +30,15 @@
                     <p>
                         A request message from a client to a server includes, within the first line of that message, the method to be applied to the resource, the identifier of the resource, and the protocol version in use.
 
-                    <p>
-                        ------ sample format here -------
-                    </p>
+                    <pre>
+                         Request       = Request-Line              
+                        *(( general-header        
+                         | request-header         
+                         | entity-header ) CRLF)  
+                        CRLF
+                        [ message-body ]         
+                    </pre>
+                    
                     <ol type="1">
                         <li><b>Request-Line</b></li>
                         <p>
@@ -98,15 +104,16 @@
                         <p>
                             The request-header fields allow the client to pass additional information about the request, and about the client itself, to the server. These fields act as request modifiers, with semantics equivalent to the parameters on a programming language method invocation.
                         </p>
-
-
                     </ol>
-
 
                 </div>
             </div>
         </article>
-        <!-- END CONTENTS FOR THIS PAGE-->
+            <pre><i>
+                Sources: https://www.tutorialspoint.com/http/http_requests.htm <br>
+                         https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5 
+             </i>
+             </pre>
     </section>
 </section>
 
