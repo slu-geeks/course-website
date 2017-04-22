@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">DOM</h3>
+                </div>
+
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is the DOM?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    HTML we write is not not really the DOM itself, but the HTML you write is parsed by the browser
+                                    and turned into the DOM. When a web page is loaded, the browser creates a Document Object Model of the page.
+                                    The HTML DOM model is constructed as a tree of Objects: <br/><br/>
+                                    <div style="text-align: center">
+                                        <img src="../../public/img/dom.gif">
+                                    </div>
+                                    <br/>
+                                    With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+                                    <ul>
+                                        <li>JavaScript can change all the HTML elements in the page</li>
+                                        <li>JavaScript can change all the HTML attributes in the page</li>
+                                        <li>JavaScript can change all the CSS styles in the page</li>
+                                        <li>JavaScript can remove existing HTML elements and attributes</li>
+                                        <li>JavaScript can add new HTML elements and attributes</li>
+                                        <li>JavaScript can react to all existing HTML events in the page</li>
+                                        <li>JavaScript can create new HTML events in the page</li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        When is the DOM different than the HTML?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Here's one possibility: there are mistakes in your HTML and the browser has fixed
+                                    them for you. Let's say you have a &lt;table&gt; element in your HTML and leave out the
+                                    required &lt;tbody&gt; element. The browser will just insert that &lt;tbody&gt; for you. It will
+                                    be there in the DOM, so you'll be able to find it with JavaScript and style it with
+                                    CSS, even though it's not in your HTML.
+                                    <br/><br/>
+                                    <b>Javascript</b> can manipulate the DOM. For example in your HTML, we have:
+                                    <pre>
+                                        &lt;div id="container"&gt;&lt;/div&gt;
+                                    </pre>
+                                    Then later in your HTML, there is a bit of JavaScript:
+                                    <pre>
+                                        &lt;script&gt;
+                                          var container = document.getElementById("container");
+                                          container.innerHTML = "New Content!";
+                                        &lt;/script&gt;
+                                    </pre>
+                                    On the screen you'll see "New Content!" rather than nothing, because that empty div
+                                    was filled with some a new content.If you use DevTools to check out the visual
+                                    representation of the DOM, you'll see:
+                                    <pre>
+                                        &lt;div id="container"&gt;New Content! &lt;/div&gt;
+                                    </pre>
+                                    Which is different than your original HTML or what you would see in View Source.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        const
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <!--INSERT CONST CONTENT-->
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        Reference: <br/>
+                        &nbsp;https://www.w3schools.com/js/js_htmldom.asp<br/>
+                        &nbsp;https://css-tricks.com/dom/<br/>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
