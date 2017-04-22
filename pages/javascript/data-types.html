@@ -24,10 +24,71 @@
                     <h3 class="panel-title">Data Types</h3>
                 </div>
                 <div class="panel-body styleWidgets">
-                    <b>TITLE</b>
+                    <b>DATA TYPES</b>
                     <p>
-                        <!--INSERT CONTENT HERE-->
-                    </p>
+                        JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript.
+                    <p/>
+                    
+                    <pre>
+                        Primitive data type
+                        -String
+                        A string value is a chain of zero or more Unicode characters (letters, digits, and punctuation marks). You use the string data type to represent text in JavaScript. You include string literals in your scripts by enclosing them in single or double quotation marks. Double quotation marks can be contained in strings surrounded by single quotation marks, and single quotation marks can be contained in strings surrounded by double quotation marks. The following are examples of strings:
+                     
+                        "Happy am I; from care I'm free!"  
+                        '"Avast, ye lubbers!" roared the technician.'   
+                        "45"  
+                        'c'
+                       
+                        Notice that JavaScript does not have a type to represent a single character. To represent a single character in JavaScript, you create a string that consists of only one character. A string that contains zero characters ("") is an empty (zero-length) string.
+                        JavaScript provides escape sequences that you can include in strings to create characters that you cannot type directly.
+                    
+                        -Number
+                        In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values).
+                        
+                                              
+                        -Boolean
+                        
+                        Whereas the string and number data types can have a virtually unlimited number of different values, the Boolean data type can only have two. They are the literals true and false. A Boolean value is a truth-value: it specifies whether the condition is true or not.
+                        Comparisons you make in your scripts always have a Boolean outcome. Consider the following line of JavaScript code.
+                        y = (x == 2000);  
+                        
+                        Here, the value of the variable x is compared to the number 2000. If it is, the result of the comparison is the Boolean value true, which is assigned to the variable y. If x is not equal to 2000, then the result of the comparison is the Boolean value false. +
+                        Boolean values are especially useful in control structures. The following code combines a comparison that creates a Boolean value directly with a statement that uses it. Consider the following JavaScript code sample.
+                        
+                        if (x == 2000) {  
+                            z = z + 1;  
+                        }  
+                        else {  
+                            x = x + 1;  
+                        }
+                        
+                        The if/else statement in JavaScript performs one action if a Boolean value is true (z = z + 1), and an alternate action if the Boolean value is false (x = x + 1).
+                        You can use any expression as a comparative expression. Any expression that evaluates to 0, null, undefined, or an empty string is interpreted as false. An expression that evaluates to any other value is interpreted as true. For example, you could use an expression such as:
+                        
+                        // This may not do what you expect. See below!  
+                        if (x = y + z)   
+                        
+                        Note that the above line does not check whether x is equal to y + z, since only a single equal sign (the assignment operator) is used. Instead, the code above assigns the value of y + z to the variable x, and then checks whether the result of the entire expression (the value of x) is zero. To check whether x is equal to y + z, you need to use the following code.
+                        
+                        // This is different from the code above!  
+                        if (x == y + z)   
+                        
+                        
+                    
+                        Composite data type
+                        -Object
+                        
+                        
+                        
+                        -Array
+                        
+                        
+                        
+                        -RegExp
+ 
+                                          
+                        
+                    </pre>
                 </div>
             </div>
         </article>
@@ -36,7 +97,27 @@
 </section>
 
 <section id="footer">
-    <!-- footer includes-->
+    <!-- footer includes***JavaScript if Statement***
+if(boolean conditional) {
+   //coding
+}
+
+if(true) {
+  console.log("boolean conditional resolved to true");
+} else {
+    console.log("boolean conditional resolved to false");
+  }
+
+
+
+***JavaScript for Loop***
+for(control variable; boolean conditional; counter) {
+  //coding
+}
+
+for(var i=0; i<4; i++) {
+  console.log("I print only when the boolean conditional is true");
+}-->
 </section>
 <!-- scripts includes-->
 </body>
