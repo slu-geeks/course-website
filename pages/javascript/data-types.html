@@ -61,7 +61,9 @@
                                     </pre>
 
                                     Notice that JavaScript does not have a type to represent a single character. To represent a single character in JavaScript, you create a string that consists of only one character. A string that contains zero characters ("") is an empty (zero-length) string.
-                                    JavaScript provides escape sequences that you can include in strings to create characters that you cannot type directly.
+                                    JavaScript provides escape sequences that you can include in strings to create characters that you cannot type directly.<br>
+                                    <br>
+                                    Reference: https://docs.microsoft.com/en-us/scripting/javascript/data-types-javascript
                                 </div>
                             </div>
                         </div>
@@ -77,8 +79,20 @@
                                 <div class="panel-body">
                                     
                                         In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values). <br>
-                                    
-                                    Reference:
+                                    <ul style="list-style-type:square">
+                                        <li><b>Integer Values</b></li><br>
+                                        Integer values can be positive whole numbers, negative whole numbers, and 0. They can be represented in base 10 (decimal), base 16 (hexadecimal), and base 8 (octal). Most numbers in JavaScript are written in decimal.
+                                        You denote hexadecimal ("hex") integers by prefixing them with a leading "0x" (zero and x|X). They can contain digits 0 through 9, and letters A through F (either uppercase or lowercase) only. The letters A through F are used to represent, as single digits, 10 through 15 in base 10. That is, 0xF is equivalent to 15, and 0x10 is equivalent to 16.
+                                        You denote octal integers by prefixing them with a leading "0" (zero). They can contain digits 0 through 7 only. A number that has a leading "0" and contains the digits "8" and/or "9" is interpreted as a decimal number.
+                                        Both hexadecimal and octal numbers can be negative, but they cannot have a decimal portion, and they cannot be written in scientific (exponential) notation.<br>
+                                        <br>
+                                        <li><b>Floating-point Values</b></li><br>
+                                        Floating-point values can be whole numbers with a decimal portion. Additionally, they can be expressed in scientific notation. That is, an uppercase or lowercase "e" is used to represent "ten to the power of". JavaScript represents numbers using the eight byte IEEE 754 floating-point standard for numerical representation. This means you can write numbers as large as 1.79769x10308, and as small as 5x10-324. A number that contains a decimal point and that has a single "0" before the decimal point is interpreted as a decimal floating-point number.
+                                        Notice that a number that begins with "0x" or "00" and contains a decimal point will generate an error.
+                                    </ul>
+
+                                    <br>
+                                    Reference:https://docs.microsoft.com/en-us/scripting/javascript/data-types-javascript
                                 </div>
                             </div>
                         </div>
@@ -126,77 +140,155 @@
                                         if (x == y + z)
                                         </pre>
                                     
-                                    Reference:
+                                    Reference: https://docs.microsoft.com/en-us/scripting/javascript/data-types-javascript
                                 </div>
 
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour1">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
+                                        Undefined and Null
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour1">
+                                <div class="panel-body">
+                                    JavaScript includes two additional primitive type values - null and undefined, that can be assigned to a variable that has special meaning. <br>
+                                    <ul style="list-style-type:square">
+                                        
+                                        <li><b>Null</b></li><br>
+                                        You can assign null to a variable to denote that currently that variable does not have any value but it will have later on. A null means absence of a value.
+                                        <pre>
+                                        var myVar = null;
+                                        alert(myVar); // null 
+                                        </pre>
+                                        In the above example, null is assigned to a variable myVar. It means we have defined a variable but have not assigned any value yet, so value is absence.<br>
+                                        
+                                        <br>
+                                        If you try to find DOM element using document.getElelementByID for example, and if element is found then it will return null. So it is recommended to check for null before doing something with that element.
+                                        <pre>
+                                        var saveButton = document.getElementById("save");
+                                        
+                                        if (saveButton !== null)
+                                                saveButton.submit();
+                                        </pre>
+                                        <br>
+                                        A null value evaluates to false in conditional expression. So you don't have to use comparison operators like === or !== to check for null values.
+                                        <pre>
+                                        var myVar = null;
+
+                                        if (myVar)
+                                            alert("myVar is not null');
+                                        else
+                                            alert("myVar is null" );
+                                        </pre>
+                                        <br>
+                                        
+                                        <li><b>Undefined</b></li><br>
+                                        Undefined is also a primitive value in JavaScript. A variable or an object has an undefined value when no value is assigned before using it. So you can say that undefined means lack of value or unknown value.
+                                        <pre>
+                                        var myVar;
+
+                                        alert(myVar); // undefined 
+                                        </pre>
+                                        In the above example, we have not assigned any value to a variable named 'myVar'. A variable 'myVar' lacks a value. So it is undefined.<br>
+                                        <br>
+                                        You will get undefined value when you call a non-existent property or method of an object.
+                                        <pre>
+                                        function Sum(val1, val2)
+                                        {
+                                            var result = val1 + val2;
+                                        }
+
+                                        var result = Sum(5, 5);
+                                        alert(result);// undefined 
+                                        </pre>
+                                        In the above example, a function Sum does not return any result but still we try to assign its resulted value to a variable. So in this case, result will be undefined.<br>
+                                        <br>
+                                        If you pass less arguments in function call then, that parameter will have undefined value.
+                                        <pre>
+                                        function Sum(val1, val2)
+                                        {
+                                            return val1 + val2;  // val2 is undefined 
+                                        }
+
+                                        Sum(5);
+                                        </pre>
+                                        <br>
+                                        An undefined evaluates to false when used in conditional expression.
+                                        <pre>
+                                        var myVar;
+
+                                        if (myVar)
+                                            alert("myVar evaluates to true");
+                                        else
+                                            alert("myVar evaluates to false");
+                                        </pre>
+                                        <br>
+                                        </ul>
+                                    
+                                        Null and Undefined is one of the main reasons to produce a runtime error in the JavaScript application. This happens if you don't check the value of unknown return variables before using it. If you are not sure that a variable will always have some value, the best practice is to check the value of variables for null or undefined before using them.<br>
+                                        
+                                    
+                                    <br>
+                                    Reference: http://www.tutorialsteacher.com/javascript/javascript-null-and-undefined
+                                </div>
+                            </div>
+                        </div>
                         
                         <br>
-                        <b>COMPOSITE DATA TYPES</b>
+                        <b>COMPOSITE (OBJECT) TYPES</b>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        Object
+                                        Core Object Types
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                                 <div class="panel-body">
+                                    <ul style="list-style-type:square">
+                                    <li><b>Core JavaScript Objects</b></li>
+                                        <ul>
+                                            <li>Object, Numbers, Booleans, String, Date, Math, Global, RegExp, Error</li>
+                                            <li>Arrays (Arrays)</li>
+                                            <li>Functions (Functions, Arguments)</li>   
+                                        </ul>
+                                    <li><b>DOM Objects</b></li>
+                                        <ul>
+                                        <li>Anchor</li>
+                                        <li>Applet</li>
+                                        <li>Attr</li>
+                                        <li>Comment</li>
+                                        <li>DOMException</li>
+                                        <li>DOMImplementation</li>
+                                        <li>DocumentFragment</li>
+                                        <li>Element</li>
+                                        <li>Event</li>
+                                        <li>Form</li>
+                                        <li>Image</li>
+                                        <li>Input</li>
+                                        <li>Layer</li>
+                                        <li>Link</li>
+                                        <li>Node</li>
+                                        <li>Option</li>
+                                        <li>Select</li>
+                                        <li>Style</li>
+                                        <li>Text</li>
+                                        <li>TextArea</li>
+                                        </ul>
+                                    </ul>
+                                
+                                    Reference: Class Notes
                                     
-                                    wait hehehe    <br>
-                                    
-                                    Reference:
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Array
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    
-                                     wait hehehe    <br>  
-                                    
-                                    Reference:
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        RegExp
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    
-                                     wait hehehe <br>   
-                                    
-                                    Reference:
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
                     </div>
                 </div>
-                
-                    
-                    
-
- 
-                                          
-                   
-                
             </div>
         </article>
         <!-- END CONTENTS FOR THIS PAGE-->
