@@ -1,97 +1,27 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="public/js/jquery.min.js"></script>
-    <base href="">
-    <title id="tt"></title>
-
-    <link
-            href='http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,400italic,700italic'
-            rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet"
-          href="../public/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet"
-          href="../public/css/bootstrap-theme.min.css"/>
-    <link type="text/css" rel="stylesheet"
-          href="../public/css/bootstrap-responsive.css"/>
-    <link type="text/css" rel="stylesheet"
-          href="../public/css/commonStyle.css"/>
-    <link type="text/css" rel="stylesheet"
-          href="../public/css/commonStyle.css"/>
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
 </head>
 
-<body id="midterms" style="background-color: #F2F2F2;">
-<section id="top-nav-barss">
-    <header>
-        <div>
-            <div class="navbar-inverse navbar-static-top" role="navigation">
-                <div class="nav-header">
-                    <a class="navbar-brand" href="../index.html"
-                       title="Go to main page !">HOME</a>
-                    <a class="navbar-brand" href="prelims.html">Prelims</a>
-                    <a class="navbar-brand" href="midterms.html">Midterms</a>
-                    <a class="navbar-brand" href="about/about.html">About Us</a>
-                </div>
-                <!-- nav-header -->
-
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-                </div>
-                <!-- collapse -->
-            </div>
-        </div>
-        <!-- navbar -->
-    </header>
-    <!-- header -->
-    <!-- column -->
-    <!-- content -->
-</section>
-<section id="side-nav-bars" style="margin-left: -14px;">
-    <section class="col col-lg-2">
-        <aside>
-            <div class="panel panel-default clearfix ">
-                <div id="sidebar" class="list-group">
-                    <a href="#" class="list-group-item" data-parent="#sidebar">
-                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;CSS
-                    </a>
-                    <div id="css" class="list-group subitem collapse">
-                        <a href="../pages/midterms.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
-                        <a href="../pages/css/ways.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Ways to insert CSS</a>
-                        <a href="../pages/css/preprocessors.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Preprocessors and Framework</a>
-                    </div>
-
-                    <a href="#" class="list-group-item" data-parent="#sidebar">
-                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;DOM
-                    </a>
-                    <div id="articles" class="list-group subitem collapse">
-                        <a href="../pages/dom/intro.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
-                        <a href="../pages/dom/notes.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Notes</a>
-                    </div>
-
-                    <a href="#" class="list-group-item" data-parent="#sidebar">
-                        <i class="glyphicon glyphicon-cloud"></i>&nbsp;&nbsp;Javascript
-                    </a>
-                    <div id="javascript" class="list-group subitem collapse">
-                        <a href="../pages/javascript/introduction.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
-                        <a href="../pages/javascript/history.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;History</a>
-                        <a href="../pages/javascript/function-scope.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;Function Scope</a>
-                        <a href="../pages/javascript/syntax.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;Syntax</a>
-                        <a href="../pages/javascript/data-types.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;Data Types</a>
-                        <a href="../pages/javascript/objects.html" class="list-group-item"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;&nbsp;Objects</a>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </section>
-</section>
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
 <section class="col-md-10">
     <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
         <article>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">CSS (Cascading Style Sheets)</h3>
+                    <h3 class="panel-title">Syntax and Rules</h3>
                 </div>
 
                 <div class="panel-body styleWidgets">
@@ -100,18 +30,88 @@
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is CSS?
+                                        Three Ways to Insert CSS
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    CSS is the language for describing the presentation of Web pages, including colors, layout,
-                                    and fonts. It allows one to adapt the presentation to different types of devices, such as
-                                    large screens, small screens, or printers. CSS is independent of HTML and can be used with
-                                    any XML-based markup language. The separation of HTML from CSS makes it easier to maintain
-                                    sites, share style sheets across pages, and tailor pages to different environments. This is
-                                    referred to as the separation of structure (or: content) from presentation.
+                                    There are three ways of inserting a style sheet:<br/>
+                                    <ul>
+                                        <li>External style sheet</li>
+                                        <li>Internal style sheet</li>
+                                        <li>Inline style</li>
+                                    </ul>
+
+                                    <b>External style sheet</b>
+                                    <br/>
+                                    With an external style sheet, you can change the look of an entire website by changing just one file!
+
+                                    Each page must include a reference to the external style sheet file inside the &lt;link&gt; element.
+                                    The &lt;link&gt; element goes inside the &lt;head&gt; section: <br/>
+                                    <pre>
+                                        &lt;head&gt;
+                                        &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+                                        &lt;/head&gt;
+                                    </pre>
+                                    An external style sheet can be written in any text editor. The file should not contain
+                                    any html tags. The style sheet file must be saved with a .css extension.
+                                    Here is how the "mystyle.css" looks:<br/>
+                                    <pre>
+                                        body {
+                                            background-color: lightblue;
+                                        }
+
+                                        h1 {
+                                            color: navy;
+                                            margin-left: 20px;
+                                        }
+                                    </pre>
+
+                                    <b>Internal Style Sheet</b>
+                                    <br/>
+                                    An internal style sheet may be used if one single page has a unique style.
+                                    Internal styles are defined within the &lt;style&gt; element, inside the &lt;head&gt;
+                                    section of an HTML page: <br/>
+                                    <pre>
+                                        &lt;head&gt;
+                                        &lt;style&gt;
+                                        body {
+                                            background-color: linen;
+                                        }
+
+                                        h1 {
+                                            color: maroon;
+                                            margin-left: 40px;
+                                        }
+                                        &lt;/style&gt;
+                                        &lt;/head&gt;
+                                    </pre>
+
+                                    <b>Inline Styles</b>
+                                    <br/>
+                                    An inline style may be used to apply a unique style for a single element.
+                                    To use inline styles, add the style attribute to the relevant element.
+                                    The style attribute can contain any CSS property.
+                                    The example below shows how to change the color and the left margin of a &lt;h1&gt;
+                                    element:<br/>
+                                    <pre>
+                                         &lt;h1 style="color:blue;margin-left:30px;"&gt;This is a heading&lt;/h1&gt;
+                                    </pre>
+
+                                    <b>Cascading Order</b>
+                                    <br/>
+                                    What style will be used when there is more than one style specified for an HTML element?
+                                    Generally speaking we can say that all the styles will "cascade" into a new "virtual"
+                                    style sheet by the following rules, where number one has the highest priority:<br/>
+                                    <ol>
+                                        <li>Inline style (inside an HTML element)</li>
+                                        <li>External and internal style sheets (in the head section)</li>
+                                        <li>Browser default</li>
+                                    </ol>
+                                    So, an inline style (inside a specific HTML element) has the highest priority,
+                                    which means that it will override a style defined inside the &lt;head&gt; tag, or in an external
+                                    style sheet, or a browser default value.
                                 </div>
                             </div>
                         </div>
@@ -129,14 +129,14 @@
                                     <br/>
                                     A CSS rule-set consists of a selector and a declaration block: <br/>
                                     <div style="text-align: center">
-                                        <img src="../public/img/css.PNG"><br/>
+                                        <img src="../../public/img/css.PNG"><br/>
                                     </div>
 
                                     <ul>
-                                       <li>The selector points to the HTML element you want to style.</li>
-                                       <li>The declaration block contains one or more declarations separated by semicolons.</li>
-                                       <li>Each declaration includes a CSS property name and a value, separated by a colon.</li>
-                                       <li>A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.</li>
+                                        <li>The selector points to the HTML element you want to style.</li>
+                                        <li>The declaration block contains one or more declarations separated by semicolons.</li>
+                                        <li>Each declaration includes a CSS property name and a value, separated by a colon.</li>
+                                        <li>A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.</li>
                                     </ul>
                                     <br/>
                                     <b>CSS Selectors</b>
@@ -300,26 +300,13 @@
                 </div>
             </div>
         </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
     </section>
 </section>
 
 <section id="footer">
-    <section class="container">
-        <footer class="row">
-            <nav class="col-lg-12">
-                <ul class="breadcrumb">
-                    <li><a href="../index.html">Main Page</a></li>
-
-                    <li><a href="about/about.html">About us</a></li>
-                </ul>
-            </nav><!-- nav -->
-        </footer><!-- footer -->
-    </section><!-- container -->
+    <!-- footer includes-->
 </section>
-<script type="text/javascript" src="../public/js/jquery.min.js"></script>
-<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../public/js/public.js"></script>
-<!--<script type="text/javascript" src="public/js/clock.js"></script>-->
-    <!-- scripts includes-->
+<!-- scripts includes-->
 </body>
 </html>

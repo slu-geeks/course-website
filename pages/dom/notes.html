@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">NOTES</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>
+                                    Defer Attribute
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Document tree should be loaded / fetch first</li>
+                                    <li>it can execute later</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Async Attribute
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>does not wait for the document tree to fetch / load first</li>
+                                    <li>once it is available, it can now execute the script</li>
+                                </ul>
+                                <br> Note: you cannot use both Defer and Async Attributes together
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    noscript
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>for browsers with no scripting support, or with scripting support disabled</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    window
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>global object</li>
+                                    <li>hook into the environment</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    navigator
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>represents the browser</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    document
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>hook into the actual document</li>
+                                    <li>owner of all other objects in your web page</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    body
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>attribute of the document element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Finding HTML Elements
+                                </b>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(id)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Find an element by element id</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByTagName(name)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Find elements by tag name</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName(name)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Find elements by class name</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Changing HTML Elements
+                                </b>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.innerHTML =  new html content
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Change the inner HTML of an element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.attribute = new value
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Change the attribute value of an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.setAttribute(attribute, value)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Change the attribute value of an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element.style.property = new style
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Change the style of an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Adding and Deleting Elements
+                                </b>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.createElement(element)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Create an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.removeChild(element)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Remove an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.appendChild(element)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Add an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.replaceChild(element)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Replace an HTML element</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(text)
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Write into the HTML output stream</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Properties
+                                </b>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerText
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Sets or retrieves the text between the start and end tags of the object.</li>
+                                    <li>
+                                        valid for block elements only. By definition, elements that do not have both
+                                        an opening and closing tag cannot have an innerText property.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textContent
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Sets or retrieves the text content of an object and any child objects.</li>
+                                    <li>preserves other white spaces</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerHTML
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>parse whatever markup, possible to create new structures</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outerHTML
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>also gets the tags '&lt;h1&gt; Content &lt;/h1&gt;'</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodeName
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>returns the name of the specified node</li>
+                                    <li>If the node is an element node, the nodeName property will return the tag name.</li>
+                                    <li>If the node is an attribute node, the nodeName property will return the name of the attribute.</li>
+                                    <li>For other node types, the nodeName property will return different names for different node types.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodeValue
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>literal content</li>
+                                    <li>sets or returns the node value of the specified node</li>
+                                    <li>If the node is an element node, the nodeValue property will return null.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodeType
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>returns the node type, as a number, of the specified node.</li>
+                                    <li>If the node is an element node, the nodeType property will return 1.</li>
+                                    <li>If the node is an attribute node, the nodeType property will return 2.</li>
+                                    <li>If the node is a text node, the nodeType property will return 3.</li>
+                                    <li>If the node is a comment node, the nodeType property will return 8.</li>
+                                    <li>This property is read-only.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>returns a collection of an element's child elements, as an HTMLCollection object</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parentNode
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>returns the parent node of the specified node, as a Node object</li>
+                                    <li>returns null if you're already at the root of the tree</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    Methods
+                                </b>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;querySelector
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Returns the first Element within the document that matches the specified
+                                        selector, or group of selectors.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;querySelectorAll
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Returns all elements within the document that matches the specified
+                                        selector, or group of selectors.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matches
+                                </b>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>returns true if the element would be selected by the specified selector
+                                        string; otherwise, returns false.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    Reference:<br/>
+                    &nbsp;https://www.w3schools.com/<br/>
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>

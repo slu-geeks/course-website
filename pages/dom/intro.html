@@ -99,21 +99,57 @@
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        const
+                                        Where the Document Object Model came from
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    <!--INSERT CONST CONTENT-->
+                                    The DOM originated as a specification to allow JavaScript scripts and Java programs to
+                                    be portable among Web browsers. "Dynamic HTML" was the immediate ancestor of the Document
+                                    Object Model, and it was originally thought of largely in terms of browsers. However,
+                                    when the DOM Working Group was formed at W3C, it was also joined by vendors in other
+                                    domains, including HTML or XML editors and document repositories. Several of these
+                                    vendors had worked with SGML before XML was developed; as a result, the DOM has been
+                                    influenced by SGML Groves and the HyTime standard. Some of these vendors had also
+                                    developed their own object models for documents in order to provide an API for SGML/XML
+                                    editors or document repositories, and these object models have also influenced the DOM.
                                 </div>
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        DOM and JavaScript
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    The DOM is not a programming language, but without it, the JavaScript language wouldn't
+                                    have any model or notion of web pages, HTML documents, XML documents, and their component
+                                    parts (e.g. elements). Every element in a document—the document as a whole, the head,
+                                    tables within the document, table headers, text within the table cells—is part of the
+                                    document object model for that document, so they can all be accessed and manipulated
+                                    using the DOM and a scripting language like JavaScript.<br/><br/>
+
+                                    In the beginning, JavaScript and the DOM were tightly intertwined, but eventually
+                                    they evolved into separate entities. The page content is stored in the DOM and may
+                                    be accessed and manipulated via JavaScript, so that we may write this approximative
+                                    equation: <br/><br/>
+
+                                    API (HTML or XML page) = DOM + JS (scripting language)
+                                </div>
+                            </div>
+                        </div>
+
                         <br/>
                         Reference: <br/>
                         &nbsp;https://www.w3schools.com/js/js_htmldom.asp<br/>
                         &nbsp;https://css-tricks.com/dom/<br/>
-
+                        &nbsp;https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction<br/>
+                        &nbsp;https://www.w3.org/TR/DOM-Level-2-Core/introduction.html<br/>
                     </div>
                 </div>
             </div>
