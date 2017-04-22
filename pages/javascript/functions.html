@@ -24,10 +24,185 @@
                     <h3 class="panel-title">Functions</h3>
                 </div>
                 <div class="panel-body styleWidgets">
-                    <b>JavaScript Functions</b>
+                    <b><h3>JavaScript Functions</h3></b>
                     <p>
-                        <!--INSERT CONTENT HERE-->
+                        A JavaScript function is a block of code designed to perform a particular task.<br>
+
+                        A JavaScript function is executed when "something" invokes it (calls it).
                     </p>
+                        <pre>
+                        function myFunction(p1, p2) {
+                            return p1 * p2;              // The function returns the product of p1 and p2
+                        }
+                        </pre>
+
+                    <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        JavaScript Function Syntax
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses (). <br>
+
+                                    Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).<br>
+
+                                    The parentheses may include parameter names separated by commas:<br>
+                                    (parameter1, parameter2, ...)<br>
+
+                                    The code to be executed, by the function, is placed inside curly brackets: {}<br>
+                                    <pre>
+                                    function name(parameter1, parameter2, parameter3) {
+                                        code to be executed
+                                    }
+                                    </pre>
+
+                                    Function parameters are the names listed in the function definition.<br>
+
+                                    Function arguments are the real values received by the function when it is invoked.<br>
+
+                                    Inside the function, the arguments (the parameters) behave as local variables.<br>
+                                    <br>
+
+                                    Reference: https://www.w3schools.com/js/js_functions.asp
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Function Invocation
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <ul style="list-style-type:square">
+
+                            The code inside the function will execute when "something" invokes (calls) the function:
+                            <li>When an event occurs (when a user clicks a button)</li>
+                            <li>When it is invoked (called) from JavaScript code</li>
+                            <li>Automatically (self invoked)</li>                 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Return Function
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    
+                                    When JavaScript reaches a return statement, the function will stop executing.<br>
+                                    If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.<br>
+                                    Functions often compute a return value. The return value is "returned" back to the "caller":<br>
+                                    <br>
+                                    <b>Example</b>
+                                    <pre>
+                                    <b>Calculate the product of two numbers, and return the result:</b>
+                        
+                                    var x = myFunction(4, 3);        // Function is called, return value will end up in x
+
+                                    function myFunction(a, b) {
+                                        return a * b;                // Function returns the product of a and b
+                                    }
+
+                                    <b>The result in x will be:</b>
+                                                12
+                                    </pre>
+                                </div>
+                         </div>
+                    </div>
+                    
+                    <b><h3>Why Functions?</h3></b>
+                    <p>
+                    You can reuse code: Define the code once, and use it many times.<br>
+
+                    You can use the same code many times with different arguments, to produce different results.
+                    </p>
+                    <b>Example</b>
+                    <pre>
+                    <b>Convert Fahrenheit to Celsius:</b>
+                    
+                    
+                            function toCelsius(fahrenheit) {
+                                return (5/9) * (fahrenheit-32);
+                            }
+                            document.getElementById("demo").innerHTML = toCelsius(77);
+                    </pre>
+
+                     <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        The () Operator Invokes the Function
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>
+                                      Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result.<br>
+
+                                     Accessing a function without () will return the function definition instead of the function result:<br>
+                                    </p>
+                                    <b>Example</b>
+                                    <pre>
+                                    function toCelsius(fahrenheit) {
+                                        return (5/9) * (fahrenheit-32);
+                                    }
+                                    document.getElementById("demo").innerHTML = toCelsius;
+                                    </pre>
+                                    
+                                    <br>
+                                    Reference: https://www.w3schools.com/js/js_functions.asp
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Functions Used as Variable Values
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    <p>
+                                    Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.
+                                    </p>
+                                    <br>
+                                    
+                                    <b>Example</b>
+                                    <pre>
+                                    <b>Instead of using a variable to store the return value of a function:</b>
+                                    
+                                    var x = toCelsius(77);
+                                    var text = "The temperature is " + x + " Celsius";
+                                    
+                                    
+                                    <b>You can use the function directly, as a variable value:</b>
+                                    
+                                    var text = "The temperature is " + toCelsius(77) + " Celsius";
+                                    </pre>
+                                    Reference: https://www.w3schools.com/js/js_functions.asp
+                                </div>
+                            </div>
+                        </div>
+                     <br>
+                   Reference: https://www.w3schools.com/js/js_functions.asp
                 </div>
             </div>
         </article>
