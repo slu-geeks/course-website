@@ -17,79 +17,186 @@
 <section id="side-nav-bars" style="margin-left: -14px;"></section>
 <section class="col-md-10">
     <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                </div>
+        
+        
+        
         <!-- START CONTENTS FOR THIS PAGE-->
         <article>
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Data Types</h3>
                 </div>
-                <div class="panel-body styleWidgets">
-                    <b>DATA TYPES</b>
-                    <p>
-                        JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript.
-                    <p/>
-                    
-                    <pre>
-                        Primitive data type
-                        -String
-                        A string value is a chain of zero or more Unicode characters (letters, digits, and punctuation marks). You use the string data type to represent text in JavaScript. You include string literals in your scripts by enclosing them in single or double quotation marks. Double quotation marks can be contained in strings surrounded by single quotation marks, and single quotation marks can be contained in strings surrounded by double quotation marks. The following are examples of strings:
+                
+                    <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        
+                        <p>
+                        JavaScript includes data types similar to other programming languages like Java or C#. Data type indicates characteristics of data. It tells the compiler whether the data value is numeric, alphabetic, date etc., so that it can perform the appropriate operation.<br>
+                        <br>
+                        JavaScript includes primitive and non-primitive data types as per latest ECMAScript 5.1.
+                        </p>
+                        <b>PRIMITIVE DATA TYPES</b>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        String
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    A string value is a chain of zero or more Unicode characters (letters, digits, and punctuation marks). You use the string data type to represent text in JavaScript. You include string literals in your scripts by enclosing them in single or double quotation marks. Double quotation marks can be contained in strings surrounded by single quotation marks, and single quotation marks can be contained in strings surrounded by double quotation marks. The following are examples of strings:
                      
-                        "Happy am I; from care I'm free!"  
-                        '"Avast, ye lubbers!" roared the technician.'   
-                        "45"  
-                        'c'
-                       
-                        Notice that JavaScript does not have a type to represent a single character. To represent a single character in JavaScript, you create a string that consists of only one character. A string that contains zero characters ("") is an empty (zero-length) string.
-                        JavaScript provides escape sequences that you can include in strings to create characters that you cannot type directly.
+                                    <pre>
+                                    "Happy am I; from care I'm free!"  
+                                    '"Avast, ye lubbers!" roared the technician.'   
+                                    "45"  
+                                    'c'
+                                    </pre>
+
+                                    Notice that JavaScript does not have a type to represent a single character. To represent a single character in JavaScript, you create a string that consists of only one character. A string that contains zero characters ("") is an empty (zero-length) string.
+                                    JavaScript provides escape sequences that you can include in strings to create characters that you cannot type directly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Number
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    
+                                        In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values). <br>
+                                    
+                                    Reference:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Boolean
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    
+                                        Whereas the string and number data types can have a virtually unlimited number of different values, the Boolean data type can only have two. They are the literals true and false. A Boolean value is a truth-value: it specifies whether the condition is true or not.
+                                        Comparisons you make in your scripts always have a Boolean outcome. Consider the following line of JavaScript code.
+                                        <pre>
+                                        y = (x == 2000);
+                                        </pre>
+
+                                        Here, the value of the variable x is compared to the number 2000. If it is, the result of the comparison is the Boolean value true, which is assigned to the variable y. If x is not equal to 2000, then the result of the comparison is the Boolean value false. +
+                                        Boolean values are especially useful in control structures. The following code combines a comparison that creates a Boolean value directly with a statement that uses it. Consider the following JavaScript code sample.
+
+                                        <pre>
+                                        if (x == 2000) {  
+                                            z = z + 1;  
+                                        }  
+                                        else {  
+                                            x = x + 1;  
+                                        }
+                                        </pre>
+
+                                        The if/else statement in JavaScript performs one action if a Boolean value is true (z = z + 1), and an alternate action if the Boolean value is false (x = x + 1).
+                                        You can use any expression as a comparative expression. Any expression that evaluates to 0, null, undefined, or an empty string is interpreted as false. An expression that evaluates to any other value is interpreted as true. For example, you could use an expression such as:
+
+                                        <pre>
+                                        // This may not do what you expect. See below!  
+                                        if (x = y + z)   
+                                        </pre>
+
+                                        Note that the above line does not check whether x is equal to y + z, since only a single equal sign (the assignment operator) is used. Instead, the code above assigns the value of y + z to the variable x, and then checks whether the result of the entire expression (the value of x) is zero. To check whether x is equal to y + z, you need to use the following code.
+
+                                        <pre>
+                                        // This is different from the code above!  
+                                        if (x == y + z)
+                                        </pre>
+                                    
+                                    Reference:
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <b>COMPOSITE DATA TYPES</b>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    
+                                    wait hehehe    <br>
+                                    
+                                    Reference:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Array
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    
+                                     wait hehehe    <br>  
+                                    
+                                    Reference:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        RegExp
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    
+                                     wait hehehe <br>   
+                                    
+                                    Reference:
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
                     
-                        -Number
-                        In JavaScript, there is no distinction between integer and floating-point values; a JavaScript number can be either (internally, JavaScript represents all numbers as floating-point values).
-                        
-                                              
-                        -Boolean
-                        
-                        Whereas the string and number data types can have a virtually unlimited number of different values, the Boolean data type can only have two. They are the literals true and false. A Boolean value is a truth-value: it specifies whether the condition is true or not.
-                        Comparisons you make in your scripts always have a Boolean outcome. Consider the following line of JavaScript code.
-                        y = (x == 2000);  
-                        
-                        Here, the value of the variable x is compared to the number 2000. If it is, the result of the comparison is the Boolean value true, which is assigned to the variable y. If x is not equal to 2000, then the result of the comparison is the Boolean value false. +
-                        Boolean values are especially useful in control structures. The following code combines a comparison that creates a Boolean value directly with a statement that uses it. Consider the following JavaScript code sample.
-                        
-                        if (x == 2000) {  
-                            z = z + 1;  
-                        }  
-                        else {  
-                            x = x + 1;  
-                        }
-                        
-                        The if/else statement in JavaScript performs one action if a Boolean value is true (z = z + 1), and an alternate action if the Boolean value is false (x = x + 1).
-                        You can use any expression as a comparative expression. Any expression that evaluates to 0, null, undefined, or an empty string is interpreted as false. An expression that evaluates to any other value is interpreted as true. For example, you could use an expression such as:
-                        
-                        // This may not do what you expect. See below!  
-                        if (x = y + z)   
-                        
-                        Note that the above line does not check whether x is equal to y + z, since only a single equal sign (the assignment operator) is used. Instead, the code above assigns the value of y + z to the variable x, and then checks whether the result of the entire expression (the value of x) is zero. To check whether x is equal to y + z, you need to use the following code.
-                        
-                        // This is different from the code above!  
-                        if (x == y + z)   
-                        
-                        
                     
-                        Composite data type
-                        -Object
-                        
-                        
-                        
-                        -Array
-                        
-                        
-                        
-                        -RegExp
+
  
                                           
-                        
-                    </pre>
-                </div>
+                   
+                
             </div>
         </article>
         <!-- END CONTENTS FOR THIS PAGE-->
