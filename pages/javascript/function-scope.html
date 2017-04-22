@@ -133,6 +133,10 @@
                                         console.log(x, z);     // 3 5
                                         console.log(typeof y); // undefined as y is local to function a
                                     </pre>
+
+                                    <h3>Reference:</h3>
+                                    <pre>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var<br>https://www.w3schools.com/js/js_variables.asp
+                                    </pre>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +150,37 @@
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    <!--INSERT LET CONTENT-->
+                                    <h3>let</h3>
+                                    <p>
+                                        The let statement declares a block scope local variable, optionally initializing it to a value.
+
+                                        let allows you to declare variables that are limited in scope to the block,
+                                        statement, or expression on which it is used. This is unlike the var keyword,
+                                        which defines a variable globally, or locally to an entire function regardless of block scope.
+                                    </p>
+                                    <hr>
+                                    <h4>Examples</h4>
+                                    <p>When used inside a block, let limits the variable's scope to that block.
+                                        Note the difference between var whose scope is inside the function where it is declared.
+                                    </p>
+                                    <pre>
+                                           var a = 1;
+                                            var b = 2;
+
+                                            if (a === 1) {
+                                              var a = 11; // the scope is global
+                                              let b = 22; // the scope is inside the if-block
+
+                                              console.log(a);  // 11
+                                              console.log(b);  // 22
+                                            }
+
+                                            console.log(a); // 11
+                                            console.log(b); // 2
+                                    </pre>
+
+                                    <h3>Reference:</h3>
+                                    <pre>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let</pre>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +194,89 @@
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    <!--INSERT CONST CONTENT-->
+                                    <h3>const</h3>
+                                    <p>
+                                        Constants are block-scoped, much like variables defined using the let statement.
+                                        The value of a constant cannot change through re-assignment, and it can't be redeclared.
+                                    </p>
+                                    <p>
+                                        This declaration creates a constant that can be either global or local to the
+                                        function in which it is declared. An initializer for a constant is required; that
+                                        is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).
+
+                                        The const declaration creates a read-only reference to a value. It does not mean
+                                        the value it holds is immutable, just that the variable identifier cannot be reassigned.
+                                        For instance, in case the content is an object, this means the object itself can still be altered.
+                                    </p>
+                                    <p>
+                                        A constant cannot share its name with a function or a variable in the same scope.
+                                    </p>
+                                    <hr>
+                                    <h4>Examples</h4>
+                                    <p>
+                                        A constant cannot share its name with a function or a variable in the same scope.
+                                    </p>
+                                    <pre>
+                                        // NOTE: Constants can be declared with uppercase or lowercase, but a common
+                                        // convention is to use all-uppercase letters.
+
+                                        // define MY_FAV as a constant and give it the value 7
+                                        const MY_FAV = 7;
+
+                                        // this will throw an error
+                                        MY_FAV = 20;
+
+                                        // will print 7
+                                        console.log('my favorite number is: ' + MY_FAV);
+
+                                        // trying to redeclare a constant throws an error
+                                        const MY_FAV = 20;
+
+                                        // the name MY_FAV is reserved for constant above, so this will also fail
+                                        var MY_FAV = 20;
+
+                                        // this throws an error also
+                                        let MY_FAV = 20;
+
+                                        // it's important to note the nature of block scoping
+                                        if (MY_FAV === 7) {
+                                            // this is fine and creates a block scoped MY_FAV variable
+                                            // (works equally well with let to declare a block scoped non const variable)
+                                            let MY_FAV = 20;
+
+                                            // MY_FAV is now 20
+                                            console.log('my favorite number is ' + MY_FAV);
+
+                                            // this gets hoisted into the global context and throws an error
+                                            var MY_FAV = 20;
+                                        }
+
+                                        // MY_FAV is still 7
+                                        console.log('my favorite number is ' + MY_FAV);
+
+                                        // throws an error, missing initializer in const declaration
+                                        const FOO;
+
+                                        // const also works on objects
+                                        const MY_OBJECT = {'key': 'value'};
+
+                                        // Attempting to overwrite the object throws an error
+                                        MY_OBJECT = {'OTHER_KEY': 'value'};
+
+                                        // However, object keys are not protected,
+                                        // so the following statement is executed without problem
+                                        MY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable
+
+                                        // The same applies to arrays
+                                        const MY_ARRAY = [];
+                                        // It's possible to push items into the array
+                                        MY_ARRAY.push('A'); // ["A"]
+                                        // However, assigning a new array to the variable throws an error
+                                        MY_ARRAY = ['B']
+                                    </pre>
+
+                                    <h3>Reference:</h3>
+                                    <pre>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const</pre>
                                 </div>
                             </div>
                         </div>
