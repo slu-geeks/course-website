@@ -27,24 +27,30 @@
                     <h3 class="panel-title">Objects</h3>
                 </div>
                 <div class="panel-body styleWidgets">
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
+                            <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         Definition
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <div>
                                         <div>
-                                        <p>Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. The concept of objects in JavaScript can be understood with real life, tangible objects.
+                                            <p>Objects in JavaScript, just as in many other programming languages, can
+                                                be compared to objects in real life. The concept of objects in
+                                                JavaScript can be understood with real life, tangible objects.
 
-                                            In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.</p>
+                                                In JavaScript, an object is a standalone entity, with properties and
+                                                type. Compare it with a cup, for example. A cup is an object, with
+                                                properties. A cup has a color, a design, weight, a material it is made
+                                                of, etc. The same way, JavaScript objects can have properties, which
+                                                define their characteristics.</p>
                                         </div>
                                         <div>
                                             <p>Almost "everything" is an object.</p>
@@ -70,157 +76,444 @@
                                 </div>
                             </div>
                         </div>
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                   href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    How to define an Object (Objects and properties)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <!-- content-->
+                                <p>
+                                    A JavaScript object has properties associated with it. A property of an object
+                                    can be explained as a variable that is attached to the object. Object properties
+                                    are basically the same as ordinary JavaScript variables, except for the
+                                    attachment to objects. The properties of an object define the characteristics of
+                                    the object. You access the properties of an object with a simple dot-notation:
+                                </p>
+                                <p class="breadcrumb">objectName.propertyName
+                                </p>
+
+                                <p>Like all JavaScript variables, both the object name (which could be a normal
+                                    variable) and property name are case sensitive. You can define a property by
+                                    assigning it a value. For example, let's create an object named myCar and give
+                                    it properties named make, model, and year as follows:</p>
+
+                                <code class="language-html" data-lang="html">
+                                        <pre>
+var myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;</pre>
+                                </code>
+
+
+                                <p>Unassigned properties of an object are undefined (and not null).</p>
+                                <p class="breadcrumb">myCar.color; // undefined
+                                </p>
+                                <p>There are 3 ways of defining an object from ECMAScript 6 onwards:</p>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item"><strong>var</strong> keyword</li>
+                                    <li class="list-group-item"><strong>let</strong> keyword</li>
+                                    <li class="list-group-item"><strong>const</strong> keyword</li>
+                                </ul>
+
+                                <p>
+                                    Properties of JavaScript objects can also be accessed or set using a bracket
+                                    notation (for more details see property accessors). Objects are sometimes called
+                                    associative arrays, since each property is associated with a string value that
+                                    can be used to access it. So, for example, you could access the properties of
+                                    the myCar object as follows:
+                                </p>
+
+
+                                <code class="language-html" data-lang="html" style="width: 300px;!important;">
+                                        <pre class="nt">
+myCar['make'] = 'Ford';
+myCar['model'] = 'Mustang';
+myCar['year'] = 1969;</pre>
+                                </code>
+
+                                <p>
+                                    An object property name can be any valid JavaScript string, or anything that can
+                                    be converted to a string, including the empty string. However, any property name
+                                    that is not a valid JavaScript identifier (for example, a property name that has
+                                    a space or a hyphen, or that starts with a number) can only be accessed using
+                                    the square bracket notation. This notation is also very useful when property
+                                    names are to be dynamically determined (when the property name is not determined
+                                    until runtime). Examples are as follows:
+                                </p>
+                                <code class="language-html" data-lang="html">
+                                        <pre>
+// four variables are created and assigned in a single go,
+// separated by commas
+var myObj = new Object(),
+str = 'myString',
+rand = Math.random(),
+obj = new Object();
+myObj.type              = 'Dot syntax';
+myObj['date created']   = 'String with space';
+myObj[str]              = 'String value';
+myObj[rand]             = 'Random Number';
+myObj[obj]              = 'Object';
+myObj['']               = 'Even an empty string';
+console.log(myObj);
+                                            </pre>
+                                </code>
+
+                                <p>Please note that all keys in the square bracket notation are converted to String
+                                    type, since objects in JavaScript can only have String type as key type. For
+                                    example, in the above code, when the key obj is added to the myObj, JavaScript
+                                    will call the obj.toString() method, and use this result string as the new key.
+
+                                    You can also access properties by using a string value that is stored in a
+                                    variable:</p>
+                                <code><pre>
+var propertyName = 'make';
+myCar[propertyName] = 'Ford';
+
+propertyName = 'model';
+myCar[propertyName] = 'Mustang';
+                                    </pre>
+                                </code>
+
+                                <p>You can use the bracket notation with for...in to iterate over all the enumerable
+                                    properties of an object. To illustrate how this works, the following function
+                                    displays the properties of the object when you pass the object and the object's
+                                    name as arguments to the function:</p>
+
+                                <code>
+                                        <pre>
+function showProps(obj, objName) {
+  var result = '';
+  for (var i in obj) {
+    // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain
+    if (obj.hasOwnProperty(i)) {
+      result += objName + '.' + i + ' = ' + obj[i] + '\n';
+    }
+  }
+  return result;
+}
+                                        </pre>
+                                </code>
+
+                                <p>So, the function call showProps(myCar, "myCar") would return the following:</p>
+                                <code><pre>
+myCar.make = Ford
+myCar.model = Mustang
+myCar.year = 1969
+                                    </pre>
+                                </code>
+
+                            </div>
+                        </div>
                     </div>
 
 
-                    <!-- -->
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                        How to define an Object (Objects and properties)
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    <!-- content-->
-                                    <p>
-                                        A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:
-                                    </p>
-                                    <div class="breadcrumb" style="width: 300px;!important;">objectName.propertyName</div>
-
-                                    <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let's create an object named myCar and give it properties named make, model, and year as follows:</p>
-
-                                    <code class="language-html" data-lang="html">
-                                        <p class="nt">var myCar = new Object();</p>
-                                        <p class="na">myCar.make = 'Ford';</p>
-                                        <p class="s">myCar.model = 'Mustang';</p>
-                                        <p class="nt">myCar.year = 1969;</p>
-                                    </code>
-
-
-                                    <div>
-                                        <form>
-                                            <div class="form-group">
-                                                <div class="col-lg-12">
-                                                    <textarea rows="20" id="code" cssClass="form-control"
-                                                                   cssStyle="resize: none; resize: vertical;"/>
-
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-
-
-
-
-                                    <p>Unassigned properties of an object are undefined (and not null).</p>
-                                    <div class="breadcrumb" style="width: 300px;!important;">myCar.color; // undefined</div>
-                                    <p>There are 3 ways of defining an object from ECMAScript 6 onwards:</p>
-
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><strong>var</strong> keyword</li>
-                                        <li class="list-group-item"><strong>let</strong> keyword</li>
-                                        <li class="list-group-item"><strong>const</strong> keyword</li>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                   href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    Enumerate the properties of an object
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>Starting with ECMAScript 5, there are three native ways to list/traverse object
+                                    properties:</p>
+                                <div>
+                                    <ul>
+                                        <li><code><a href="/en-US/docs/Web/JavaScript/Reference/Statements/for...in"
+                                                     title="en-US/docs/JavaScript/Reference/Statements/for...in">for...in</a></code>
+                                            loops<br>
+                                            This method traverses all enumerable properties of an object and its
+                                            prototype chain
+                                        </li>
+                                        <li>
+                                            <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
+                                               title="The Object.keys() method returns an array of a given object's own enumerable properties, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)."><code>Object.keys(o)</code></a><br>
+                                            This method returns an array with all the own (not in the prototype
+                                            chain) enumerable properties' names ("keys") of an object <code>o</code>.
+                                        </li>
+                                        <li>
+                                            <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames"
+                                               title="The Object.getOwnPropertyNames() method returns an array of all properties (enumerable or not) found directly upon a given object."><code>Object.getOwnPropertyNames(o)</code></a><br>
+                                            This method returns an array containing all own properties' names
+                                            (enumerable or not) of an object <code>o</code>.
+                                        </li>
                                     </ul>
+                                </div>
+                                <div>
+                                    <p>Before ECMAScript 5, there was no native way to list all properties of an object.
+                                        However, this can be achieved with the following function:</p>
+                                    <code>
+                                        <pre>
+function listAllProperties(o) {
+	var objectToInspect;
+	var result = [];
 
-                                    <p>
-                                        Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:
-                                    </p>
+	for(objectToInspect = o; objectToInspect !== null; objectToInspect = Object.getPrototypeOf(objectToInspect)) {
+      result = result.concat(Object.getOwnPropertyNames(objectToInspect));
+	}
 
-
-                                    <code class="language-html" data-lang="html">
-                                        <p class="nt">myCar['make'] = 'Ford';</p>
-                                        <p class="na">myCar['model'] = 'Mustang';</p>
-                                        <p class="s">myCar['year'] = 1969;</p>
+	return result;
+}
+                                        </pre>
                                     </code>
 
-
+                                    <p>This can be useful to reveal "hidden" properties (properties in the prototype
+                                        chain which are not accessible through the object, because another property has
+                                        the same name earlier in the prototype chain). Listing accessible properties
+                                        only can easily be done by removing duplicates in the array.</p>
 
                                 </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                   href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    Creating new objects
+                                </a>
+
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <p>JavaScript has a number of predefined objects. In addition, you can create your
+                                    own objects. You can create an object using an object initializer.
+                                    Alternatively, you can first create a constructor function and then instantiate
+                                    an object invoking that function in conjunction with the new operator.</p>
+                                <h2>Using object initializers
+
+                                </h2>
+
+                                <p>In addition to creating objects using a constructor function, you can create
+                                    objects using an object initializer. Using object initializers is sometimes
+                                    referred to as creating objects with literal notation. "Object initializer" is
+                                    consistent with the terminology used by C++.
+
+                                    The syntax for an object using an object initializer is:</p>
+                                <code>
+                                        <pre>
+var obj = { property_1:   value_1,   // property_# may be an identifier...
+            2:            value_2,   // or a number...
+            // ...,
+            'property n': value_n }; // or a string
+                                        </pre>
+                                </code>
+
+                                <p>
+                                    where obj is the name of the new object, each property_i is an identifier
+                                    (either a name, a number, or a string literal), and each value_i is an
+                                    expression whose value is assigned to the property_i. The obj and assignment is
+                                    optional; if you do not need to refer to this object elsewhere, you do not need
+                                    to assign it to a variable. (Note that you may need to wrap the object literal
+                                    in parentheses if the object appears where a statement is expected, so as not to
+                                    have the literal be confused with a block statement.)
+
+                                    Object initializers are expressions, and each object initializer results in a
+                                    new object being created whenever the statement in which it appears is executed.
+                                    Identical object initializers create distinct objects that will not compare to
+                                    each other as equal. Objects are created as if a call to new Object() were made;
+                                    that is, objects made from object literal expressions are instances of Object.
+
+                                    The following statement creates an object and assigns it to the variable x if
+                                    and only if the expression cond is true:
+                                </p>
+                                <p class="breadcrumb">if (cond) var x = {greeting: 'hi there'};
+                                </p>
+
+                                <p>
+                                    The following example creates myHonda with three properties. Note that the engine
+                                    property is also an object with its own properties.
+                                </p>
+
+                                <p class="breadcrumb">var myHonda = {color: 'red', wheels: 4, engine: {cylinders: 4,
+                                    size: 2.2}};
+                                </p>
+
+                                You can also use object initializers to create arrays. See array literals.
+
+                                <h2>Using a constructor function</h2>
+
+                                <p>Alternatively, you can create an object with these two steps:</p>
+
+                                <ol>
+                                    <li>Define the object type by writing a constructor function. There is a strong
+                                        convention, with good reason, to use a capital initial letter.
+                                    </li>
+                                    <li>Create an instance of the object with <code>new</code>.</li>
+                                </ol>
+
+                                <p>To define an object type, create a function for the object type that specifies its
+                                    name, properties, and methods. For example, suppose you want to create an object
+                                    type for cars. You want this type of object to be called <code>car</code>, and you
+                                    want it to have properties for make, model, and year. To do this, you would write
+                                    the following function:</p>
+
+                                <code>
+                                        <pre>
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+                                        </pre>
+                                </code>
+
+                                <p>
+                                    Notice the use of this to assign values to the object's properties based on the
+                                    values passed to the function.
+
+
+                                </p>
+                                <p>Now you can create an object called mycar as follows:</p>
+
+                                <p class="breadcrumb">var mycar = new Car('Eagle', 'Talon TSi', 1993);
+                                </p>
+
+                                <p>
+                                    This statement creates mycar and assigns it the specified values for its properties.
+                                    Then the value of mycar.make is the string "Eagle", mycar.year is the integer 1993,
+                                    and so on.
+
+
+                                </p>
+                                <p> You can create any number of car objects by calls to new. For example,</p>
+
+                                <code><pre>
+var kenscar = new Car('Nissan', '300ZX', 1992);
+var vpgscar = new Car('Mazda', 'Miata', 1990);
+                                    </pre>
+                                </code>
+
+                                <p>An object can have a property that is itself another object. For example, suppose you
+                                    define an object called person as follows:</p>
+
+                                <code>
+                                        <pre>
+function Person(name, age, sex) {
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+                                        </pre>
+                                </code>
+
+                                <p>and then instantiate two new person objects as follows:</p>
+
+                                <code><pre>
+var rand = new Person('Rand McKinnon', 33, 'M');
+var ken = new Person('Ken Jones', 39, 'M');
+                                    </pre>
+                                </code>
+
+                                <p>Then, you can rewrite the definition of car to include an owner property that takes a
+                                    person object, as follows:</p>
+
+                                <code>
+                                        <pre>
+function Car(make, model, year, owner) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.owner = owner;
+}
+                                        </pre>
+
+                                </code>
+                                <p>To instantiate the new objects, you then use the following:</p>
+
+                                <code>
+                                        <pre>
+var car1 = new Car('Eagle', 'Talon TSi', 1993, rand);
+var car2 = new Car('Nissan', '300ZX', 1992, ken);
+                                        </pre>
+                                </code>
+
+                                <p>Notice that instead of passing a literal string or integer value when creating the
+                                    new objects, the above statements pass the objects rand and ken as the arguments for
+                                    the owners. Then if you want to find out the name of the owner of car2, you can
+                                    access the following property:</p>
+                                <p class="breadcrumb">car2.owner.name
+                                </p>
+
+                                <p>Note that you can always add a property to a previously defined object. For example,
+                                    the statement</p>
+                                <p class="breadcrumb">car1.color = 'black';
+                                </p>
+
+                                <p>adds a property color to car1, and assigns it a value of "black." However, this does
+                                    not affect any other objects. To add the new property to all objects of the same
+                                    type, you have to add the property to the definition of the car object type.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                        How to define an Object
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    <!-- content-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                        How to define an Object
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    <!-- content-->
-                                </div>
-                            </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                   href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    Using the Object.create method
+                                </a>
+                            </h4>
                         </div>
-                    </div>
+                        <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <p>
+                                    Objects can also be created using the Object.create() method. This method can be
+                                    very useful, because it allows you to choose the prototype object for the object you
+                                    want to create, without having to define a constructor function.
 
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                        How to define an Object
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    <!-- content-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingSix">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                        How to define an Object
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingSix">
-                                <div class="panel-body">
-                                    <!-- content-->
-                                </div>
+                                </p>
+
+                                <code>
+                                        <pre>
+// Animal properties and method encapsulation
+var Animal = {
+  type: 'Invertebrates', // Default value of properties
+  displayType: function() {  // Method which will display type of Animal
+    console.log(this.type);
+  }
+};
+
+// Create new animal type called animal1
+var animal1 = Object.create(Animal);
+animal1.displayType(); // Output:Invertebrates
+
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = 'Fishes';
+fish.displayType(); // Output:Fishes
+                                        </pre>
+                                </code>
                             </div>
                         </div>
                     </div>
+                </div>
 
                 </div>
             </div>
