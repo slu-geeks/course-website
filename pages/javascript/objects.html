@@ -6,13 +6,16 @@
 
     <script type="text/javascript">
         $(function () {
-            loader("Common Template");
+            loader("Javascript Object");
         });
     </script>
     <!--head include-->
 </head>
 
 <body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
 <section id="top-nav-barss"></section>
 <section id="side-nav-bars" style="margin-left: -14px;"></section>
 <section class="col-md-10">
@@ -24,10 +27,201 @@
                     <h3 class="panel-title">Objects</h3>
                 </div>
                 <div class="panel-body styleWidgets">
-                    <b>TITLE</b>
-                    <p>
-                        <!--INSERT CONTENT HERE-->
-                    </p>
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        Definition
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                        <p>Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. The concept of objects in JavaScript can be understood with real life, tangible objects.
+
+                                            In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.</p>
+                                        </div>
+                                        <div>
+                                            <p>Almost "everything" is an object.</p>
+                                            <ul>
+                                                <li>Booleans can be objects (if defined with the <strong>new</strong>
+                                                    keyword)
+                                                </li>
+                                                <li>Numbers can be objects (if defined with the <strong>new</strong>
+                                                    keyword)
+                                                </li>
+                                                <li>Strings can be objects (if defined with the <strong>new</strong>
+                                                    keyword)
+                                                </li>
+                                                <li>Dates are always objects</li>
+                                                <li>Maths are always objects</li>
+                                                <li>Regular expressions are always objects</li>
+                                                <li>Arrays are always objects</li>
+                                                <li>Functions are always objects</li>
+                                                <li>Objects are always objects</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- -->
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        How to define an Object (Objects and properties)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>
+                                        A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:
+                                    </p>
+                                    <div class="breadcrumb" style="width: 300px;!important;">objectName.propertyName</div>
+
+                                    <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let's create an object named myCar and give it properties named make, model, and year as follows:</p>
+
+                                    <code class="language-html" data-lang="html">
+                                        <p class="nt">var myCar = new Object();</p>
+                                        <p class="na">myCar.make = 'Ford';</p>
+                                        <p class="s">myCar.model = 'Mustang';</p>
+                                        <p class="nt">myCar.year = 1969;</p>
+                                    </code>
+
+
+                                    <div>
+                                        <form>
+                                            <div class="form-group">
+                                                <div class="col-lg-12">
+                                                    <textarea rows="20" id="code" cssClass="form-control"
+                                                                   cssStyle="resize: none; resize: vertical;"/>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+
+
+                                    <p>Unassigned properties of an object are undefined (and not null).</p>
+                                    <div class="breadcrumb" style="width: 300px;!important;">myCar.color; // undefined</div>
+                                    <p>There are 3 ways of defining an object from ECMAScript 6 onwards:</p>
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><strong>var</strong> keyword</li>
+                                        <li class="list-group-item"><strong>let</strong> keyword</li>
+                                        <li class="list-group-item"><strong>const</strong> keyword</li>
+                                    </ul>
+
+                                    <p>
+                                        Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:
+                                    </p>
+
+
+                                    <code class="language-html" data-lang="html">
+                                        <p class="nt">myCar['make'] = 'Ford';</p>
+                                        <p class="na">myCar['model'] = 'Mustang';</p>
+                                        <p class="s">myCar['year'] = 1969;</p>
+                                    </code>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        How to define an Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        How to define an Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        How to define an Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                        How to define an Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </article>
@@ -41,3 +235,4 @@
 <!-- scripts includes-->
 </body>
 </html>
+
