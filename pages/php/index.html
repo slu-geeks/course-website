@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Read Only by HTML5 UP</title>
+		<title>PHP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -17,29 +17,27 @@
 
 		<!-- Header -->
 			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Willis Corto</a></h1>
-					<p>I got reprogrammed by a rogue AI<br />
-					and now I'm totally cray</p>
-				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">A Few Accomplishments</a></li>
-						<li><a href="#four">Contact</a></li>
+						<li><a href="#one" class="active">What is PHP?</a></li>
+						<li><a href="#two">String Literals in PHP</a></li>
+						<li><a href="#three">Syntax</a></li>
+						<li><a href="#four">How to handle a PHP Request?</a></li>
+						<li><a href="#five">Loop</a></li>
+						<li><a href="#six">Operator Types</a></li>
+						<li><a href="#seven">GET and POST</a></li>
+						<li><a href="#eight">How to make PHP Response Request?</a></li>
+						<li><a href="#nine">PHP Classes</a></li>
+						<li><a href="#ten">PHP Includes</a></li>
+						<li><a href="#eleven">Connecting to MySQL</a></li>
+						<li><a href="#twelve">PHP Session</a></li>
+						<li><a href="#thirteen">PHP Error Handling</a></li>
+						<li><a href="#fourteen">PHP Frameworks</a></li>
+						<li><a href="#fifteen">LAMP and WAMP Tutorials</a></li>
+						<li><a href="#sixteen">File Size Limitations</a></li>
+						<li><a href="#seventeen">How to handle a file inside PHP</a></li>
 					</ul>
 				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
 			</section>
 
 		<!-- Wrapper -->
@@ -52,27 +50,45 @@
 							<section id="one">
 								<div class="container">
 									<header class="major">
-										<h2>Read Only</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
+										<h2>PHP</h2>
+										<p>- recursive acronym for PHP: Hypertext Preprocessor</p>
+										<p>A widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</p>
 									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+									<h4>Introductory Example</h4>
+									<code>
+									&lt;!DOCTYPE  HTML&gt;<br>
+									&lt;html&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Example&lt;/title&gt;
+									&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Hello, This is a PHP script!";&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&gt;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+									&lt;/html&gt;
+									</code>
+									<p>Source: http://php.net/manual/en/intro-whatis.php</p>
 								</div>
 							</section>
 
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="fa-code">Write all the code</li>
-										<li class="fa-cubes">Stack small boxes</li>
-										<li class="fa-book">Read books and stuff</li>
-										<li class="fa-coffee">Drink much coffee</li>
-										<li class="fa-bolt">Lightning bolt</li>
-										<li class="fa-users">Shadow clone technique</li>
-									</ul>
+									<header class="major">
+										<h3>String Literals</h3>
+										<p>String literals are a row of characters enclosed in either double or single quotes.</p>
+									</header>
+									<p>- the quotes must be matched.</p>
+									<p>- If the string starts with a single quote, it must end with a matching single quote; likewise if it starts with a double quote, it must end with a double quote.</p>
+									<p>- If a string of characters is enclosed in single quotes, the characters are treated literally (each of the characters represents itself).
+									<h4>Single quotes can hide double quotes, and double quotes can hide single quotes:</h4>
+									<code>
+									"This is a string"<br>
+									'This is a also a string'<br>
+									"This is another 'string'"<br>
+									'This is "a string"'
+									</code>
 								</div>
 							</section>
 
