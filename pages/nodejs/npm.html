@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js Modules</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Node.js <NPM></NPM>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <p>NPM is a package manager for Node.js packages, or modules if you like.</p>
+                                        <p>www.npmjs.com hosts thousands of free packages to download and use.</p>
+                                        <p>The NPM program is installed on your computer when you install Node.js
+
+                                        </p>
+                                        <p class="breadcrumb">NPM is already ready to run on your computer!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is a Package?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>A package in Node.js contains all the files you need for a module.</p>
+                                    <p>Modules are JavaScript libraries you can include in your project.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Download a Package
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>Downloading a package is very easy.</p>
+                                    <p>Open the command line interface and tell NPM to download the package you want.</p>
+                                    <p>I want to download a package called "upper-case":</p>
+                                    <p>Download "upper-case":</p>
+                                    <p>
+                                    <pre>
+C:\Users\Your Name>npm install upper-case
+                                    </pre>
+                                    </p>
+                                    <p>Now you have downloaded and installed you first package!</p>
+                                    <p>NPM creates a folder named "node_modules", where the package will be placed. All packages you install in the future will be placed in this folder.</p>
+                                    <p>My project now has a folder structure like this:</p>
+                                    <p class="redColor">C:\Users\My Name\node_modules\upper-case</p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Using a Package
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <p class="panel-body">
+                                    <p>Once the package is installed, it is ready to use.</p>
+                                    <p>Include the "upper-case" package the same way you include any other module:</p>
+                                    <p>
+                                    <pre>
+var uc = require('upper-case');
+                                    </pre>
+                                </p>
+                                <p>Create a Node.js file that will convert the output "Hello World!" into upper-case letters:</p>
+                                <h3>Example</h3>
+                                <p>
+                                    <pre>
+var http = require('http');
+var uc = require('upper-case');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(uc("Hello World!"));
+    res.end();
+}).listen(8080);
+                            </pre>
+                                </p>
+                                <p>
+                                    Save the code above in a file called "demo_uppercase.js", and initiate the file:
+                                </p>
+                                <p>
+                                    Initiate demo_uppercase:
+                                </p>
+                                <p>
+                                    <pre>
+C:\Users\Your Name>node demo_uppercase.js
+                            </pre>
+                                </p>
+<p>If you have followed the same steps on your computer, you will see the same result as the example: http://localhost:8080</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
