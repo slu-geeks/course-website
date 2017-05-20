@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js Upload Files</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        The Formidable Module
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>There is a very good module for working with file uploads, called "Formidable".</p>
+                                            <p>The Formidable module can be downloaded and installed using NPM:</p>
+                                            <p>
+                                            <pre>
+C:\Users\Your Name>npm install formidable
+                                        </pre>
+                                            </p>
+
+                                            <p>After you have downloaded the Formidable module, you can include the module in any application:</p>
+                                            <p>
+                                                <pre>
+var formidable = require('formidable');
+                                        </pre>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Upload Files
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>Now you are ready to make a web page in Node.js that lets the user upload files to your computer:</p>
+
+                                    <h3>
+                                        Step 1: Create an Upload Form
+                                    </h3>
+                                    <p>Create a Node.js file that writes an HTML form, with an upload field:</p>
+                                    <h3>Example</h3>
+                                    <p>This code will produce an HTML form:</p>
+                                    <p>
+                                    <code>
+                                    <pre>
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data"&gt;');
+  res.write('&lt;input type="file" name="filetoupload"&gt;&lt;br&gt;');
+  res.write('&lt;input type="submit"&gt;');
+  res.write('&lt;/form&gt;');
+  return res.end();
+}).listen(8080);
+                                </pre>
+
+</code>
+                                    </p>
+                                    <h3>Step 2: Parse the Uploaded File</h3>
+                                    <p>Include the Formidable module to be able to parse the uploaded file once it reaches the server.</p>
+                                    <p>When the file is uploaded and parsed, it gets placed on a temporary folder on your computer.</p>
+                                    <h3>Example</h3>
+                                    <p>The file will be uploaded, and placed on a temporary folder:</p>
+                                    <p>
+                                    <code>
+                                    <pre>
+var http = require('http');
+var formidable = require('formidable');
+
+http.createServer(function (req, res) {
+  if (req.url == '/fileupload') {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      res.write('File uploaded');
+      res.end();
+    });
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data"&gt;');
+    res.write('&lt;input type="file" name="filetoupload"&gt;&lt;br&gt;');
+    res.write('&lt;input type="submit"&gt;');
+    res.write('&lt;/form&gt;');
+    return res.end();
+  }
+}).listen(8080);
+                                </pre>
+                                    </code>
+
+                                    </p>
+                                    <h3>Step 3: Save the File</h3>
+                                    <p>When a file is successfully uploaded to the server, it is placed on a temporary folder.</p>
+                                    <p>The path to this directory can be found in the "files" object, passed as the second argument in the <span class="redColor">parse()</span> method's callback function.</p>
+
+                                    <p>To move the file to the folder of your choice, use the File System module, and rename the file:</p>
+                                    <h3>Example</h3>
+                                    <p>Include the fs module, and move the file to the current folder:</p>
+                                    <p>
+                                    <code>
+                                    <pre>
+var http = require('http');
+var formidable = require('formidable');
+var fs = require('fs');
+
+http.createServer(function (req, res) {
+  if (req.url == '/fileupload') {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      var oldpath = files.filetoupload.path;
+      var newpath = 'C:/Users/Your Name/' + files.filetoupload.name;
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        res.write('File uploaded and moved!');
+        res.end();
+      });
+ });
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('&lt;form action="fileupload" method="post" enctype="multipart/form-data"&gt;');
+    res.write('&lt;input type="file" name="filetoupload"&gt;&lt;br&gt;');
+    res.write('&lt;input type="submit"&gt;');
+    res.write('&lt;/form&gt;');
+    return res.end();
+  }
+}).listen(8080);
+                                </pre>
+                                    </code>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
