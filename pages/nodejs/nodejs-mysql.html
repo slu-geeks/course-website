@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js MySQL</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is a Module in Node.js?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>Node.js can be used in database applications.</p>
+                                            <p>One of the most popular databases is MySQL.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Install MySQL Driver
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>Once you have MySQL up and running on your computer, you can access it by using Node.js.</p>
+                                    <p>To access a MySQL database with Node.js, you need a MySQL driver. This tutorial will use the "mysql" module, downloaded from NPM.</p>
+                                    <p>To download and install the "mysql" module, open the Command Terminal and execute the following:</p>
+                                    <p><pre>
+C:\Users\Your Name>npm install mysql
+                                </pre></p>
+                                    <p>Now you have downloaded and installed a mysql database driver.</p>
+                                    <p>Node.js can use this module to manipulate the MySQL database:</p>
+                                    <p>
+                                        <pre>
+var mysql = require('mysql');
+                                </pre>
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Create Connection
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>Start by creating a connection to the database.</p>
+                                    <p>Use the username and password from your MySQL database.
+
+                                    </p>
+                                    <p>
+                                        demo_db_connection.js
+                                    </p>
+                                    <p>
+                                        <pre>
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+                                </pre>
+                                    </p>
+
+                                    <p>Save the code above in a file called "demo_db_connection.js" and run the file:</p>
+                                    <p>Run "demo_db_connection.js"</p>
+                                    <p>
+                                        <pre>
+C:\Users\Your Name>node demo_db_connection.js
+                                </pre>
+                                    </p>
+                                    <p>
+                                        Which will give you this result:
+                                    </p>
+                                    <p>
+                                        <pre>
+Connected!
+                                </pre>
+                                    </p>
+
+                                    <p>
+                                        Now you can start querying the database using SQL statements.
+                                    </p>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Query a Database
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>Use SQL statements to read from (or write to) a MySQL database. This is also called "to query" the database.</p>
+                                    <p>The connection object created in the example above, has a method for querying the database:</p>
+                                    <p>
+                                        <pre>
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Result: " + result);
+  });
+});
+                                </pre>
+                                    </p>
+
+                                    <p>
+                                        The query method takes an sql statements as a parameter and returns the result.
+                                    </p>
+
+                                    <p>Here is an example of select statement inside node.js</p>
+                                    <p>
+                                        <pre>
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword",
+  database: "mydb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers", function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+                                </pre>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
