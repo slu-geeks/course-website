@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js File System Module</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Node.js as a File Server
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>The Node.js file system module allow you to work with the file system on
+                                                your computer.</p>
+                                            <p>To include the File System module, use the <span class="redColor">require()</span>
+                                                method:</p>
+                                            <p>
+                                            <pre>
+var fs = require('fs');
+                                        </pre>
+                                            </p>
+
+                                            <p>Common use for the File System module:</p>
+                                            <ul>
+                                                <li>Read files</li>
+                                                <li>Create files</li>
+                                                <li>Update files</li>
+                                                <li>Delete files</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Read Files
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>The fs.readFile() method is used to read files on your computer.</p>
+                                    <p>Assume we have the following HTML file (located in the same folder as
+                                        Node.js):</p>
+                                    <h3>
+                                        demofile1.html
+                                    </h3>
+                                    <p>
+                                    <code>
+                                    <pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;My Header&lt;/h1&gt;
+&lt;p&gt;My paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                </pre>
+                                    </code>
+
+                                    </p>
+                                    <p>Create a Node.js file that reads the HTML file, and return the content:</p>
+                                    <h3>Example</h3>
+                                    <p>
+                                    <pre>
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile('demofile1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+}).listen(8080);
+                                </pre>
+                                    </p>
+
+                                    <p>Save the code above in a file called "demo_readfile.js", and initiate the
+                                        file:</p>
+                                    <h3>Initiate demo_readfile.js:</h3>
+                                    <p>
+                                    <pre>
+C:\Users\Your Name>node demo_readfile.js
+                                </pre>
+                                    </p>
+                                    <p>If you have followed the same steps on your computer, you will see the same
+                                        result as the example: http://localhost:8080</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Create Files
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>The File System module has methods for creating new files:</p>
+                                    <ul>
+                                        <li class="redColor">fs.appendFile()</li>
+                                        <li class="redColor">fs.open()</li>
+                                        <li class="redColor">fs.writeFile()</li>
+                                    </ul>
+                                    <p>The <span class="redColor">fs.appendFile()</span> method appends specified
+                                        content to a file. If the file does not exist, the file will be created:</p>
+                                    <h3>Example</h3>
+                                    <p>Create a new file using the appendFile() method:</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+                                </pre>
+                                    </p>
+                                    <p>
+                                        The <span class="redColor">fs.open()</span> method takes a "flag" as the second
+                                        argument, if the flag is "w" for "writing", the specified file is opened for
+                                        writing. If the file does not exist, an empty file is created:
+                                    </p>
+                                    <h3>Example</h3>
+                                    <p>Create a new, empty file using the open() method:</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+                                </pre>
+                                    </p>
+
+                                    <p>The <span class="redColor">fs.writeFile()</span> method replaces the specified
+                                        file and content if it exists. If the file does not exists a new file,
+                                        containing the specified content, will be created:</p>
+                                    <h3>Example</h3>
+                                    <p>Create a new file using the writeFile() method:</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+                                </pre>
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Update Files
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>The File System module has methods for updating files:</p>
+                                    <ul>
+                                        <li>fs.appendFile()</li>
+                                        <li>fs.writeFile()</li>
+                                    </ul>
+                                    <p>The <span class="redColor">fs.appendFile()</span> method appends the specified
+                                        content at the end of the specified file:</p>
+                                    <h3>Example</h3>
+                                    <p>Append "This is my text." to the end of the file "mynewfile1.txt":</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+  if (err) throw err;
+  console.log('Updated!');
+});
+                                </pre>
+                                    </p>
+                                    <p>The <span class="redColor">fs.writeFile()</span> method replaces the specified
+                                        file and content:</p>
+                                    <h3>Example</h3>
+                                    <p>Replace the content of the file "mynewfile3.txt":</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.writeFile('mynewfile3.txt', 'This is my text', function (err) {
+  if (err) throw err;
+  console.log('Replaced!');
+});
+                                </pre>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Delete Files
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    <p>To delete a file with the File System module, use the <span class="redColor">fs.unlink()</span>
+                                        method.</p>
+                                    <p>The <span class="redColor">fs.unlink()</span> method deletes the specified file:
+                                    </p>
+                                    <h3>Example</h3>
+                                    <p>Delete "mynewfile2.txt":</p>
+                                    <p>
+                                    <pre>
+var fs = require('fs');
+
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+                                </pre>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Upload Files
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <p>You can also use Node.js to upload files to your computer.</p>
+                                    <p>Read how in our Node.js <a href="upload-file.html" >Upload Files</a>chapter..</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+

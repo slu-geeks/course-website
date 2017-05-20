@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js Modules</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is a Module in Node.js?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>Consider modules to be the same as JavaScript libraries.</p>
+                                            <p>A set of functions you want to include in your application.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Built-in Modules
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>Node.js has a set of built-in modules which you can use without any further installation.</p>
+                                    <p>Here is a list of the built-in modules of Node.js version 6.10.0:</p>
+                                    <table>
+                                        <tbody><tr>
+                                            <th>Module</th>
+                                            <th>Descritpion</th>
+                                        </tr>
+                                        <tr><td>assert</td><td>Provides a set of assertion tests</td></tr>
+                                        <tr><td>buffer</td><td>To handle binary data</td></tr>
+                                        <tr><td>child_process</td><td>To run a child process</td></tr>
+                                        <tr><td>cluster</td><td>To split a single Node process into multiple processes</td></tr>
+                                        <tr><td>crypto </td><td>To handle OpenSSL cryptographic functions</td></tr>
+                                        <tr><td>dgram </td><td>Provides implementation of UDP datagram sockets</td></tr>
+                                        <tr><td>dns </td><td>To do DNS lookups and name resolution functions</td></tr>
+                                        <tr><td>domain</td><td>Deprecated. To handle unhandled errors</td></tr>
+                                        <tr><td>events </td><td>To handle events</td></tr>
+                                        <tr><td>fs </td><td>To handle the file system</td></tr>
+                                        <tr><td>http </td><td>To make Node.js act as an HTTP server</td></tr>
+                                        <tr><td>https </td><td>To make Node.js act as an HTTPS server.</td></tr>
+                                        <tr><td>net </td><td>To create servers and clients</td></tr>
+                                        <tr><td>os </td><td>Provides information about the operation system</td></tr>
+                                        <tr><td>path </td><td>To handle file paths</td></tr>
+                                        <tr><td>punycode</td><td>Deprecated. A character encoding scheme</td></tr>
+                                        <tr><td>querystring </td><td>To handle URL query strings</td></tr>
+                                        <tr><td>readline </td><td>To handle readable streams one line at the time</td></tr>
+                                        <tr><td>stream </td><td>To handle streaming data</td></tr>
+                                        <tr><td>string_decoder </td><td>To decode buffer objects into strings</td></tr>
+                                        <tr><td>tls </td><td>To implement TLS and SSL protocols</td></tr>
+                                        <tr><td>tty</td><td>Provides classes used by a text terminal</td></tr>
+                                        <tr><td>url </td><td>To parse URL strings</td></tr>
+                                        <tr><td>util </td><td>To access utility functions</td></tr>
+                                        <tr><td>v8</td><td></td></tr>
+                                        <tr><td>vm </td><td>To compile JavaScript code in a virtual machine</td></tr>
+                                        <tr><td>zlib </td><td>To compress or decompress files</td></tr>
+                                        </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How to include a module ?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>To include a module, use the require() function with the name of the module:
+                                    </p>
+
+                                    <p>
+                                        <pre>
+var http = require('http');
+                                </pre>
+                                    </p>
+                                    <p>Now your application has access to the HTTP module, and is able to create a server:</p>
+                <p>                    <pre>
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello World!');
+}).listen(8080);
+                                    </pre></p>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Create Your Own Modules
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>You can create your own modules, and easily include them in your applications.</p>
+                                    <p>
+                                        The following example creates a a module that returns a date and time object:
+                                    </p>
+                                        <h2>
+                                            Example
+                                        </h2>
+                                    <h3>Create a module that returns the current date and time:</h3>
+                                    <p>
+                                        <pre>
+exports.myDateTime = function () {
+    return Date();
+};
+                                </pre>
+                                    </p>
+                                    <p>Use the exports keyword to make properties and methods available outside the module file.</p>
+                                    <p>Save the code above in a file called "myfirstmodule.js"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Include Your Own Module
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFive">
+                                <div class="panel-body">
+<p>Now you can include and use the module in any of your Node.js files.</p>
+                                    <h2>Example</h2>
+                                    <h3>Use the module "myfirstmodule" in a Node.js file:</h3>
+                                 <p>
+                                     <pre>
+var http = require('http');
+var dt = require('./myfirstmodule');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write("The date and time are currently: " + dt.myDateTime());
+    res.end();
+}).listen(8080);
+                                </pre>
+                                 </p>
+                                    <p>Notice that we use ./ to locate the module, that means that the module is located in the same folder as the Node.js file.
+
+                                    </p>
+
+                                    <p>Save the code above in a file called "demo_module.js", and initiate the file:</p>
+                                    <h3>Initiate demo_module.js:</h3>
+                                    <p>
+                                        <pre>
+C:\Users\Your Name>node demo_module.js
+                                </pre>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js HTTP Module</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        The Built-in HTTP Module
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).</p>
+                                            <p>To include the HTTP module, use the <span class="redColor">require()</span> method:</p>
+                                            <p>
+                                                <pre>
+var http = require('http');
+                                        </pre>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Node.js as a Web Server
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.</p>
+                                    <p>Use the <span class="redColor">createServer()</span> method to create an HTTP server:</p>
+                                    <h2>Example</h2>
+                                    <p>
+                                    <pre>
+var http = require('http');
+
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8080); //the server object listens on port 8080
+                                    </pre>
+                                    </p>
+                                    <p>
+                                        The function passed into the <span class="redColor">http.createServer()</span> method, will be executed when someone tries to access the computer on port 8080.
+                                    </p>
+                                    <p>Save the code above in a file called "demo_http.js", and initiate the file:</p>
+                                    <h3>Initiate demo_http.js:</h3>
+                                    <p>
+                                        <pre>
+C:\Users\Your Name>node demo_http.js
+                                </pre>
+                                    </p>
+                                    <p>
+                                        If you have followed the same steps on your computer, you will see the same result as the example: http://localhost:8080
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Add a Header
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>If the response from the HTTP server is supposed to be displayed as HTML, you should include an HTTP header with the correct content type:</p>
+                                    <h3>
+                                        Example
+                                    </h3>
+                                    <p>
+                                        <pre>
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('Hello World!');
+  res.end();
+}).listen(8080);
+                                </pre>
+                                    </p>
+
+                                    <p>The first argument of the <span class="redColor">res.writeHead()</span> method is the status code, 200 means that all is OK, the second argument is an object containing the response headers.</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Read the Query String
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>The function passed into the <span class="redColor  ">http.createServer()</span> has a req argument that represents the request from the client, as an object (http.IncomingMessage object).</p>
+                                    <p>This object has a property called "url" which holds the part of the url that comes after the domain name:</p>
+                                    <h3>
+                                        demo_http_url.js
+                                    </h3>
+                                    <p>
+                                        <pre>
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(req.url);
+    res.end();
+}).listen(8080);
+                                </pre>
+                                    </p>
+                                    <p>Save the code above in a file called "demo_http_url.js" and initiate the file:</p>
+                                    <h3>Initiate demo_http_url.js:</h3>
+                                    <p>
+
+                                        <pre>
+C:\Users\Your Name>node demo_http_url.js
+                                </pre>
+                                    </p>
+
+                                    <p>If you have followed the same steps on your computer, you should see two different results when opening these two addresses:</p>
+                                    <p>http://localhost:8080/summer</p>
+                                    <h3>Will produce this result:</h3>
+                                    <p>
+                                        <pre>
+/summer
+                                </pre>
+                                    </p>
+                                    <p>
+                                        http://localhost:8080/winter
+                                    </p>
+                                    <h3>Will produce this result:</h3>
+                                    <p>/winter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+

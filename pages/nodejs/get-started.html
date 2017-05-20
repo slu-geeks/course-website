@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js Get Started</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Get started
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>Node.js is available in all os platforms and can be download from this <a
+                                                    href="https://nodejs.org" target="_blank">link</a> and install </p>
+                                            <p>Once you have downloaded and installed Node.js on your computer, lets try
+                                                to display "Hello World" in a web browser.</p>
+                                            <p>Create a Node.js file named "myfirst.js", and add the following code:</p>
+                                            <p>
+                                            <pre>
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello World!');
+}).listen(8080);
+                                        </pre>
+                                            </p>
+
+
+                                            <p>
+                                                Save the file on your computer: C:\User\Your Name\myfirst.js
+                                            </p>
+                                            <p> The code tells the computer to write "Hello World!" if anyone (e.g. a
+                                                web browser) tries to access your computer on port 8080.
+                                            </p>
+                                            <p>For now, you do not have to understand the code. It will be explained
+                                                later.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Command Line Interface
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>
+                                        Node.js files must be initiated in the "Command Line Interface" program of your
+                                        computer.
+                                    </p>
+                                    <p>
+                                        How to open the command line interface on your computer depends on the operating
+                                        system. For Windows users, press the start button and look for "Command Prompt",
+                                        or simply write "cmd" in the search field.
+                                    </p>
+                                    <p> Navigate to the folder that contains the file "myfirst.js", the command line
+                                        interface window should look something like this:
+                                    </p>
+                                    <p>
+                                    <pre>
+C:\Users\Your Name>
+user@user-ubuntu:/$
+                                </pre>
+                                    </p>
+
+                                    <h2>Initiate the Node.js File</h2>
+                                    <p>
+                                        The file you have just created must be initiated by Node.js before any action
+                                        can take place.
+                                    </p>
+                                    <p>
+                                        Start your command line interface, write node myfirst.js and hit enter:
+                                    </p>
+                                    <pre>
+
+C:/Users/Your Name>node myfirst.js
+                                </pre>
+
+                                    <p>
+                                        Now, your computer works as a server!
+
+                                        If anyone tries to access your computer on port 8080, they will get a "Hello World!" message in return!
+</p><p>
+                                        Start your internet browser, and type in the address: <strong>http://localhost:8080</strong>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
