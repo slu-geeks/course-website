@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js Events</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Events in Node.js
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <p>Node.js is perfect for event-driven applications.</p>
+                                        <p>Every action on a computer is an event. Like when a connection is made or a file is opened.</p>
+                                        <p>Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:</p>
+                                        <h3>Example</h3>
+                                        <p>
+                                            <pre>
+var fs = require('fs');
+var rs = fs.createReadStream('./demofile.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+});
+                                    </pre>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Events Module
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>Node.js have a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.</p>
+                                    <p>To include the built-in Events module use the <span class="redColor">require()</span> method. In addition, all event properties and methods are an instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter object:</p>
+                                    <p>
+                                        <pre>
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+                                </pre>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        The EventEmitter Object
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>You can assign event handlers to your own events with the EventEmitter object.</p>
+                                    <p>In the example below we have created a function that will be executed when a "scream" event is fired.</p>
+                                    <p>To fire an event, use the <span>emit()</span> method.</p>
+                                    <h3>Example</h3>
+                                    <p>
+                                        <pre>
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+//Create an event handler:
+var myEventHandler = function () {
+  console.log('I hear a scream!');
+}
+
+//Assign the event handler to an event:
+eventEmitter.on('scream', myEventHandler);
+
+//Fire the 'scream' event:
+eventEmitter.emit('scream');
+                                </pre>
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
