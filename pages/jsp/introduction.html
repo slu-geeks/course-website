@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Java Server Pages (JSP)</h3>
+                </div>
+
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is JSP?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p> </p>
+                                    <p>
+                                        Short for Java Server Page. A server-side technology, Java Server Pages are an extension to the Java servlet technology that was developed by Sun.</p>
+                                    <p>
+                                        JSPs have dynamic scripting capability that works in tandem with HTML code, separating the page logic from the static elements -- the actual design and display of the page -- to help make the HTML more functional(i.e. dynamic database queries).
+                                        A JSP is translated into Java servlet before being run, and it processes HTTP requests and generates responses like any servlet. However, JSP technology provides a more convenient way to code a servlet. Translation occurs the first time the application is run. A JSP translator is triggered by the .jsp file name extension in a URL. JSPs are fully interoperable with servlets. You can include output from a servlet or forward the output to a servlet, and a servlet can include output from a JSP or forward output to a JSP.
+                                    </p>
+
+                                    <h5>Here is an example of a simple JSP:</h5>
+                                    <code>
+                                        <xmp>
+            <html>
+            <head><title>First JSP</title></head>
+            <body>
+            <%
+            double num = Math.random();
+            if (num > 0.95) {
+            %>
+            <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
+            <%
+            } else {
+            %>
+            <h2>Well, life goes on ... </h2><p>(<%= num %>)</p>
+            <%
+            }
+            %>
+            <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+            </body>
+            </html>
+                                        </xmp>
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Why do we need to use JSP?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>Java Server Pages often serve the same purpose as programs implemented using the Common Gateway Interface (CGI). But JSP offers several advantages in comparison with the CGI.</p>
+                                    <details>
+                                        <summary>Performance</summary><br>
+                                        <p>Performance is significantly better because JSP allows embedding Dynamic Elements in HTML Pages itself instead of having separate CGI files.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP are always compiled</summary><br>
+                                        <p>JSP are always compiled before they are processed by the server unlike CGI/Perl which requires the server to load an interpreter and the target script each time the page is requested.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Java Servlets API</summary><br>
+                                        <p>JavaServer Pages are built on top of the Java Servlets API, so like Servlets, JSP also has access to all the powerful Enterprise Java APIs, including JDBC, JNDI, EJB, JAXP, etc.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Java Servlet template engines</summary>
+                                        <p>JSP pages can be used in combination with servlets that handle the business logic, the model supported by Java servlet template engines.</p>
+                                    </details><br>
+
+                                    <p>
+                                        JSP is an integral part of Java EE, a complete platform for enterprise class applications. This means that JSP can play a part in the simplest applications to the most complex and demanding.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        JSP Architecture
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>The web server needs a JSP engine, i.e, a container to process JSP pages. The JSP container is responsible for intercepting requests for JSP pages. This tutorial makes use of Apache which has built-in JSP container to support JSP pages development.
+
+                                        A JSP container works with the Web server to provide the runtime environment and other services a JSP needs. It knows how to understand the special elements that are part of JSPs.
+
+                                        Following diagram shows the position of JSP container and JSP files in a Web application.</p>
+                                    <img src="https://www.tutorialspoint.com/jsp/images/jsp-arch.jpg" alt="JSP Architecture">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        JSP Lifecycle
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>A JSP life cycle is defined as the process from its creation till the destruction. This is similar to a servlet life cycle with an additional step which is required to compile a JSP into servlet.</p>
+                                    <p>The four major phases of a JSP life cycle are very similar to the Servlet Life Cycle. The four phases have been described below −</p>
+                                    <img src="https://www.tutorialspoint.com/jsp/images/jsp_life_cycle.jpg" alt="JSP Lifecycle">
+                                    <details>
+                                        <summary>JSP Compilation</summary>
+                                        <p>When a browser asks for a JSP, the JSP engine first checks to see whether it needs to compile the page. If the page has never been compiled, or if the JSP has been modified since it was last compiled, the JSP engine compiles the page.
+                                        </p>
+                                        <p>The compilation process involves three steps - </p>
+                                        <ul>
+                                            <li><p>Parsing the JSP.</p></li>
+                                            <li><p>Turning the JSP into a servlet.</p></li>
+                                            <li><p>Compiling the servlet.</p></li>
+                                        </ul>
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP Initialization</summary>
+                                        <p>When a container loads a JSP it invokes the <code>jspInit()</code> method before servicing any requests. If you need to perform JSP-specific initialization, override the <code>jspInit()</code> method  </p>
+                                        <code>
+                                            public void jspInit(){
+                                            // Initialization code...
+                                            }
+                                        </code>
+                                        <p>Typically, initialization is performed only once and as with the servlet init method, you generally initialize database connections, open files, and create lookup tables in the jspInit method.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP Execution</summary>
+                                        <p>This phase of the JSP life cycle represents all interactions with requests until the JSP is destroyed.</p>
+                                        <p>Whenever a browser requests a JSP and the page has been loaded and initialized, the JSP engine invokes the <code> _jspService()</code> method in the JSP.</p>
+                                        <p>The <code>_jspService()</code> method takes an HttpServletRequest and an <code> HttpServletResponse </code>as its parameters as follows −</p>
+
+                                        <code>
+                                            void _jspService(HttpServletRequest request, HttpServletResponse response) {
+                                            // Service handling code...
+                                            }
+                                        </code>
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP Cleanup</summary>
+                                        <p>The destruction phase of the JSP life cycle represents when a JSP is being removed from use by a container.</p>
+                                        <p>The <code>jspDestroy()</code> method is the JSP equivalent of the destroy method for servlets. Override jspDestroy when you need to perform any cleanup, such as releasing database connections or closing open files.</p>
+                                        <p>The jspDestroy() method has the following form: </p>
+                                        <code>public void jspDestroy() {
+                                            // Your cleanup code goes here.
+                                            }</code>
+
+                                    </details>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        JSP Syntax
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <details>
+                                        <summary>The Scriptlet</summary>
+                                        <p>A scriptlet can contain any number of JAVA language statements, variable or method declarations, or expressions that are valid in the page scripting language.</p>
+                                        <code><% code fragment %></code>
+                                        <p>The jspDestroy() method has the following form: </p>
+                                        <code>public void jspDestroy() {
+                                            // Your cleanup code goes here.
+                                            }</code>
+
+                                        <p>Any text, HTML tags, or JSP elements you write must be outside the scriptlet. Following is the simple and first example for JSP - </p>
+                                        <code><xmp>
+                                            <html>
+                                            <head><title>Hello World</title></head>
+
+                                            <body>
+                                            Hello World!<br/>
+                                            <%
+                                            out.println("Your IP address is " + request.getRemoteAddr());
+                                            %>
+                                            </body>
+                                            </html></xmp>
+                                        </code>
+
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP Declarations</summary>
+                                        <p>A declaration declares one or more variables or methods that you can use in Java code later in the JSP file. You must declare the variable or method before you use it in the JSP file.</p>
+                                        <code><%! declaration; [ declaration; ]+ ... %></code>
+
+                                        <p>You can write the XML equivalent of the above syntax as follows -</p>
+                                        <code><xmp>
+                                            <jsp:declaration>
+                                               code fragment
+                                            </jsp:declaration>
+
+                                            <%-- Following is an example for JSP Declarations--%>
+
+                                            <%! int i = 0; %>
+                                            <%! int a, b, c; %>
+                                            <%! Circle a = new Circle(2.0); %>
+                                        </xmp>
+                                        </code>
+                                    </details>
+
+                                    <details>
+                                        <summary>JSP Expression</summary>
+                                        <p>A JSP expression element contains a scripting language expression that is evaluated, converted to a String, and inserted where the expression appears in the JSP file.</p>
+                                        <p>Because the value of an expression is converted to a String, you can use an expression within a line of text, whether or not it is tagged with HTML, in a JSP file.</p>
+                                        <p>The expression element can contain any expression that is valid according to the Java Language Specification but you cannot use a semicolon to end an expression.</p>
+                                        <code><%= expression %></code>
+
+                                        <p>You can write the XML equivalent of the above syntax as follows -</p>
+                                        <code><xmp>
+                                            <jsp:expression>
+                                            expression
+                                        </jsp:expression></xmp>
+                                        </code>
+
+                                        <p>Following example shows a JSP Expression -</p>
+                                        <code><xmp>
+                                            <html>
+                                            <head><title>A Comment Test</title></head>
+
+                                            <body>
+                                            <p>Today's date: <%= (new java.util.Date()).toLocaleString()%></p>
+                                            </body>
+                                            </html>
+
+                                        </xmp></code>
+                                        <p>
+                                            The above code will generate the following result
+                                        </p>
+                                        <pre>Today's date: 11-Sep-2010 21:24:25</pre>
+
+                                    </details>
+
+                                    <details>
+                                        <summary><b>JSP Comments</b></summary>
+                                        <p>JSP comment marks text or statements that the JSP container should ignore. A JSP comment is useful when you want to hide or "comment out", a part of your JSP page.</p>
+                                        <code><%-- This is JSP comment --%></code>
+                                        <p>Following example shows the JSP Comments</p>
+                                        <code><xmp>
+                                            <html>
+                                            <head><title>A Comment Test</title></head>
+
+                                            <body>
+                                            <h2>A Test of Comments</h2>
+                                            <%-- This comment will not be visible in the page source --%>
+                                            </body>
+                                            </html>
+
+                                        </xmp>  </code>
+                                    </details>
+
+                                    <details>
+                                        <summary><b>JSP Directives</b></summary>
+                                        <p>A JSP directive affects the overall structure of the servlet class. It usually has the following form -</p>
+                                        <code><%@ directive attribute="value" %></code><br><br>
+
+                                        <b>JSP Directives</b>
+                                        <table border="2">
+                                            <tbody>
+                                            <tr>
+                                                <th style="width:20%">S.No.</th>
+                                                <th>Directive & Description</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><code><%@ page ... %></code><br>
+                                                    Defines page-dependent attributes, such as scripting language, error page, and buffering requirements.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><code><%@ include ... %></code><br>
+                                                    Includes a file during the translation phase.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><code><%@ taglib ... %></code><br>
+                                                    Declares a tag library, containing custom actions, used in the page</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                    </details>
+
+                                    <details>
+                                        <summary><b>JSP Actions</b></summary>
+                                        <p>JSP actions use constructs in XML syntax to control the behavior of the servlet engine. You can dynamically insert a file, reuse JavaBeans components, forward the user to another page, or generate HTML for the Java plugin.</p>
+                                        <table border="2">
+                                            <tbody>
+                                            <tr>
+                                                <th style="width:20%">S.No.</th>
+                                                <th>Syntax and Purpose</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><b>jsp:include</b><br>
+                                                    Includes a file at the time the page is requested.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><b>jsp:useBean</b><br>
+                                                    Finds or instantiates a JavaBean.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><b>jsp:setProperty</b><br>
+                                                    Sets the property of a JavaBean.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td><b>jsp:getProperty</b><br>
+                                                    Inserts the property of a JavaBean into the output.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>5</td>
+                                                <td><b>jsp:forward</b><br>
+                                                    Forwards the requester to a new page.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>6</td>
+                                                <td><b>jsp:plugin</b><br>
+                                                    Generates browser-specific code that makes an OBJECT or EMBED tag for the Java plugin.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td><b>jsp:element</b><br>
+                                                    Defines XML elements dynamically.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td><b>jsp:attribute</b><br>
+                                                    Defines dynamically-defined XML element's attribute.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>9</td>
+                                                <td><b>jsp:body</b><br>
+                                                    Defines dynamically-defined XML element's body.</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>10</td>
+                                                <td><b>jsp:text</b><br>
+                                                    Used to write template text in JSP pages and documents.</td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </details>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        JSP Exception Handling
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <h2>JSP - Exception Handling</h2>
+                                    <p>In this chapter. we will discuss how to handle exceptions in JSP. When you are writing a JSP code, you might make coding errors which can occur at any part of the code. There may occur the following type of errors in your JSP code -</p>
+                                    <article>
+                                        <h3>Checked exceptions</h3>
+                                        <p>A checked exception is an exception that is typically a user error or a problem that cannot be foreseen by the programmer. For example, if a file is to be opened, but the file cannot be found, an exception occurs. These exceptions cannot simply be ignored at the time of compilation.</p>
+                                    </article>
+
+                                    <article>
+                                        <h3>Runtime exceptions</h3>
+                                        <p>A runtime exception is an exception that probably could have been avoided by the programmer. As opposed to the checked exceptions, runtime exceptions are ignored at the time of compliation.</p>
+                                    </article>
+                                    <article>
+                                        <h3>Errors</h3>
+                                        <p>These are not exceptions at all, but problems that arise beyond the control of the user or the programmer. Errors are typically ignored in your code because you can rarely do anything about an error. For example, if a stack overflow occurs, an error will arise. They are also ignored at the time of compilation.</p>
+                                    </article>
+
+                                    <article>
+                                        <h3>Using Exception Object</h3>
+                                        <p>The exception object is an instance of a subclass of Throwable (e.g., java.lang. NullPointerException) and is only available in error pages. Following table lists out the important methods available in the Throwable class.</p>
+                                        <table border="2">
+                                            <tbody>
+                                            <tr>
+                                                <th style="width:20%">S.No.</th>
+                                                <th>Methods and Description</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td><b>public String getMessage()</b><br>
+                                                    Returns a detailed message about the exception that has occurred. This message is initialized in the Throwable constructor.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><b>public Throwable getCause()</b><br>
+                                                    Returns the cause of the exception as represented by a Throwable object.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><b>public String toString()</b><br>
+                                                    Returns the name of the class concatenated with the result of <b>getMessage()</b>.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td><b>public void printStackTrace()</b><br>
+                                                    Prints the result of <b>toString()</b> along with the stack trace to <b>System.err</b>, the error output stream.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>5</td>
+                                                <td><b>public StackTraceElement [] getStackTrace()</b><br>
+                                                    Returns an array containing each element on the stack trace. The element at index 0 represents the top of the call stack, and the last element in the array represents the method at the bottom of the call stack.</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>6</td>
+                                                <td><b>public Throwable fillInStackTrace()</b><br>
+                                                    Fills the stack trace of this Throwable object with the current stack trace, adding to any previous information in the stack trace.</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <p>JSP gives you an option to specify Error Page for each JSP. Whenever the page throws an exception, the JSP container automatically invokes the error page.</p>
+                                    </article>
+
+                                    <article>
+                                        <h2>Using Try - Catch Block</h2>
+                                        <p>If you want to handle errors within the same page and want to take some action instead of firing an error page, you can make use of the try....catch block.</p>
+
+                                        <code>
+                                            <xmp>
+                                                <html>
+                                                <head>
+                                                    <title>Try...Catch Example</title>
+                                                </head>
+
+                                                <body>
+                                                <%
+                                                try {
+                                                int i = 1;
+                                                i = i / 0;
+                                                out.println("The answer is " + i);
+                                                }
+                                                catch (Exception e) {
+                                                out.println("An exception occurred: " + e.getMessage());
+                                                }
+                                                %>
+                                                </body>
+                                                </html>
+                                            </xmp>
+                                        </code>
+                                    </article>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <br/>
+                        Reference:<br/>
+                        <p>http://www.webopedia.com/TERM/J/JSP.html <br>
+                        https://www.tutorialspoint.com/jsp/index.htm<br>
+                        https://www.tutorialspoint.com/jsp/jsp_overview.htm<br>
+                            https://www.tutorialspoint.com/jsp/jsp_architecture.htm</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</section>
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
