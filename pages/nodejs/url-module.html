@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Javascript Object");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="last">
+
+</section>
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Node.js URL Module</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        The Built-in URL Module
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <p>The URL module splits up a web address into readable parts.</p>
+                                            <p>To include the URL module, use the <span class="redColor">require()</span> method:</p>
+                                            <p>
+                                                <pre>
+var url = require('url');
+                                        </pre>
+                                            </p>
+                                            <p>Parse an address with the <span class="redColor">url.parse()</span> method, and it will return a URL object with each part of the address as properties:</p>
+                                            <h3>Example</h3>
+                                            <p>Split a web address into readable parts:</p>
+                                            <p><pre>
+var url = require('url');
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+var q = url.parse(adr, true);
+
+console.log(q.host); //returns 'localhost:8080'
+console.log(q.pathname); //returns '/default.htm'
+console.log(q.search); //returns '?year=2017&month=february'
+
+var qdata = q.query; //returns an object: { year: 2017, month: 'february' }
+console.log(qdata.month); //returns 'february'
+                                        </pre></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Node.js File Server
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <!-- content-->
+                                    <p>Now we know how to parse the query string, and in the previous chapter we learned how to make Node.js behave as a file server. Let us combine the two, and serve the file requested by the client.</p>
+                                    <p>Create two html files and save them in the same folder as your node.js files.</p>
+                                    <p>
+                                        summer.html
+                                    </p>
+                                    <p>
+                                        <code>
+                                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Summer&lt;/h1&gt;
+&lt;p&gt;I love the sun!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                                </pre>
+                                        </code>
+
+                                    </p>
+
+                                    <p>winter.html</p>
+                                    <p>
+                                        <code>
+                                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Winter&lt;/h1&gt;
+&lt;p&gt;I love the snow!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+                                </pre>
+                                        </code>
+
+                                    </p>
+                                    <p>Create a Node.js file that opens the requested file and returns the content to the client. If anything goes wrong, throw a 404 error:</p>
+                                    <p>demo_fileserver.js:</p>
+                                    <p>
+                                        <code>
+                                            <pre>
+var http = require('http');
+var url = require('url');
+var fs = require('fs');
+
+http.createServer(function (req, res) {
+  var q = url.parse(req.url, true);
+  var filename = "." + q.pathname;
+  fs.readFile(filename, function(err, data) {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/html'});
+      return res.end("404 Not Found");
+    }
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080);
+                                            </pre>
+                                        </code>
+                                    </p>
+                                    <p>Remember to initiate the file:</p>
+                                    <p>Initiate demo_fileserver.js:</p>
+                                    <p>If you have followed the same steps on your computer, you should see two different results when opening these two addresses:</p>
+                                    <p>http://localhost:8080/summer.html</p>
+                                    <p>Will produse this result:</p>
+
+                                    <div class="breadcrumb"><h1>Summer</h1><p>I love the sun!</p></div>
+                                    <p>http://localhost:8080/winter.html</p>
+                                    <div class="breadcrumb"><h1>Winter</h1><p>I love the snow!</p></div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
+
