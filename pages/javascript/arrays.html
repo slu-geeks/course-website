@@ -50,118 +50,158 @@
                       </tr>
                       </tbody>
                     </table>
-
+                    <br/>
                     <b>Array Methods</b>
                     <table border="2">
-                      <tbody><tr>
-                        <th style="width:20%">Method</th>
-                        <th>Description</th>
-                      </tr>
-                      <tr>
-                        <td>concat()</td>
-                        <td>Joins two or more arrays, and returns a copy of the joined arrays</td>
-                      </tr>
-                      <tr>
-                        <td>copyWithin()</td>
-                        <td>Copies array elements within the array, to and from specified positions</td>
-                      </tr>
-                      <tr>
-                        <td>every()</td>
-                        <td>Checks if every element in an array pass a test</td>
+                        <tbody>
+                            <tr>
+                                <td>from()</td>
+                                <td>Creates a new Array instance from an array-like or iterable object.</td>
+                            </tr>
+                            <tr>
+                                <td>isArray()</td>
+                                <td>Checks whether an object is an array</td>
+                            </tr>
+                            <tr>
+                                <td>of()</td>
+                                <td>Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <br/>
+                    <b>Accessor methods - These methods do not modify the array and return some representation of the array.</b>
+                    <table border="2">
+                      <tbody>
+                          <tr>
+                            <th style="width:20%">Method</th>
+                            <th>Description</th>
+                          </tr>
+                          <tr>
+                            <td>concat()</td>
+                            <td>Joins two or more arrays, and returns a copy of the joined arrays</td>
+                          </tr>
+                          <tr>
+                              <td>includes()</td>
+                              <td>Determines whether an array contains a certain element, returning true or false as appropriate.</td>
+                          </tr>
+                          <tr>
+                              <td>indexOf()</td>
+                              <td>Search the array for an element and returns its position</td>
+                          </tr>
+                          <tr>
+                              <td>join()</td>
+                              <td>Joins all elements of an array into a string</td>
+                          </tr>
+                          <tr>
+                              <td>lastIndexOf()</td>
+                              <td>Search the array for an element, starting at the end, and returns its position</td>
+                          </tr>
+                          <tr>
+                              <td>slice()</td>
+                              <td>Selects a part of an array, and returns the new array</td>
+                          </tr>
+                          <tr>
+                              <td>toSource() </td>
+                              <td>Returns an array literal representing the specified array; you can use this value to create a new array.</td>
+                          </tr>
+                          <tr>
+                              <td>toString()</td>
+                              <td>Converts an array to a string, and returns the result</td>
+                          </tr>
+                          <tr>
+                              <td>toLocalString()</td>
+                              <td>Returns a localized string representing the array and its elements.</td>
+                          </tr>
+                      </tbody>
+                    </table>
+
+                    <br/>
+                    <b>Mutator methods - These methods modify the array:</b>
+                    <table border="2">
+                      <tbody>
+                        <tr>
+                          <td>copyWithin()</td>
+                          <td>Copies array elements within the array, to and from specified positions</td>
                         </tr>
                         <tr>
-                        <td>fill()</td>
-                        <td>Fill the elements in an array with a static value</td>
+                          <td>fill()</td>
+                          <td>Fill the elements in an array with a static value</td>
                         </tr>
                         <tr>
-                        <td>filter()</td>
-                        <td>Creates a new array with every element in an array that pass a test</td>
+                          <td>pop()</td>
+                          <td>Removes the last element of an array, and returns that element</td>
                         </tr>
                         <tr>
-                        <td>find()</td>
-                        <td>Returns the value of the first element in an array that pass a test</td>
+                          <td>push()</td>
+                          <td>Adds new elements to the end of an array, and returns the new length</td>
                         </tr>
                         <tr>
-                        <td>findIndex()</td>
-                        <td>Returns the index of the first element in an array that pass a test</td>
-                        </tr>
-                      <tr>
-                        <td>forEach()</td>
-                        <td>Calls a function for each array element</td>
+                          <td>reverse()</td>
+                          <td>Reverses the order of the elements in an array</td>
                         </tr>
                         <tr>
-                        <td>indexOf()</td>
-                        <td>Search the array for an element and returns its position</td>
+                          <td>shift()</td>
+                          <td>Removes the first element of an array, and returns that element</td>
                         </tr>
-                      <tr>
-                        <td>isArray()</td>
-                        <td>Checks whether an object is an array</td>
-                        </tr>
-                      <tr>
-                        <td>join()</td>
-                        <td>Joins all elements of an array into a string</td>
-                        </tr>
-                      <tr>
-                        <td>lastIndexOf()</td>
-                        <td>Search the array for an element, starting at the end, and returns its position</td>
+
+                        <tr>
+                          <td>sort()</td>
+                          <td>Sorts the elements of an array</td>
+                          </tr>
+                        <tr>
+                          <td>splice()</td>
+                          <td>Adds/Removes elements from an array</td>
                         </tr>
                         <tr>
-                        <td>map()</td>
-                        <td>Creates a new array with the result of calling a function for each array element</td>
+                          <td>unshift()</td>
+                          <td>Adds new elements to the beginning of an array, and returns the new length</td>
                         </tr>
-                      <tr>
-                        <td>pop()</td>
-                        <td>Removes the last element of an array, and returns that element</td>
-                        </tr>
-                      <tr>
-                        <td>push()</td>
-                        <td>Adds new elements to the end of an array, and returns the new length</td>
+                      </tbody>
+                    </table>
+                    <br/>
+                    <b>Iteration methods - Several methods take as arguments functions to be called back while processing the array. When these methods are called, the length of the array is sampled, and any element added beyond this length from within the callback is not visited.</b>
+                    <table border="2">
+                      <tbody>
+                        <tr>
+                            <td>every()</td>
+                            <td>Checks if every element in an array pass a test</td>
                         </tr>
                         <tr>
-                        <td>reduce()</td>
-                        <td>Reduce the values of an array to a single value (going left-to-right)</td>
+                            <td>filter()</td>
+                            <td>Creates a new array with every element in an array that pass a test</td>
                         </tr>
                         <tr>
-                        <td>reduceRight()</td>
-                        <td>Reduce the values of an array to a single value (going right-to-left)</td>
+                            <td>find()</td>
+                            <td>Returns the value of the first element in an array that pass a test</td>
                         </tr>
-                      <tr>
-                        <td>reverse()</td>
-                        <td>Reverses the order of the elements in an array</td>
+                        <tr>
+                            <td>findIndex()</td>
+                            <td>Returns the index of the first element in an array that pass a test</td>
                         </tr>
-                      <tr>
-                        <td>shift()</td>
-                        <td>Removes the first element of an array, and returns that element</td>
+                        <tr>
+                            <td>forEach()</td>
+                            <td>Calls a function for each array element</td>
                         </tr>
-                      <tr>
-                        <td>slice()</td>
-                        <td>Selects a part of an array, and returns the new array</td>
+                        <tr>
+                            <td>map()</td>
+                            <td>Creates a new array with the result of calling a function for each array element</td>
                         </tr>
-                      <tr>
-                        <td>some()</td>
-                        <td>Checks if any of the elements in an array pass a test</td>
+                        <tr>
+                            <td>reduce()</td>
+                            <td>Reduce the values of an array to a single value (going left-to-right)</td>
                         </tr>
-                      <tr>
-                        <td>sort()</td>
-                        <td>Sorts the elements of an array</td>
+                        <tr>
+                            <td>reduceRight()</td>
+                            <td>Reduce the values of an array to a single value (going right-to-left)</td>
                         </tr>
-                      <tr>
-                        <td>splice()</td>
-                        <td>Adds/Removes elements from an array</td>
+                        <tr>
+                            <td>some()</td>
+                            <td>Checks if any of the elements in an array pass a test</td>
                         </tr>
-                      <tr>
-                        <td>toString()</td>
-                        <td>Converts an array to a string, and returns the result</td>
-                        </tr>
-                      <tr>
-                        <td>unshift()</td>
-                        <td>Adds new elements to the beginning of an array, and returns the new length</td>
-                        </tr>
-                      <tr>
-                        <td>valueOf()</td>
-                        <td>Returns the primitive value of an array</td>
-                        </tr>
-                    </tbody></table>
+                      </tbody>
+                    </table>
                      <br/>
                         Reference:<br/>
                         <pre>https://www.w3schools.com/jsref/jsref_obj_array.asp<br/>https://www.tutorialspoint.com/javascript/javascript_arrays_object.htm<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment<br></pre>
