@@ -106,237 +106,726 @@
 </section>
 <section class="col-md-10">
     <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
         <article>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">CSS (Cascading Style Sheets)</h3>
+                    <h3 class="panel-title">Servlet</h3>
                 </div>
-
                 <div class="panel-body styleWidgets">
+                    <h3>What are Servlets?</h3>
+                    &nbsp; Java Servlets are programs that run on a Web or Application server and act as a middle layer
+                    between
+                    a request coming from a Web browser or other HTTP client and databases or applications on the HTTP
+                    server. Using Servlets, you can collect input from users through web page forms, present records
+                    from a database or another source, and create web pages dynamically.
+                    <br/><br/>
                     <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is CSS?
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Life Cycle of a Servlet
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    CSS is the language for describing the presentation of Web pages, including colors, layout,
-                                    and fonts. It allows one to adapt the presentation to different types of devices, such as
-                                    large screens, small screens, or printers. CSS is independent of HTML and can be used with
-                                    any XML-based markup language. The separation of HTML from CSS makes it easier to maintain
-                                    sites, share style sheets across pages, and tailor pages to different environments. This is
-                                    referred to as the separation of structure (or: content) from presentation.
+                                    &nbsp; A servlet life cycle can be defined as the entire process from its creation
+                                    till the
+                                    destruction.
+                                    The following are the paths followed by a servlet
+                                    <ul>
+                                        <li>The servlet is initialized by calling the <b>init ()</b> method.</li>
+                                        <li>The servlet calls <b>service()</b> method to process a client's request.
+                                        </li>
+                                        <li>The servlet is terminated by calling the <b>destroy()</b> method.</li>
+                                        <li>Finally, servlet is garbage collected by the garbage collector of the JVM.
+                                        </li>
+                                    </ul>
+                                    <ol>
+                                        <li>
+                                            <b>The init() method</b><br/>
+                                            The init method is designed to be called only once. It is called when the
+                                            servlet is
+                                            first created, and not called again for each user request. So, it is used
+                                            for one-time
+                                            initializations, just as with the init method of applets.
+
+                                            <br/><br/>
+
+                                            The servlet is normally created when a user first invokes a URL
+                                            corresponding to the
+                                            servlet, but you can also specify that the servlet be loaded when the server
+                                            is first
+                                            started.
+
+                                            <br/><br/>
+
+                                            When a user invokes a servlet, a single instance of each servlet gets
+                                            created, with each
+                                            user request resulting in a new thread that is handed off to doGet or doPost
+                                            as appropriate.
+                                            The init() method simply creates or loads some data that will be used
+                                            throughout the life of
+                                            the servlet.
+
+                                            <br/><br/>
+
+                                            The init method definition looks like this:<br/>
+                                            <pre>
+                                            public void init() throws ServletException {
+                                                // Initialization code...
+                                            }</pre>
+                                        </li>
+                                        <li>
+                                            <b>The service() method</b><br/>
+                                            The service() method is the main method to perform the actual task. The
+                                            servlet container
+                                            (i.e. web server) calls the service() method to handle requests coming from
+                                            the client(
+                                            browsers) and to write the formatted response back to the client.
+
+                                            <br/><br/>
+
+                                            Each time the server receives a request for a servlet, the server spawns a
+                                            new thread and
+                                            calls service. The service() method checks the HTTP request type (GET, POST,
+                                            PUT, DELETE,
+                                            etc.) and calls doGet, doPost, doPut, doDelete, etc. methods as appropriate.
+
+                                            <br/><br/>
+
+                                            Here is the signature of this method:<br/>
+                                            <pre>
+                                            public void service(ServletRequest request,
+                                                                ServletResponse response)
+                                                  throws ServletException, IOException{
+                                            }</pre>
+
+                                            The service () method is called by the container and service method invokes
+                                            doGet, doPost,
+                                            doPut, doDelete, etc. methods as appropriate. So you have nothing to do with
+                                            service()
+                                            method but you override either doGet() or doPost() depending on what type of
+                                            request you
+                                            receive from the client.
+
+                                            <br/><br/>
+
+                                            The doGet() and doPost() are most frequently used methods with in each
+                                            service request. Here
+                                            is the signature of these two methods.
+                                        </li>
+                                        <li>
+                                            <b>The doGet() Method</b><br/>
+                                            A GET request results from a normal request for a URL or from an HTML form
+                                            that has no METHOD specified and it should be handled by doGet() method.
+
+                                            <br/><br/>
+
+                                            <pre>
+                                            public void doGet(HttpServletRequest request,
+                                                              HttpServletResponse response)
+                                                throws ServletException, IOException {
+                                                // Servlet code
+                                            }</pre>
+                                        </li>
+                                        <li>
+                                            <b>The doPost() Method</b><br/>
+                                            A POST request results from an HTML form that specifically lists POST as the
+                                            METHOD and it should be handled by doPost() method.
+
+                                            <br/><br/>
+
+                                            <pre>
+                                            public void doPost(HttpServletRequest request,
+                                                               HttpServletResponse response)
+                                                throws ServletException, IOException {
+                                                // Servlet code
+                                            }</pre>
+                                        </li>
+                                        <li>
+                                            <b>The destroy() method</b><br/>
+                                            The destroy() method is called only once at the end of the life cycle of a
+                                            servlet. This method gives your servlet a chance to close database
+                                            connections, halt background threads, write cookie lists or hit counts to
+                                            disk, and perform other such cleanup activities.
+
+                                            <br/><br/>
+
+                                            After the destroy() method is called, the servlet object is marked for
+                                            garbage collection. The destroy method definition looks like this:
+
+                                            <pre>
+                                            public void destroy() {
+                                                // Finalization code...
+                                            }</pre>
+                                        </li>
+                                    </ol>
+                                    <br/>
+                                    <h4>Architecture Diagram</h4>
+                                    The following figure depicts a typical servlet life-cycle scenario.
+
+                                    <br><br/>
+
+                                    <ul>
+                                        <li>First the HTTP requests coming to the server are delegated to the servlet
+                                            container.
+                                        </li>
+                                        <li>The servlet container loads the servlet before invoking the service()
+                                            method.
+                                        </li>
+                                        <li>Then the servlet container handles multiple requests by spawning multiple
+                                            threads, each thread executing the service() method of a single instance of
+                                            the servlet.
+                                        </li>
+                                    </ul>
+
+                                    <div style="text-align: center">
+                                        <img src="Capture.PNG">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        CSS Syntax and Selectors
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Static and Dynamic Website
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    <b>CSS Syntax</b>
-                                    <br/>
-                                    A CSS rule-set consists of a selector and a declaration block: <br/>
-                                    <div style="text-align: center">
-                                        <img src="../public/img/css.PNG"><br/>
-                                    </div>
+                                    <h4><b>There are basically two main types of website - static and dynamic.</b>
+                                    </h4>
+                                    <p>
+                                        A static site is one that is usually written in plain HTML and what is in
+                                        the code of the page is what is displayed to the user.</p>
 
-                                    <ul>
-                                        <li>The selector points to the HTML element you want to style.</li>
-                                        <li>The declaration block contains one or more declarations separated by semicolons.</li>
-                                        <li>Each declaration includes a CSS property name and a value, separated by a colon.</li>
-                                        <li>A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.</li>
-                                    </ul>
-                                    <br/>
-                                    <b>CSS Selectors</b>
-                                    <br/>
-                                    CSS selectors are used to "find" (or select) HTML elements based on their element name, id, class, attribute, and more.
-                                    <br/><br/>
+                                    <p>
+                                        A dynamic site is one that is written using a server-side scripting language
+                                        such as PHP, ASP, JSP, or Coldfusion. In such a site the content is called
+                                        in by the scripting language from other files or from a database depending
+                                        on actions taken by the user.</p><br>
 
-                                    <b>The element Selector</b>
-                                    <br/>
-                                    The element selector selects elements based on the element name.You can select all &lt;p&gt; elements on a page like this
-                                    (in this case, all &lt;p&gt; elements will be center-aligned, with a red text color):<br/>
-                                    <pre>
-                                        p {
-                                            color: red;
-                                            text-align: center;
-                                        }
-                                    </pre>
+                                    <h4><b>Relative merits of static and dynamic websites</b></h4>
+                                    <br>
+                                    <b>Static sites - advantages</b>
+                                    <p>
+                                        Flexibility is the main advantage of a static site - every page can be
+                                        different if desired, to match the layout to different content, and the
+                                        designer is free to put in any special effects that a client may ask for in
+                                        a unique way on different pages. This allows theming - for instance an
+                                        author may want a different theme for a different book and associated pages
+                                        or perhaps for a series of books, in order to match the cover designs or the
+                                        context of the stories.</p>
 
-                                    <b>The id Selector</b>
-                                    <br/>
-                                    The id selector uses the id attribute of an HTML element to select a specific element.
-                                    The id of an element should be unique within a page, so the id selector is used to select one unique element!
-                                    To select an element with a specific id, write a hash (#) character, followed by the id of the element.
-                                    The style rule below will be applied to the HTML element with id="para1":<br/>
-                                    <pre>
-                                        #para1 {
-                                            text-align: center;
-                                            color: red;
-                                        }
-                                    </pre>
+                                    Cost is generally lower up-front than a dynamic site.
+                                    <br>
 
-                                    <b>The class Selector</b>
-                                    <br/>
-                                    The class selector selects elements with a specific class attribute.
-                                    To select elements with a specific class, write a period (.) character, followed by the name of the class.
-                                    In the example below, all HTML elements with class="center" will be red and center-aligned:<br/>
-                                    <pre>
-                                        .center {
-                                            text-align: center;
-                                            color: red;
-                                        }
-                                    </pre>
-                                    You can also specify that only specific HTML elements should be affected by a class.
-                                    In the example below, only &lt;p&gt; elements with class="center" will be center-aligned:<br/>
-                                    <pre>
-                                        p.center {
-                                            text-align: center;
-                                            color: red;
-                                        }
-                                    </pre>
-                                    HTML elements can also refer to more than one class.
-                                    In the example below, the &lt;p&gt; element will be styled according to class="center" and to class="large":<br/>
-                                    <pre>
-                                        &lt;p&gt; class="center large">This paragraph refers to two classes.&lt;p&gt;
-                                    </pre>
+                                    <b>Static sites - disadvantages</b>
+                                    <p>
+                                        The main problem with any static site appears when you wish to update the
+                                        content. Unless you are conversant with HTML and the design methods used in
+                                        the site then you have to go back to the designer to have any content
+                                        changes made. This may be perfectly ok when a new page is required which
+                                        needs design input, but if all you want to do is change some text then it
+                                        can be a nuisance for both client and designer.</p>
 
-                                    <b>Grouping Selectors</b>
-                                    <br/>
-                                    If you have elements with the same style definitions, like this:<br/>
-                                    <pre>
-                                        h1 {
-                                            text-align: center;
-                                            color: red;
-                                        }
+                                    <p>The second main problem is scalability. If you wish to sell products on your
+                                        site and you have a lot of them then you may have to construct individual
+                                        pages for each one, which can take considerable time, effort and cost.</p>
 
-                                        h2 {
-                                            text-align: center;
-                                            color: red;
-                                        }
+                                    Costs - there are ongoing costs for updating the content.<br>
+                                    <br>
 
-                                        p {
-                                            text-align: center;
-                                            color: red;
-                                        }
-                                    </pre>
-                                    It will be better to group the selectors, to minimize the code.
-                                    To group selectors, separate each selector with a comma.
-                                    In the example below we have grouped the selectors from the code above:<br/>
-                                    <pre>
-                                        h1, h2, p {
-                                            text-align: center;
-                                            color: red;
-                                        }
-                                    </pre>
+                                    <b>Dynamic sites - advantages</b>
+                                    <p>
+                                        The main advantages of dynamic sites are that by connecting them to
+                                        databases you can easily pull in information in an organised and structured
+                                        way to create product pages or categories of related products sorted in a
+                                        variety of different ways depending on how the user wants to view them.</p>
+                                    <p>
+                                        This ability to connect to a database means that you can also create a
+                                        content management system - an interface which allows the client to input
+                                        and manage data via a web-based series of administration pages. That content
+                                        can be text for their pages and images to go along with the text, or items
+                                        in their product range with categories, specifications, short and long
+                                        descriptions, images, etc. In both these cases it can be as simple or as
+                                        complex as the client requires.</p>
+
+                                    <p>
+                                        There are little or no ongoing costs unless there is a change in the basic
+                                        design or an extra capability added.</p>
+
+                                    <b>Dynamic sites - disadvantages</b>
+                                    <p>
+                                        The design of a dynamic site is more fixed than a static one because many of
+                                        the pages are essentially a template into which data and content is poured
+                                        to create multiple pages of a similar type. So for instance all your product
+                                        pages will be essentially the same page layout with different data being
+                                        displayed. While some customisation cabability can be built in it is usually
+                                        quite limited, such a selecting from a set of pre-defined options.
+                                        Individual layout changes to particular pages are not usually possible.</p>
+
+                                    <p> Costs are higher initially than for a static site, and additional
+                                        functionality may also cost more, particularly if it's something that wasn't
+                                        envisaged originally and requires re-writing of the core code or
+                                        database.</p>
+                                    <br> <br>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        CSS Rule Precedence
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Servlet API
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    <ul style="list-style-type:square">
-                                        <li><b>!important</b></li>
-                                        <li><b>by origin and importance</b></li>
-                                        <ul>
-                                            <li>user agent important declaration</li>
-                                            <li>user important declaration</li>
-                                            <li>author important declaration</li>
-                                            <li>author normal declaration</li>
-                                            <li>user normal declaration</li>
-                                            <li>user agent normal declaration</li>
-                                        </ul>
-                                        <li><b>by specificity</b></li>
-                                        <ul>
-                                            <li>inline style</li>
-                                            <li>number of ID selectors</li>
-                                            <li>number of class selectors, attribute selectors, pseudo-classes</li>
-                                            <li>number of type selectors and pseudo elements</li>
-                                        </ul>
-                                        <li><b>by order</b></li>
+                                    <b>Servlet API consists of two important packages that encapsulates all
+                                        the important classes and interface, namely :</b>
+                                    <ul>
+                                        <li><b>javax.servlet.http</b></li>
+                                        <li><b>javax.servlet</b></li>
                                     </ul>
+                                    <br>
+                                    <h4>Some Important Classes and Interfaces of javax.servlet</h4>
+
+                                    <table>
+                                        <tr>
+                                            <th>INTERFACES</th>
+                                            <th>CLASSES</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Servlet</td>
+                                            <td>ServletInputStream</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletContext</td>
+                                            <td>ServletOutputStream</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletConfig</td>
+                                            <td>ServletRequestWrapper</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletRequest</td>
+                                            <td>ServletResponseWrapper</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletResponse</td>
+                                            <td>ServletRequestEvent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletContextListener</td>
+                                            <td>ServletContextEvent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RequestDispatcher</td>
+                                            <td>ServletRequestAttributeEvent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SingleThreadModel</td>
+                                            <td>ServletContextAttributeEvent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Filter</td>
+                                            <td>ServletException</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FilterConfig</td>
+                                            <td>UnavailableException</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FilterChain</td>
+                                            <td>GenericServlet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ServletRequestListene</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </table>
+                                    <br>
+
+                                    <h4>Some Important Classes and Interface of javax.servlet.http</h4>
+
+                                    <table>
+                                        <tr>
+                                            <th>INTERFACES</th>
+                                            <th>CLASSES</th>
+                                        </tr>
+                                        <tr>
+                                            <td>HttpServletRequest</td>
+                                            <td>HttpServlet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>HttpSessionAttributeListener</td>
+                                            <td>HttpServletResponse</td>
+                                        </tr>
+                                        <tr>
+                                            <td>HttpSessionListener</td>
+                                            <td>HttpSession</td>
+                                        </tr>
+                                        <tr>
+                                            <td>HttpSessionEvent</td>
+                                            <td>Cookie</td>
+                                        </tr>
+                                    </table>
+
+                                    <br>
+                                    <br>
+                                    <h4>Servlet Interface</h4>
+                                    <p>
+                                        Servlet Interface provides five methods. Out of these five methods,
+                                        three methods are Servlet life cycle methods and rest two are non life
+                                        cycle methods.
+                                    </p>
+                                    <img src="../../public/img/servlet.jpg"/>
+
+                                    <br>
+                                    <br>
+                                    <h4>GenericServlet Class</h4>
+                                    <p>GenericServlet is an abstract class that provides implementation of most
+                                        of the basic servlet methods. This is a very important class.</p>
+                                    <b>Methods of GenericServlet class</b>
+                                    <pre><ul>
+                                                <li>public void init(ServletConfig)</li>
+                                                <li>public abstract void service(ServletRequest request,ServletResposne response)</li>
+                                                <li>public void destroy()</li>
+                                                <li>public ServletConfig getServletConfig()</li>
+                                                <li>public String getServletInfo()</li>
+                                                <li>public ServletContext getServletContext()</li>
+                                                <li>public String getInitParameter(String name)</li>
+                                                <li>public Enumeration getInitParameterNames()</li>
+                                                <li>public String getServletName()</li>
+                                                <li>public void log(String msg)</li>
+                                                <li>public void log(String msg, Throwable t)</li>
+                                                </ul></pre>
+
+                                    <h4>HttpServlet class</h4>
+                                    <p>
+                                        HttpServlet is also an abstract class. This class gives implementation
+                                        of various service() methods of Servlet interface.
+                                    </p>
+                                    <p>
+                                        To create a servlet, we should create a class that extends HttpServlet
+                                        abstract class. The Servlet class that we will create, must not override
+                                        service() method. Our servlet class will override only the doGet()
+                                        and/or doPost() methods.
+                                    </p>
+                                    <p>
+                                        The service() method of HttpServlet class listens to the Http methods
+                                        (GET, POST etc) from request stream and invokes doGet() or doPost()
+                                        methods based on Http Method type.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        CSS Inheritance
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Servlet Filter
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
                                 <div class="panel-body">
-                                    Inheritance in CSS is the mechanism through which certain properties are passed on from a parent element down to its children. It&#39;s quite similar to inheritance in genetics, really. If the parents have blue eyes, their children will probably have blue eyes, too.
-                                    <ul style="list-style-type:square">
-                                        <li><b>Why inheritance is useful?</b></li>
-                                        <ul>
-                                            <li>
-                                                you don&#39;t have to specify things for every single element type
-                                            </li>
-                                            <li>
-                                                you can for example specify the font properties for the html or body elements and they will be inherited by all other elements
-                                            </li>
-                                        </ul>
-                                        <li><b>How inheritance works?</b></li>
-                                        <ul>
-                                            <li>
-                                                Every element in an HTML document will inherit all inheritable properties from its parent except the root element (html), which doesn&#39;t have a parent.
-                                            </li>
-                                            <li>
-                                                Whether or not the inherited properties will have any effect depends on other things. Just as a blue-eyed mother can have a brown-eyed child if the father has brown eyes, inherited properties in CSS can be overridden.
-                                            </li>
-                                        </ul>
+                                    A filter is an object that is invoked at the preprocessing and postprocessing of a
+                                    request. It is mainly used to perform filtering tasks such as conversion, logging,
+                                    compression, encryption and decryption, input validation etc. So maintenance cost
+                                    will be less.
+
+                                    <h4>Usage of Filter</h4>
+                                    <ul>
+                                        <li>recording all incoming requests</li>
+                                        <li>logs the IP addresses of the computers from which the requests originate
+                                        </li>
+                                        <li>conversion</li>
+                                        <li>data compression</li>
+                                        <li>encryption and decryption</li>
+                                        <li>input validation etc.</li>
+                                    </ul>
+
+                                    <h4>Advantage of Filter</h4>
+                                    <ul>
+                                        <li>Filter is pluggable.</li>
+                                        <li>One filter don't have dependency onto another resource.</li>
+                                        <li>Less Maintenance</li>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion0"
+                                       href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Session Tracking in Servlets
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    Session simply means a particular interval of time.
+
+                                    Session Tracking is a way to maintain state (data) of an user. It is also known as
+                                    session management in servlet.
+
+                                    Http protocol is a stateless so we need to maintain state using session tracking
+                                    techniques. Each time user requests to the server, server treats the request as the
+                                    new request. So we need to maintain the state of an user to recognize to particular
+                                    user.
+
+                                    HTTP is stateless that means each request is considered as the new request. It is
+                                    shown in the figure given below:
+
+                                    <div style="text-align: center">
+                                        <img src="CaptureServ.PNG">
+                                    </div>
+
+                                    <h4>Why use Session Tracking?</h4>
+                                    To recognize the user It is used to recognize the particular user.
+                                    <br/><br/>
+
+
+                                    <h4>Session Tracking Techniques</h4>
+                                    <ol>
+                                        <li>
+                                            <h4><b>Cookies</b></h4> - a small piece of information that is persisted
+                                            between
+                                            the
+                                            multiple client requests.
+
+                                            <br/><br/>
+
+                                            <b>How Cookie works</b>
+
+                                            By default, each request is considered as a new request. In cookies
+                                            technique, we add cookie with response from the servlet. So cookie is stored
+                                            in the cache of the browser. After that if request is sent by the user,
+                                            cookie is added with request by default. Thus, we recognize the user as the
+                                            old user.
+
+                                            <br/><br/>
+
+                                            There are 2 types of cookies in servlets.
+                                            <ol>
+                                                <li>Non-persistent cookie - It is valid for single session only. It is
+                                                    removed each time when user closes the browser.
+                                                </li>
+                                                <li>Persistent cookie - It is valid for multiple session . It is not
+                                                    removed each time when user closes the browser. It is removed only
+                                                    if user logout or signout.
+                                                </li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>Advantages of Cookies</b>
+                                            <ol>
+                                                <li>Simplest technique of maintaining the state.</li>
+                                                <li>Cookies are maintained at client side.</li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>Disadvantage of Cookies</b>
+                                            <ol>
+                                                <li>It will not work if cookie is disabled from the browser.</li>
+                                                <li>Only textual information can be set in Cookie object.</li>
+                                            </ol>
+
+                                            <br/>
+
+                                        </li>
+                                        <li>
+                                            <h4><b>Hidden Form Field</b></h4> - a hidden (invisible) textfield is used
+                                            for
+                                            maintaining the state of an user. In such case, we store the information in
+                                            the hidden field and get it from another servlet. This approach is better if
+                                            we have to submit form in all the pages and we don't want to depend on the
+                                            browser. Let's see the code to store value in hidden field.
+
+                                            <pre> &lt;input type="hidden" name="uname" value="Vimal Jaiswal"&gt; </pre>
+
+                                            Here, uname is the hidden field name and Vimal Jaiswal is the hidden field
+                                            value.
+
+                                            <br/><br/>
+
+                                            <b>Advantage of Hidden Form Field</b>
+                                            <ol>
+                                                <li>It will always work whether cookie is disabled or not.</li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>Disadvantage of Hidden Form Field</b>
+                                            <ol>
+                                                <li>It is maintained at server side.</li>
+                                                <li>Extra form submission is required on each pages.</li>
+                                                <li>Only textual information can be used.</li>
+                                            </ol>
+
+                                            <br/>
+                                        </li>
+                                        <li>
+                                            <h4><b>URL Rewriting</b></h4> - is the process of altering (often
+                                            automatically by
+                                            means of a program written for that purpose) the parameters in a URL
+                                            (Uniform Resource Locator). We append a token or identifier to the URL of
+                                            the next Servlet or the next resource. We can send parameter name/value
+                                            pairs using the following format:
+
+                                            <pre>url?name1=value1&name2=value2&??</pre>
+
+                                            A name and a value is separated using an equal = sign, a parameter
+                                            name/value pair is separated from another parameter using the ampersand(&).
+                                            When the user clicks the hyperlink, the parameter name/value pairs will be
+                                            passed to the server. From a Servlet, we can use getParameter() method to
+                                            obtain a parameter value.
+
+                                            <br/><br/>
+
+                                            <b>Advantage of URL Rewriting</b>
+                                            <ol>
+                                                <li>It will always work whether cookie is disabled or not (browser
+                                                    independent).
+                                                </li>
+                                                <li>Extra form submission is not required on each pages.</li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>Disadvantage of URL Rewriting</b>
+                                            <ol>
+                                                <li>It will work only with links.</li>
+                                                <li>It can send Only textual information.</li>
+                                            </ol>
+
+                                            <br/>
+
+                                        </li>
+                                        <li>
+                                            <h4><b>HttpSession interface</b></h4> - can be used a container creates a
+                                            session id
+                                            for each user and this id to identify the particular user. In such case,
+                                            container creates a session id for each user.The container uses this id to
+                                            identify the particular user.An object of HttpSession can be used to perform
+                                            two tasks:<br/>
+                                            <ol>
+                                                <li>bind objects</li>
+                                                <li>view and manipulate information about a session, such as the session
+                                                    identifier, creation time, and last accessed time.
+                                                </li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>How to get the HttpSession object?</b><br/>
+                                            The HttpServletRequest interface provides two methods to get the object of
+                                            HttpSession:
+                                            <ol>
+                                                <li>
+                                                    <b>public HttpSession getSession():</b> Returns the current session
+                                                    associated with this request, or if the request does not have a
+                                                    session, creates one.
+                                                </li>
+                                                <li>
+                                                    <b>public HttpSession getSession(boolean create):</b> Returns the
+                                                    current HttpSession associated with this request or, if there is no
+                                                    current session and create is true, returns a new session.
+                                                </li>
+                                            </ol>
+
+                                            <br/>
+
+                                            <b>Commonly used methods of HttpSession interface</b><br/>
+                                            <ol>
+                                                <li>
+                                                    <b>public String getId(): </b>Returns a string containing the unique
+                                                    identifier value.
+                                                </li>
+                                                <li>
+                                                    <b>public long getCreationTime(): </b>Returns the time when this
+                                                    session was created, measured in milliseconds since midnight January
+                                                    1, 1970 GMT.
+                                                </li>
+                                                <li>
+                                                    <b>public long getLastAccessedTime(): </b>Returns the last time the
+                                                    client sent a request associated with this session, as the number of
+                                                    milliseconds since midnight January 1, 1970 GMT.
+                                                </li>
+                                                <li>
+                                                    <b>public void invalidate(): </b>Invalidates this session then
+                                                    unbinds any objects bound to it.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                    <br/>
+                                    <h4>Advantage of Filter</h4>
+                                    <ul>
+                                        <li>Filter is pluggable.</li>
+                                        <li>One filter don't have dependency onto another resource.</li>
+                                        <li>Less Maintenance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <br/>
-                        Reference:<br/>
-                        <pre>https://www.w3schools.com/css/css_syntax.asp<br/>https://www.w3.org/wiki/Inheritance_and_cascade<br/>https://www.w3.org/TR/CSS2/cascade.html#value-def-inherit<br/></pre>
+                        Extra Info: <br/>
+                        What are WAR and EAR files? <br/>
+                        <pre>
+                 WAR (web archive). It is used to deploy web applications according to the servlet standard. It is a
+                 jar file containing a special directory called WEB-INF and several files and directories inside it
+                (web.xml, lib, classes) as well as all the HTML, JSP, images, CSS, JavaScript and other resources of
+                 the web application.
+
+                 EAR (enterprise archive). It is used to deploy enterprise application containing EJBs, web
+                 applications, and 3rd party libraries. It is also a jar file, it has a special directory called
+                 APP-INF that contains the application.xml file, and it contains jar and war files.</pre>
                     </div>
+
+                    <br/>
+                    Reference: <br/>
+                    <pre>https://www.tutorialspoint.com/servlets/servlets-life-cycle.htm<br/>http://www.studytonight.com/servlet/how-a-servlet-application-work<br/>https://www.javatpoint.com<br/></pre>
                 </div>
             </div>
         </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
     </section>
 </section>
 
 <section id="footer">
-    <section class="container">
-        <footer class="row">
-            <nav class="col-lg-12">
-                <ul class="breadcrumb">
-                    <li><a href="../index.html">Main Page</a></li>
-
-                    <li><a href="about/about.html">About us</a></li>
-                </ul>
-            </nav><!-- nav -->
-        </footer><!-- footer -->
-    </section><!-- container -->
+    <!-- footer includes-->
 </section>
+<!-- scripts includes-->
 <script type="text/javascript" src="../public/js/jquery.min.js"></script>
 <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../public/js/public.js"></script>
 <!--<script type="text/javascript" src="public/js/clock.js"></script>-->
-<!-- scripts includes-->
 </body>
 </html>
