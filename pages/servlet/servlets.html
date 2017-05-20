@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Servlet</h3>
+                </div>
+                <div class="panel-body styleWidgets">
+                    <h3>What are Servlets?</h3>
+                    &nbsp; Java Servlets are programs that run on a Web or Application server and act as a middle layer
+                    between
+                    a request coming from a Web browser or other HTTP client and databases or applications on the HTTP
+                    server. Using Servlets, you can collect input from users through web page forms, present records
+                    from a database or another source, and create web pages dynamically.
+                    <br/><br/>
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Life Cycle
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    &nbsp; A servlet life cycle can be defined as the entire process from its creation
+                                    till the
+                                    destruction.
+                                    The following are the paths followed by a servlet
+                                    <ul>
+                                        <li>The servlet is initialized by calling the <b>init ()</b> method.</li>
+                                        <li>The servlet calls <b>service()</b> method to process a client's request.
+                                        </li>
+                                        <li>The servlet is terminated by calling the <b>destroy()</b> method.</li>
+                                        <li>Finally, servlet is garbage collected by the garbage collector of the JVM.
+                                        </li>
+                                    </ul>
+                                    <ol>
+                                        <li>
+                                            <b>The init() method</b><br/>
+                                            The init method is designed to be called only once. It is called when the
+                                            servlet is
+                                            first created, and not called again for each user request. So, it is used
+                                            for one-time
+                                            initializations, just as with the init method of applets.
+
+                                            <br/><br/>
+
+                                            The servlet is normally created when a user first invokes a URL
+                                            corresponding to the
+                                            servlet, but you can also specify that the servlet be loaded when the server
+                                            is first
+                                            started.
+
+                                            <br/><br/>
+
+                                            When a user invokes a servlet, a single instance of each servlet gets
+                                            created, with each
+                                            user request resulting in a new thread that is handed off to doGet or doPost
+                                            as appropriate.
+                                            The init() method simply creates or loads some data that will be used
+                                            throughout the life of
+                                            the servlet.
+
+                                            <br/><br/>
+
+                                            The init method definition looks like this:<br/>
+                                            <pre>
+                                            public void init() throws ServletException {
+                                                // Initialization code...
+                                            }</pre>
+                                        </li>
+                                        <li>
+                                            <b>The service() method</b><br/>
+                                            The service() method is the main method to perform the actual task. The
+                                            servlet container
+                                            (i.e. web server) calls the service() method to handle requests coming from
+                                            the client(
+                                            browsers) and to write the formatted response back to the client.
+
+                                            <br/><br/>
+
+                                            Each time the server receives a request for a servlet, the server spawns a
+                                            new thread and
+                                            calls service. The service() method checks the HTTP request type (GET, POST,
+                                            PUT, DELETE,
+                                            etc.) and calls doGet, doPost, doPut, doDelete, etc. methods as appropriate.
+
+                                            <br/><br/>
+
+                                            Here is the signature of this method:<br/>
+                                            <pre>
+                                            public void service(ServletRequest request,
+                                                                ServletResponse response)
+                                                  throws ServletException, IOException{
+                                            }</pre>
+
+                                            The service () method is called by the container and service method invokes
+                                            doGet, doPost,
+                                            doPut, doDelete, etc. methods as appropriate. So you have nothing to do with
+                                            service()
+                                            method but you override either doGet() or doPost() depending on what type of
+                                            request you
+                                            receive from the client.
+
+                                            <br/><br/>
+
+                                            The doGet() and doPost() are most frequently used methods with in each
+                                            service request. Here
+                                            is the signature of these two methods.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        When is the DOM different than the HTML?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Here's one possibility: there are mistakes in your HTML and the browser has fixed
+                                    them for you. Let's say you have a &lt;table&gt; element in your HTML and leave out
+                                    the
+                                    required &lt;tbody&gt; element. The browser will just insert that &lt;tbody&gt; for
+                                    you. It will
+                                    be there in the DOM, so you'll be able to find it with JavaScript and style it with
+                                    CSS, even though it's not in your HTML.
+                                    <br/><br/>
+                                    <b>Javascript</b> can manipulate the DOM. For example in your HTML, we have:
+                                    <pre>
+                                        &lt;div id="container"&gt;&lt;/div&gt;
+                                    </pre>
+                                    Then later in your HTML, there is a bit of JavaScript:
+                                    <pre>
+                                        &lt;script&gt;
+                                          var container = document.getElementById("container");
+                                          container.innerHTML = "New Content!";
+                                        &lt;/script&gt;
+                                    </pre>
+                                    On the screen you'll see "New Content!" rather than nothing, because that empty div
+                                    was filled with some a new content.If you use DevTools to check out the visual
+                                    representation of the DOM, you'll see:
+                                    <pre>
+                                        &lt;div id="container"&gt;New Content! &lt;/div&gt;
+                                    </pre>
+                                    Which is different than your original HTML or what you would see in View Source.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Where the Document Object Model came from
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    The DOM originated as a specification to allow JavaScript scripts and Java programs
+                                    to
+                                    be portable among Web browsers. "Dynamic HTML" was the immediate ancestor of the
+                                    Document
+                                    Object Model, and it was originally thought of largely in terms of browsers.
+                                    However,
+                                    when the DOM Working Group was formed at W3C, it was also joined by vendors in other
+                                    domains, including HTML or XML editors and document repositories. Several of these
+                                    vendors had worked with SGML before XML was developed; as a result, the DOM has been
+                                    influenced by SGML Groves and the HyTime standard. Some of these vendors had also
+                                    developed their own object models for documents in order to provide an API for
+                                    SGML/XML
+                                    editors or document repositories, and these object models have also influenced the
+                                    DOM.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0"
+                                       href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        DOM and JavaScript
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    The DOM is not a programming language, but without it, the JavaScript language
+                                    wouldn't
+                                    have any model or notion of web pages, HTML documents, XML documents, and their
+                                    component
+                                    parts (e.g. elements). Every element in a document—the document as a whole, the
+                                    head,
+                                    tables within the document, table headers, text within the table cells—is part of
+                                    the
+                                    document object model for that document, so they can all be accessed and manipulated
+                                    using the DOM and a scripting language like JavaScript.<br/><br/>
+
+                                    In the beginning, JavaScript and the DOM were tightly intertwined, but eventually
+                                    they evolved into separate entities. The page content is stored in the DOM and may
+                                    be accessed and manipulated via JavaScript, so that we may write this approximative
+                                    equation: <br/><br/>
+
+                                    API (HTML or XML page) = DOM + JS (scripting language)
+                                </div>
+                            </div>
+                        </div>
+
+                        <br/>
+                        Reference: <br/>
+                        <pre>https://www.tutorialspoint.com/servlets/servlets-life-cycle.htm<br/></pre>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
