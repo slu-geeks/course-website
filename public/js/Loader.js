@@ -9,6 +9,7 @@ function loader(title){
     $("#top-nav-barss").load(root+ "/content/top-nav.html");
     $("#side-nav-barss").load(root+ "/content/side-nav.html");
     $("#side-nav-bars").load(root+ "/content/side-nav-midterm.html");
+    $("#side-nav-bars-finals").load(root+ "/content/side-nav-finals.html");
     $("#footer").load(root+ "/content/footer.html");
     $("#footer").after().load(root+ "/content/scripts.html");
 }

@@ -1,20 +1,106 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head id="head">
-    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../public/js/Loader.js"></script>
 
-    <script type="text/javascript">
-        $(function () {
-            loader("Common Template");
-        });
-    </script>
-    <!--head include-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <base href="">
+    <title id="tt"></title>
+
+    <link
+            href='http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,400italic,700italic'
+            rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet"
+          href="../public/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="../public/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="../public/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="../public/css/commonStyle.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="../public/css/commonStyle.css"/>
 </head>
 
-<body id="home" style="background-color: #F2F2F2;">
-<section id="top-nav-barss"></section>
-<section id="side-nav-bars-finals" style="margin-left: -14px;"></section>
+<body id="midterms" style="background-color: #F2F2F2;">
+<section id="top-nav-barss">
+    <header>
+        <div>
+            <div class="navbar-inverse navbar-static-top" role="navigation">
+                <div class="nav-header">
+                    <a class="navbar-brand" href="../index.html"
+                       title="Go to main page !">HOME</a>
+                    <a class="navbar-brand" href="prelims.html">Prelims</a>
+                    <a class="navbar-brand" href="midterms.html">Midterms</a>
+                    <a class="navbar-brand" href="finals.html">Finals</a>
+                    <a class="navbar-brand" href="about/about.html">About Us</a>
+                </div>
+                <!-- nav-header -->
+
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                </div>
+                <!-- collapse -->
+            </div>
+        </div>
+        <!-- navbar -->
+    </header>
+    <!-- header -->
+    <!-- column -->
+    <!-- content -->
+</section>
+<section id="side-nav-bars" style="margin-left: -14px;">
+    <section class="col col-lg-2">
+        <aside>
+            <div class="panel panel-default clearfix ">
+                <div id="sidebar" class="list-group">
+                    <a href="#" class="list-group-item" data-parent="#sidebar">
+                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;Servlet
+                    </a>
+                    <div id="css" class="list-group subitem collapse">
+                        <a href="../pages/finals.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;General</a>
+                    </div>
+
+                    <a href="#" class="list-group-item" data-parent="#sidebar">
+                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;JSP
+                    </a>
+                    <div id="articles1" class="list-group subitem collapse">
+                        <a href="../pages/jsp/introduction.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
+                    </div>
+
+                    <a href="#" class="list-group-item" data-parent="#sidebar">
+                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;JSTL
+                    </a>
+                    <div id="articles2" class="list-group subitem collapse">
+                        <a href="../pages/jstl/JSTL.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
+                    </div>
+
+                    <a href="#" class="list-group-item" data-parent="#sidebar">
+                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;NodeJS
+                    </a>
+                    <div id="articles3" class="list-group subitem collapse">
+                        <a href="../pages/nodejs/intro.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Introduction</a>
+                        <a href="../pages/nodejs/event.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Event</a>
+                        <a href="../pages/nodejs/filesystem-module.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;File System</a>
+                        <a href="../pages/nodejs/get-started.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Get Started</a>
+                        <a href="../pages/nodejs/http-module.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;HTTP Module</a>
+                        <a href="../pages/nodejs/modules.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Modules</a>
+                        <a href="../pages/nodejs/npm.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;NPM</a>
+                        <a href="../pages/nodejs/upload-file.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;Upload File</a>
+                        <a href="../pages/nodejs/url-module.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;URL module</a>
+                    </div>
+
+                    <a href="#" class="list-group-item" data-parent="#sidebar">
+                        <i class="glyphicon glyphicon-blackboard"></i>&nbsp;&nbsp;PHP
+                    </a>
+                    <div id="articles4" class="list-group subitem collapse">
+                        <a href="../pages/php/What%20is%20PHP.html" class="list-group-item"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;General</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </section>
+</section>
 <section class="col-md-10">
     <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
         <!-- START CONTENTS FOR THIS PAGE-->
@@ -731,8 +817,22 @@
 </section>
 
 <section id="footer">
-    <!-- footer includes-->
+    <section class="container">
+        <footer class="row">
+            <nav class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a href="../index.html">Main Page</a></li>
+
+                    <li><a href="about/about.html">About us</a></li>
+                </ul>
+            </nav><!-- nav -->
+        </footer><!-- footer -->
+    </section><!-- container -->
 </section>
-<!-- scripts includes-->
+<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../public/js/public.js"></script>
+<!--<script type="text/javascript" src="public/js/clock.js"></script>-->
+    <!-- scripts includes-->
 </body>
 </html>
