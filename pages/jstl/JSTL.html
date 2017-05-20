@@ -71,17 +71,22 @@
                                 <div class="panel-body">
                                     <details>
                                         <summary>Using the Expression Language</summary><br>
-                                        <p>Performance is significantly better because JSP allows embedding Dynamic Elements in HTML Pages itself instead of having separate CGI files.</p>
+                                        <p>The expression language (EL) allows for a much simpler syntax for doing application data manipulation for the page author. Currently the EL in the JSTL can only be used with tag attribute values, primarily in actions that reside in the Core tag library. It is possible to use the EL within template text if you are working with the JSP 2.0 specification. Expressions in template text are not supported if you are using JSTL 1.0 with JSP 1.2.</p>
                                     </details>
 
                                     <details>
                                         <summary>Implicit Objects Available in the EL</summary><br>
-                                        <p>JSP are always compiled before they are processed by the server unlike CGI/Perl which requires the server to load an interpreter and the target script each time the page is requested.</p>
+                                        <p>There are quite a few implicit objects exposed through the EL. These objects allow for access to any variables that are held in the particular JSP scopes. Objects include pageScope, requestScope, sessionScope, and applicationScope. All of these xScope objects are Maps that map the respective scope attribute names to their values. Using the implicit objects param and paramValues, it is also possible to access HTTP request parameters. This holds true for request header information as well as for using the implicit objects header and headerValues.<br>
+                                        </p>
+                                        <p>The param and header objects are Maps that map the parameter or header name to a String .This is similar to doing a ServletRequest.getParameter(String name) or ServletRequest.getHeader(String name).The paramValues and headerValues are Maps that map parameter and header names to a String[] of all values for that parameter or header. Again, this is as if you had made ServletRequest.getParameterValues(String name) or ServletRequest.getHeaders(String) calls.<br>
+                                        </p>
+                                        <p>The initParam gives access to context initialization parameters, while cookie exposes cookies received in the request. The implicit object pageContext gives access to all properties associated with the PageContext of a JSP page such as the HttpServletRequest , ServletContext ,and HttpSession objects and their properties.<br>
+                                        </p>
                                     </details>
 
                                     <details>
                                         <summary>Automatic Type Conversion</summary><br>
-                                        <p>JavaServer Pages are built on top of the Java Servlets API, so like Servlets, JSP also has access to all the powerful Enterprise Java APIs, including JDBC, JNDI, EJB, JAXP, etc.</p>
+                                        <p>The automatic type conversion is a very convenient feature of the EL in that a full set of coercion between various object and primitive types is supported. Coercion means that the page author isn't responsible for converting parameters into the appropriate objects or primitives. The JSTL defines appropriate conversions and default values. For example, a String parameter from a request will be coerced to the appropriate object or primitive.</p>
                                     </details>
                                 </div>
                             </div>
@@ -90,63 +95,21 @@
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        JSP Lifecycle
+                                        Install JSTL Library
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                                 <div class="panel-body">
-                                    <p>A JSP life cycle is defined as the process from its creation till the destruction. This is similar to a servlet life cycle with an additional step which is required to compile a JSP into servlet.</p>
-                                    <p>The four major phases of a JSP life cycle are very similar to the Servlet Life Cycle. The four phases have been described below −</p>
-                                    <img src="https://www.tutorialspoint.com/jsp/images/jsp_life_cycle.jpg" alt="JSP Lifecycle">
-                                    <details>
-                                        <summary>JSP Compilation</summary>
-                                        <p>When a browser asks for a JSP, the JSP engine first checks to see whether it needs to compile the page. If the page has never been compiled, or if the JSP has been modified since it was last compiled, the JSP engine compiles the page.
-                                        </p>
-                                        <p>The compilation process involves three steps - </p>
-                                        <ul>
-                                            <li><p>Parsing the JSP.</p></li>
-                                            <li><p>Turning the JSP into a servlet.</p></li>
-                                            <li><p>Compiling the servlet.</p></li>
-                                        </ul>
-                                    </details>
+                                    <p>To begin working with JSP tages you need to first install the JSTL library. If you are using the Apache Tomcat container, then follow these two steps &minus;</p>
 
-                                    <details>
-                                        <summary>JSP Initialization</summary>
-                                        <p>When a container loads a JSP it invokes the <code>jspInit()</code> method before servicing any requests. If you need to perform JSP-specific initialization, override the <code>jspInit()</code> method  </p>
-                                        <code>
-                                            public void jspInit(){
-                                            // Initialization code...
-                                            }
-                                        </code>
-                                        <p>Typically, initialization is performed only once and as with the servlet init method, you generally initialize database connections, open files, and create lookup tables in the jspInit method.</p>
-                                    </details>
+                                    <p><b>Step 1</b> &minus; Download the binary distribution from <a rel="nofollow" href="https://tomcat.apache.org/taglibs/index.html" target="_blank">Apache Standard Taglib</a> and unpack the compressed file.</p>
 
-                                    <details>
-                                        <summary>JSP Execution</summary>
-                                        <p>This phase of the JSP life cycle represents all interactions with requests until the JSP is destroyed.</p>
-                                        <p>Whenever a browser requests a JSP and the page has been loaded and initialized, the JSP engine invokes the <code> _jspService()</code> method in the JSP.</p>
-                                        <p>The <code>_jspService()</code> method takes an HttpServletRequest and an <code> HttpServletResponse </code>as its parameters as follows −</p>
-
-                                        <code>
-                                            void _jspService(HttpServletRequest request, HttpServletResponse response) {
-                                            // Service handling code...
-                                            }
-                                        </code>
-                                    </details>
-
-                                    <details>
-                                        <summary>JSP Cleanup</summary>
-                                        <p>The destruction phase of the JSP life cycle represents when a JSP is being removed from use by a container.</p>
-                                        <p>The <code>jspDestroy()</code> method is the JSP equivalent of the destroy method for servlets. Override jspDestroy when you need to perform any cleanup, such as releasing database connections or closing open files.</p>
-                                        <p>The jspDestroy() method has the following form: </p>
-                                        <code>public void jspDestroy() {
-                                            // Your cleanup code goes here.
-                                            }</code>
-
-                                    </details>
+                                    <p><b>Step 2</b> &minus; To use the Standard Taglib from its <b>Jakarta Taglibs distribution</b>, simply copy the JAR files in the distribution's 'lib' directory to your application's <b>webapps\ROOT\WEB-INF\lib
+                                    </b> directory.</p>
+                                    
+                                    <p>To use any of the libraries, you must include a &lt;taglib&gt; directive at the top of each JSP that uses the library.</p>
                                 </div>
-
                             </div>
                         </div>
                         <div class="panel panel-default">
