@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-barss" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <!-- START CONTENTS FOR THIS PAGE-->
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">PHP</h3>
+                </div>
+
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is PHP?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    - recursive acronym for PHP: Hypertext Preprocessor<br>
+                                    - A widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.<br/><br/>
+                                    <br/>
+                                    <code>
+                                    &lt;!DOCTYPE  HTML&gt;<br>
+                                    &lt;html&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Example&lt;/title&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Hello, This is a PHP script!";&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&gt;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                                    &lt;/html&gt;
+                                    </code>
+
+                                    <p>Source: http://php.net/manual/en/intro-whatis.php</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        String Literals
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    String literals are a row of characters enclosed in either double or single quotes.
+                                    <br/><br/>
+                                    - the quotes must be matched.<br>
+                                    - If the string starts with a single quote, it must end with a matching single quote; likewise if it starts with a double quote, it must end with a double quote.<br>
+                                    - If a string of characters is enclosed in single quotes, the characters are treated literally (each of the characters represents itself).<br>
+                                    <br>
+                                    <br>
+                                    <b>Single quotes can hide double quotes, and double quotes can hide single quotes:</b><br>
+                                    <code>
+                                    "This is a string"<br>
+                                    'This is a also a string'<br>
+                                    "This is another 'string'"<br>
+                                    'This is "a string"'
+                                    </code>
+                                    <br>
+                                    <p>Source: http://www.informit.com/articles/article.aspx?p=680835</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Basic Syntax (PHP tags)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    When PHP parses a file, it looks for opening and closing tags, which are <?php and ?> which tell PHP to start and stop interpreting the code between them. Parsing in this manner allows PHP to be embedded in all sorts of different documents, as everything outside of a pair of opening and closing tags is ignored by the PHP parser.<br><br>
+                                    PHP also allows for short open tag &lt;? (which is discouraged since it is only available if enabled using the short_open_tag php.ini configuration file directive, or if PHP was configured with the --enable-short-tags option).
+                                    <br><br>
+                                    If a file is pure PHP code, it is preferable to omit the PHP closing tag at the end of the file. This prevents accidental whitespace or new lines being added after the PHP closing tag, which may cause unwanted effects because PHP will start output buffering when there is no intention from the programmer to send any output at that point in the script.
+                                    <br><br>
+                                    <code>
+                                    &lt;?php<br>
+                                    echo "Hi world";<br>
+                                    <br>
+                                    // .... some codes<br>
+                                    echo "Last statement";<br>
+                                    <br>
+                                    // the script end here with no PHP closing tag
+                                    </code>
+                                    <p>Source: http://php.net/manual/en/language.basic-syntax.phptags.php</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Basic Syntax (Escaping from HTML)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    Everything outside of a pair of opening and closing tags is ignored by the PHP parser which allows PHP files to have mixed content. This allows PHP to be embedded in HTML documents, for example to create templates.<br><br>
+                                    <code>
+                                    &lt;br&gt;<br>
+                                    &lt;code&gt;<br>
+                                    &lt;p&gt;This is going to be ignored by PHP and displayed by the browser.&lt;/p&gt;<br>
+                                    &lt;?php echo 'While this is going to be parsed.'; ?&gt;<br>
+                                    &lt;p&gt;This will also be ignored by PHP and displayed by the browser.&lt;/p&gt;
+                                    </code><br><br>
+
+                                    This works as expected, because when the PHP interpreter hits the ?> closing tags, it simply starts outputting whatever it finds (except for an immediately following newline - see instruction separation) until it hits another opening tag unless in the middle of a conditional statement in which case the interpreter will determine the outcome of the conditional before making a decision of what to skip over. See the next example.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                                        Basic Syntax (Instruction separation)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    As in C or Perl, PHP requires instructions to be terminated with a semicolon at the end of each statement. The closing tag of a block of PHP code automatically implies a semicolon; you do not need to have a semicolon terminating the last line of a PHP block. The closing tag for the block will include the immediately trailing newline if one is present.<br><br>
+
+                                    <code>
+                                    &lt;?php
+                                    &nbsp;&nbsp;&nbsp;&nbsp;echo 'This is a test';
+                                    ?&gt;<br>
+
+                                    &lt;?php echo 'This is a test' ?&gt;
+
+                                    &lt;?php echo 'We omitted the last closing tag
+                                    </code>
+                                    <p>Source: http://php.net/manual/en/language.basic-syntax.instruction-separation.php</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+                                        Basic Syntax (Comments)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    PHP supports 'C', 'C++' and Unix shell-style (Perl style) comments. For example:<br><br>
+
+                                    <code>
+                                    &lt;?php<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;'This is a test'; // This is a one-line c++ style comment<br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;/* This is a multi line comment
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yet another line of comment */<br>
+                                    echo 'This is yet another test';<br>
+                                    echo 'One Final Test'; # This is a one-line shell-style comment<br>
+                                    ?&gt;
+                                    </code>
+                                    <p>Source: http://php.net/manual/en/language.basic-syntax.instruction-separation.php</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br/>
+                        Reference: <br/>
+                        <pre>https://www.w3schools.com/js/js_htmldom.asp<br/>https://css-tricks.com/dom/<br/>https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction<br/>https://www.w3.org/TR/DOM-Level-2-Core/introduction.html</pre>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+
+        <!-- END CONTENTS FOR THIS PAGE-->
+    </section>
+</section>
+
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
