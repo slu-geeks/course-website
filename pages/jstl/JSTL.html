@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/Loader.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            loader("Common Template");
+        });
+    </script>
+    <!--head include-->
+</head>
+
+<body id="home" style="background-color: #F2F2F2;">
+<section id="top-nav-barss"></section>
+<section id="side-nav-bars" style="margin-left: -14px;"></section>
+<section class="col-md-10">
+    <section id="main-secss" class="main col col-lg-12" style=" margin-top: 20px;">
+        <article>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Java Standard Tag Library (JSTL)</h3>
+                </div>
+
+                <div class="panel-body styleWidgets">
+                    <div class="panel-group" id="accordion0" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is JSTL?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p> </p>
+                                    <p>
+                                        The Java Standard Tag Library (JSTL) is a collection of useful JSP tags which encapsulates the core functionality common to many JSP applications.<br>
+                                    </p>
+                                    <p>
+                                    JSTL has support for common, structural tasks such as iteration and conditionals, tags for manipulating XML documents, internationalization tags, and SQL tags. It also provides a framework for integrating the existing custom tags with the JSTL tags.
+                                    </p>           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Why do we need to use JSTL?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>Having a defined specification for how the functionality is implemented means that a page author can learn these custom actions once and then use and reuse them on all future products on all application containers that support the specification. Using the JSTL will not only make your JSPs more readable and maintainable, but will allow you to concentrate on good design and implementation practices in your pages. We can finally take the custom out of custom action and replace it with standard.No more creating your own iteration action for the tenth time. Additionally, your favorite Integrated Development Environment (IDE) that supports JSP authoring will now support these standard actions and can assist the JSP page author in rapid development.</p>           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Features of JSTL
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <details>
+                                        <summary>Using the Expression Language</summary><br>
+                                        <p>The expression language (EL) allows for a much simpler syntax for doing application data manipulation for the page author. Currently the EL in the JSTL can only be used with tag attribute values, primarily in actions that reside in the Core tag library. It is possible to use the EL within template text if you are working with the JSP 2.0 specification. Expressions in template text are not supported if you are using JSTL 1.0 with JSP 1.2.</p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Implicit Objects Available in the EL</summary><br>
+                                        <p>There are quite a few implicit objects exposed through the EL. These objects allow for access to any variables that are held in the particular JSP scopes. Objects include pageScope, requestScope, sessionScope, and applicationScope. All of these xScope objects are Maps that map the respective scope attribute names to their values. Using the implicit objects param and paramValues, it is also possible to access HTTP request parameters. This holds true for request header information as well as for using the implicit objects header and headerValues.<br>
+                                        </p>
+                                        <p>The param and header objects are Maps that map the parameter or header name to a String .This is similar to doing a ServletRequest.getParameter(String name) or ServletRequest.getHeader(String name).The paramValues and headerValues are Maps that map parameter and header names to a String[] of all values for that parameter or header. Again, this is as if you had made ServletRequest.getParameterValues(String name) or ServletRequest.getHeaders(String) calls.<br>
+                                        </p>
+                                        <p>The initParam gives access to context initialization parameters, while cookie exposes cookies received in the request. The implicit object pageContext gives access to all properties associated with the PageContext of a JSP page such as the HttpServletRequest , ServletContext ,and HttpSession objects and their properties.<br>
+                                        </p>
+                                    </details>
+
+                                    <details>
+                                        <summary>Automatic Type Conversion</summary><br>
+                                        <p>The automatic type conversion is a very convenient feature of the EL in that a full set of coercion between various object and primitive types is supported. Coercion means that the page author isn't responsible for converting parameters into the appropriate objects or primitives. The JSTL defines appropriate conversions and default values. For example, a String parameter from a request will be coerced to the appropriate object or primitive.</p>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Install JSTL Library
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <p>To begin working with JSP tages you need to first install the JSTL library. If you are using the Apache Tomcat container, then follow these two steps &minus;</p>
+
+                                    <p><b>Step 1</b> &minus; Download the binary distribution from <a rel="nofollow" href="https://tomcat.apache.org/taglibs/index.html" target="_blank">Apache Standard Taglib</a> and unpack the compressed file.</p>
+
+                                    <p><b>Step 2</b> &minus; To use the Standard Taglib from its <b>Jakarta Taglibs distribution</b>, simply copy the JAR files in the distribution's 'lib' directory to your application's <b>webapps\ROOT\WEB-INF\lib
+                                    </b> directory.</p>
+
+                                    <p>To use any of the libraries, you must include a &lt;taglib&gt; directive at the top of each JSP that uses the library.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion0" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Classification of JSTL Tags
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <h2>Classification of The JSTL Tags</h2>
+                                        <p>The JSTL tags can be classified, according to their functions, into the following JSTL tag library groups that can be used when creating a JSP page &minus;</p>
+                                        <ul class="list">
+                                        <li><p><b>Core Tags</b></p></li>
+                                        <li><p><b>Formatting tags</b></p></li>
+                                        <li><p><b>SQL tags</b></p></li>
+                                        <li><p><b>XML tags</b></p></li>
+                                        <li><p><b>JSTL Functions</b></p></li>
+                                        </ul>
+                                        <h2>Core Tags</h2>
+                                        <p>The core group of tags are the most commonly used JSTL tags. Following is the syntax to include the JSTL Core library in your JSP &minus;</p>
+                                        <pre class="result notranslate">
+                                        &lt;%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %&gt;
+                                        </pre>
+                                        <p>Following table lists out the core JSTL Tags &minus;</p>
+                                        <table class="table table-bordered">
+                                        <tr>
+                                        <th style="width:11%">S.No.</th>
+                                        <th style="text-align:center;">Tag &amp; Description</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">1</td>
+                                        <td><a href="/jsp/jstl_core_out_tag.htm"> &lt;c:out&gt;</a>
+                                        <p>Like &lt;%= ... &gt;, but for expressions.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">2</td>
+                                        <td><a href="/jsp/jstl_core_set_tag.htm">&lt;c:set &gt;</a>
+                                        <p>Sets the result of an expression evaluation in a <b>'scope'</b></p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">3</td>
+                                        <td><a href="/jsp/jstl_core_remove_tag.htm">&lt;c:remove &gt;</a>
+                                        <p>Removes a <b>scoped variable</b> (from a particular scope, if specified).</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">4</td>
+                                        <td><a href="/jsp/jstl_core_catch_tag.htm">&lt;c:catch&gt;</a>
+                                        <p>Catches any <b>Throwable</b> that occurs in its body and optionally exposes it.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">5</td>
+                                        <td><a href="/jsp/jstl_core_if_tag.htm">&lt;c:if&gt;</a>
+                                        <p>Simple conditional tag which evalutes its body if the supplied condition is true.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">6</td>
+                                        <td><a href="/jsp/jstl_core_choose_tag.htm">&lt;c:choose&gt;</a>
+                                        <p>Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by <b>&lt;when&gt;</b> and <b>&lt;otherwise&gt;</b>.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">7</td>
+                                        <td><a href="/jsp/jstl_core_choose_tag.htm">&lt;c:when&gt;</a>
+                                        <p>Subtag of <b>&lt;choose&gt;</b> that includes its body if its condition evalutes to <b>'true'</b>.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">8</td>
+                                        <td><a href="/jsp/jstl_core_choose_tag.htm">&lt;c:otherwise &gt;</a>
+                                        <p>Subtag of <b>&lt;choose&gt;</b> that follows the <b>&lt;when&gt;</b> tags and runs only if all of the prior conditions evaluated to <b>'false'</b>.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">9</td>
+                                        <td><a href="/jsp/jstl_core_import_tag.htm">&lt;c:import&gt;</a>
+                                        <p>Retrieves an absolute or relative URL and exposes its contents to either the page, a String in <b>'var'</b>, or a Reader in <b>'varReader'</b>.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">10</td>
+                                        <td><a href="/jsp/jstl_core_foreach_tag.htm">&lt;c:forEach &gt;</a>
+                                        <p>The basic iteration tag, accepting many different collection types and supporting subsetting and other functionality .</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">11</td>
+                                        <td><a href="/jsp/jstl_core_foreach_tag.htm">&lt;c:forTokens&gt;</a>
+                                        <p>Iterates over tokens, separated by the supplied delimeters.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">12</td>
+                                        <td><a href="/jsp/jstl_core_param_tag.htm">&lt;c:param&gt;</a>
+                                        <p>Adds a parameter to a containing <b>'import'</b> tag's URL.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">13</td>
+                                        <td><a href="/jsp/jstl_core_redirect_tag.htm">&lt;c:redirect &gt;</a>
+                                        <p>Redirects to a new URL.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">14</td>
+                                        <td><a href="/jsp/jstl_core_url_tag.htm">&lt;c:url&gt;</a>
+                                        <p>Creates a URL with optional query parameters</p>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <h2>Formatting Tags</h2>
+                                        <p>The JSTL formatting tags are used to format and display text, the date, the time, and numbers for internationalized Websites. Following is the syntax to include Formatting library in your JSP &minus;</p>
+                                        <pre class="result notranslate">
+                                        &lt;%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %&gt;
+                                        </pre>
+                                        <p>Following table lists out the Formatting JSTL Tags &minus;</p>
+                                        <table class="table table-bordered">
+                                        <tr>
+                                        <th style="width:11%">S.No.</th>
+                                        <th style="text-align:center;">Tag &amp; Description</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">1</td>
+                                        <td><a href="/jsp/jstl_format_formatnumber_tag.htm">&lt;fmt:formatNumber&gt;</a>
+                                        <p>To render numerical value with specific precision or format.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">2</td>
+                                        <td><a href="/jsp/jstl_format_parsenumber_tag.htm">&lt;fmt:parseNumber&gt;</a>
+                                        <p>Parses the string representation of a number, currency, or percentage.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">3</td>
+                                        <td><a href="/jsp/jstl_format_formatdate_tag.htm">&lt;fmt:formatDate&gt;</a>
+                                        <p>Formats a date and/or time using the supplied styles and pattern.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">4</td>
+                                        <td><a href="/jsp/jstl_format_parsedate_tag.htm">&lt;fmt:parseDate&gt;</a>
+                                        <p>Parses the string representation of a date and/or time</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">5</td>
+                                        <td><a href="/jsp/jstl_format_bundle_tag.htm">&lt;fmt:bundle&gt;</a>
+                                        <p>Loads a resource bundle to be used by its tag body.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">6</td>
+                                        <td><a href="/jsp/jstl_format_setlocale_tag.htm">&lt;fmt:setLocale&gt;</a>
+                                        <p>Stores the given locale in the locale configuration variable.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">7</td>
+                                        <td><a href="/jsp/jstl_format_setbundle_tag.htm">&lt;fmt:setBundle&gt;</a>
+                                        <p>Loads a resource bundle and stores it in the named scoped variable or the bundle configuration variable.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">8</td>
+                                        <td><a href="/jsp/jstl_format_timezone_tag.htm">&lt;fmt:timeZone&gt;</a>
+                                        <p>Specifies the time zone for any time formatting or parsing actions nested in its body.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">9</td>
+                                        <td><a href="/jsp/jstl_format_settimezone_tag.htm">&lt;fmt:setTimeZone&gt;</a>
+                                        <p>Stores the given time zone in the time zone configuration variable</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">10</td>
+                                        <td><a href="/jsp/jstl_format_message_tag.htm">&lt;fmt:message&gt;</a>
+                                        <p>Displays an internationalized message.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">11</td>
+                                        <td><a href="/jsp/jstl_format_requestencoding_tag.htm">&lt;fmt:requestEncoding&gt;</a>
+                                        <p>Sets the request character encoding</p>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <h2>SQL Tags</h2>
+                                        <p>The JSTL SQL tag library provides tags for interacting with relational databases (RDBMSs) such as <b>Oracle, mySQL</b>, or <b>Microsoft SQL Server</b>.</p>
+                                        <p>Following is the syntax to include JSTL SQL library in your JSP &minus;</p>
+                                        <pre class="result notranslate">
+                                        &lt;%@ taglib prefix = "sql" uri = "http://java.sun.com/jsp/jstl/sql" %&gt;
+                                        </pre>
+                                        <p>Following table lists out the SQL JSTL Tags &minus;</p>
+                                        <table class="table table-bordered">
+                                        <tr>
+                                        <th style="width:11%">S.No.</th>
+                                        <th style="text-align:center;">Tag &amp; Description</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">1</td>
+                                        <td><a href="/jsp/jstl_sql_setdatasource_tag.htm">&lt;sql:setDataSource&gt;</a>
+                                        <p>Creates a simple DataSource suitable only for prototyping</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">2</td>
+                                        <td><a href="/jsp/jstl_sql_query_tag.htm">&lt;sql:query&gt;</a>
+                                        <p>Executes the SQL query defined in its body or through the sql attribute.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">3</td>
+                                        <td><a href="/jsp/jstl_sql_update_tag.htm">&lt;sql:update&gt;</a>
+                                        <p>Executes the SQL update defined in its body or through the sql attribute.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">4</td>
+                                        <td><a href="/jsp/jstl_sql_param_tag.htm">&lt;sql:param&gt;</a>
+                                        <p>Sets a parameter in an SQL statement to the specified value.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">5</td>
+                                        <td><a href="/jsp/jstl_sql_dateparam_tag.htm">&lt;sql:dateParam&gt;</a>
+                                        <p>Sets a parameter in an SQL statement to the specified java.util.Date value.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">6</td>
+                                        <td><a href="/jsp/jstl_sql_transaction_tag.htm">&lt;sql:transaction &gt;</a>
+                                        <p>Provides nested database action elements with a shared Connection, set up to execute all statements as one transaction.</p>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <h2>XML tags</h2>
+                                        <p>The JSTL XML tags provide a JSP-centric way of creating and manipulating the XML documents. Following is the syntax to include the JSTL XML library in your JSP.</p>
+                                        <p>The JSTL XML tag library has custom tags for interacting with the XML data. This includes parsing the XML, transforming the XML data, and the flow control based on the XPath expressions.</p>
+                                        <pre class="result notranslate">
+                                        &lt;%@ taglib prefix = "x" 
+                                           uri = "http://java.sun.com/jsp/jstl/xml" %&gt;
+                                        </pre>
+                                        <p>Before you proceed with the examples, you will need to copy the following two XML and XPath related libraries into your <b>&lt;Tomcat Installation Directory&gt;\lib</b> &minus;</p>
+                                        <ul class="list">
+                                        <li><p><b>XercesImpl.jar</b> &minus; Download it from <a href="https://www.apache.org/dist/xerces/j/" rel="nofollow" target="_blank">https://www.apache.org/dist/xerces/j/</a></p></li>
+                                        <li><p><b>xalan.jar</b> &minus; Download it from <a href="https://xml.apache.org/xalan-j/index.html" rel="nofollow" target="_blank">https://xml.apache.org/xalan-j/index.html</a></p></li>
+                                        </ul>
+                                        <p>Following is the list of XML JSTL Tags &minus;</p>
+                                        <table class="table table-bordered">
+                                        <tr>
+                                        <th style="width:11%">S.No.</th>
+                                        <th style="text-align:center;">Tag &amp; Description</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">1</td>
+                                        <td><a href="/jsp/jstl_xml_out_tag.htm">&lt;x:out&gt;</a>
+                                        <p>Like &lt;%= ... &gt;, but for XPath expressions.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">2</td>
+                                        <td><a href="/jsp/jstl_xml_parse_tag.htm">&lt;x:parse&gt;</a>
+                                        <p>Used to parse the XML data specified either via an attribute or in the tag body.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">3</td>
+                                        <td><a href="/jsp/jstl_xml_set_tag.htm">&lt;x:set &gt;</a>
+                                        <p>Sets a variable to the value of an XPath expression.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">4</td>
+                                        <td><a href="/jsp/jstl_xml_if_tag.htm">&lt;x:if &gt;</a>
+                                        <p>Evaluates a test XPath expression and if it is true, it processes its body. If the test condition is false, the body is ignored.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">5</td>
+                                        <td><a href="/jsp/jstl_xml_foreach_tag.htm">&lt;x:forEach&gt;</a>
+                                        <p>To loop over nodes in an XML document.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">6</td>
+                                        <td><a href="/jsp/jstl_xml_choose_tag.htm">&lt;x:choose&gt;</a>
+                                        <p>Simple conditional tag that establishes a context for mutually exclusive conditional operations, marked by <b>&lt;when&gt;</b> and <b>&lt;otherwise&gt;</b> tags.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">7</td>
+                                        <td><a href="/jsp/jstl_xml_choose_tag.htm">&lt;x:when &gt;</a>
+                                        <p>Subtag of <b>&lt;choose&gt;</b> that includes its body if its expression evalutes to 'true'.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">8</td>
+                                        <td><a href="/jsp/jstl_xml_choose_tag.htm">&lt;x:otherwise &gt;</a>
+                                        <p>Subtag of <b>&lt;choose&gt;</b> that follows the <b>&lt;when&gt;</b> tags and runs only if all of the prior conditions evaluates to 'false'.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">9</td>
+                                        <td><a href="/jsp/jstl_xml_transform_tag.htm">&lt;x:transform &gt;</a>
+                                        <p>Applies an XSL transformation on a XML document</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">10</td>
+                                        <td><a href="/jsp/jstl_xml_param_tag.htm">&lt;x:param &gt;</a>
+                                        <p>Used along with the <b>transform</b> tag to set a parameter in the XSLT stylesheet</p>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <h2>JSTL Functions</h2>
+                                        <p>JSTL includes a number of standard functions, most of which are common string manipulation functions. Following is the syntax to include JSTL Functions library in your JSP &minus;</p>
+                                        <pre class="result notranslate">
+                                        &lt;%@ taglib prefix = "fn" 
+                                           uri = "http://java.sun.com/jsp/jstl/functions" %&gt;
+                                        </pre>
+                                        <p>Following table lists out the various JSTL Functions &minus;</p>
+                                        <table class="table table-bordered">
+                                        <tr>
+                                        <th style="width:11%">S.No.</th>
+                                        <th style="text-align:center;">Function &amp; Description</th>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">1</td>
+                                        <td><a href="/jsp/jstl_function_contains.htm">fn:contains()</a>
+                                        <p>Tests if an input string contains the specified substring.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">2</td>
+                                        <td><a href="/jsp/jstl_function_containsignorecase.htm">fn:containsIgnoreCase()</a>
+                                        <p>Tests if an input string contains the specified substring in a case insensitive way.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">3</td>
+                                        <td><a href="/jsp/jstl_function_endswith.htm">fn:endsWith()</a>
+                                        <p>Tests if an input string ends with the specified suffix.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">4</td>
+                                        <td><a href="/jsp/jstl_function_escapexml.htm">fn:escapeXml()</a>
+                                        <p>Escapes characters that can be interpreted as XML markup.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">5</td>
+                                        <td><a href="/jsp/jstl_function_indexof.htm">fn:indexOf()</a>
+                                        <p>Returns the index withing a string of the first occurrence of a specified substring.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">6</td>
+                                        <td><a href="/jsp/jstl_function_join.htm">fn:join() </a>
+                                        <p>Joins all elements of an array into a string.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">7</td>
+                                        <td><a href="/jsp/jstl_function_length.htm">fn:length() </a>
+                                        <p>Returns the number of items in a collection, or the number of characters in a string.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">8</td>
+                                        <td><a href="/jsp/jstl_function_replace.htm">fn:replace()</a>
+                                        <p>Returns a string resulting from replacing in an input string all occurrences with a given string.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">9</td>
+                                        <td><a href="/jsp/jstl_function_split.htm">fn:split()</a>
+                                        <p>Splits a string into an array of substrings.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">10</td>
+                                        <td><a href="/jsp/jstl_function_startswith.htm">fn:startsWith()</a>
+                                        <p>Tests if an input string starts with the specified prefix.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">11</td>
+                                        <td><a href="/jsp/jstl_function_substring.htm">fn:substring()</a>
+                                        <p>Returns a subset of a string.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">12</td>
+                                        <td><a href="/jsp/jstl_function_substringafter.htm">fn:substringAfter()</a>
+                                        <p>Returns a subset of a string following a specific substring.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">13</td>
+                                        <td><a href="/jsp/jstl_function_substringbefore.htm">fn:substringBefore()</a>
+                                        <p>Returns a subset of a string before a specific substring.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">14</td>
+                                        <td><a href="/jsp/jstl_function_tolowercase.htm">fn:toLowerCase()</a>
+                                        <p>Converts all of the characters of a string to lower case.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">15</td>
+                                        <td><a href="/jsp/jstl_function_touppercase.htm">fn:toUpperCase()</a>
+                                        <p>Converts all of the characters of a string to upper case.</p>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td style="text-align:center;vertical-align:middle;">16</td>
+                                        <td><a href="/jsp/jstl_function_trim.htm">fn:trim()</a>
+                                        <p>Removes white spaces from both ends of a string.</p>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        
+                        <br/>
+                        Reference:<br/>
+                        <p>https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm<br>
+                        http://www.javaranch.com/journal/2003/09/AnIntroductionToJstl.html<br>
+                        https://www.javatpoint.com/jstl<br></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</section>
+<section id="footer">
+    <!-- footer includes-->
+</section>
+<!-- scripts includes-->
+</body>
+</html>
